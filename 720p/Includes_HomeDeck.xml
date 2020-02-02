@@ -91,12 +91,12 @@
 
 				<!-- Movies -->
 				<control type="grouplist">
-					<height>74</height>
+					<height>78</height>
 					<orientation>vertical</orientation>
 					<itemgap>0</itemgap>
 					<visible>Integer.IsGreater(Window.Property(Movies.Count),0) + [![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] | [String.IsEqual(Container(9000).ListItem.Property(labelID),movies)]]</visible>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[20342]</label>
@@ -113,7 +113,7 @@
 						</control>
 					</control>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[16101]</label>
@@ -130,7 +130,7 @@
 						</control>
 					</control>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[16102]</label>
@@ -149,12 +149,12 @@
 
 				<!-- TV Shows -->
 				<control type="grouplist">
-					<height>74</height>
+					<height>78</height>
 					<orientation>vertical</orientation>
 					<itemgap>0</itemgap>
 					<visible>Integer.IsGreater(Window.Property(Episodes.Count),0) + [![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] | [String.IsEqual(Container(9000).ListItem.Property(labelID),tvshows)]]</visible>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[20343]</label>
@@ -171,7 +171,7 @@
 						</control>
 					</control>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[20360]</label>
@@ -188,7 +188,7 @@
 						</control>
 					</control>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[16101]</label>
@@ -208,12 +208,12 @@
 
 				<!-- Music -->
 				<control type="grouplist">
-					<height>74</height>
+					<height>78</height>
 					<orientation>vertical</orientation>
 					<itemgap>0</itemgap>
 					<visible>Integer.IsGreater(Window.Property(Music.SongsCount),0) + [![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] | [String.IsEqual(Container(9000).ListItem.Property(labelID),music)]]</visible>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[133]</label>
@@ -230,7 +230,7 @@
 						</control>
 					</control>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[132]</label>
@@ -247,7 +247,7 @@
 						</control>
 					</control>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[134]</label>
@@ -272,7 +272,7 @@
 					<itemgap>0</itemgap>
 					<visible>Integer.IsGreater(Window.Property(MusicVideos.Count),0) + [![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] | [String.IsEqual(Container(9000).ListItem.Property(labelID),musicvideos)]]</visible>
 					<control type="grouplist">
-						<height>24</height>
+						<height>26</height>
 						<orientation>horizontal</orientation>
 						<control type="label">
 							<label>$LOCALIZE[20389]</label>
@@ -372,7 +372,7 @@
 				<font>METF_RecentlyAddedListText</font>
 				<textcolor>RecentlyAddedNF</textcolor>
 				<label>$VAR[GlobalWidgetLabel]</label>
-				<visible>[[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] + !String.IsEmpty(Container(9000).ListItem.Property(widget))] | [Control.HasFocus(8000) | Control.HasFocus(8001) | Control.HasFocus(8002) | Control.HasFocus(8003)]</visible>
+				<visible>[[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] ] | [Control.HasFocus(8000) | Control.HasFocus(8001) | Control.HasFocus(8002) | Control.HasFocus(8003)| Control.HasFocus(8003)]</visible> 
 			</control>
 		</itemlayout>
 		<focusedlayout width="510" height="27">
@@ -385,7 +385,7 @@
 				<aligny>center</aligny>
 				<texture>FocusLine.png</texture>
 				<colordiffuse>FocusBar</colordiffuse>
-				<visible>[[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] + !String.IsEmpty(Container(9000).ListItem.Property(widget))] | [Control.HasFocus(8000) | Control.HasFocus(8001) | Control.HasFocus(8002) | Control.HasFocus(8003)]</visible>
+				<visible>[[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] ] | [Control.HasFocus(8000) | Control.HasFocus(8001) | Control.HasFocus(8002) | Control.HasFocus(8003)| Control.HasFocus(8003)]</visible>
 			</control>
 			<control type="label">
 				<posx>10</posx>
@@ -400,7 +400,7 @@
 				<font>METF_RecentlyAddedListText</font>
 				<textcolor>FocusBarText</textcolor>
 				<label>$VAR[GlobalWidgetLabel]</label>
-				<visible>[[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] + !String.IsEmpty(Container(9000).ListItem.Property(widget))] | [Control.HasFocus(8000) | Control.HasFocus(8001) | Control.HasFocus(8002) | Control.HasFocus(8003)]</visible>
+				<visible>[[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] ] | [Control.HasFocus(8000) | Control.HasFocus(8001) | Control.HasFocus(8002) | Control.HasFocus(8003)| Control.HasFocus(8003)]</visible>
 			</control>
 		</focusedlayout>
 	</include>

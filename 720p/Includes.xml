@@ -140,6 +140,7 @@
 		<aligny>center</aligny>
 		<include>Animation_HiddenByInfo</include>
 	</include>
+	
 	<include name="Global_Heading">
 		<control type="group">
 			<posx>30</posx>
@@ -147,20 +148,30 @@
 			<include>Animation_OpenCloseFade</include>
 			<include>Animation_FadedByMenu</include>
 			<include>Animation_HiddenByInfo</include>
-
 			<!-- Left side title -->
 			<control type="label">
 				<label>$VAR[GlobalHeadingLeft]</label>
 				<include>Global_HeadingSectionVars</include>
 			</control>
-
 			<!-- Center details -->
 			<control type="label">
 				<label>$LOCALIZE[31208] $INFO[Window.Property(Updated)]</label>
 				<include>Global_HeadingLevelVars</include>
 				<visible>Window.IsActive(AddonBrowser)</visible>
 			</control>
-
+			<!-- Center NextAired sub details -->
+			<control type="label">
+				<label>$VAR[GlobalSubHeadingCenter]</label>
+				<font>METF_PlotTextSmall</font>
+				<posy>20</posy>
+				<width>1220</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<height>30</height>
+				<textcolor>SettingsDetail</textcolor>
+				<include>Animation_HiddenByInfo</include>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + Skin.HasSetting(NextAired)</visible>
+			</control>
 			<!-- Right side details -->
 			<control type="label" id="52">
 				<description>Build Version</description>
@@ -175,6 +186,7 @@
 			</control>
 		</control>
 	</include>
+	
 	<!-- SortLetter popup when scrolling through lists quickly -->
 	<include name="Global_ScrollOffsetLabel">
 		<control type="group" id="9906">
@@ -213,13 +225,16 @@
 		<aspectratio align="center">keep</aspectratio>
 	</include>
 	<include name="Global_Weather">
-		<control type="group">
-			<posx>12</posx>
-			<posy>40</posy>
+		<control type="grouplist">
+			<left>1110</left>
+			<top>557</top>
+			<height>30</height>
+			<width>140</width>
+			<align>right</align>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>false</usecontrolcoords>
 			<visible>Weather.IsFetched + [[!Window.IsActive(visualisation) + !Skin.HasSetting(HideClockTemp)] | [Window.IsActive(visualisation) + Player.ShowInfo + !Skin.HasSetting(HideVisClock) + !Window.IsVisible(120)]]</visible>
 			<control type="multiimage">
-				<posx>1145</posx>
-				<posy>517</posy>
 				<width>30</width>
 				<height>30</height>
 				<include>Weather_Icon_Common</include>
@@ -227,12 +242,10 @@
 			</control>
 			<control type="label">
 				<description>Temperature</description>
-				<posx>1241</posx>
-				<posy>517</posy>
-				<width>200</width>
+				<width min="50" max="110">auto</width>
 				<height>30</height>
 				<font>METF_Temp</font>
-				<align>right</align>
+				<align>left</align>
 				<aligny>center</aligny>
 				<textcolor>Temp</textcolor>
 				<label>[B]$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][/B]</label>
@@ -243,7 +256,7 @@
 		<posx>1241</posx>
 		<posy>546</posy>
 		<width>200</width>
-		<height>30</height>
+		<height>26</height>
 		<font>METF_Date</font>
 		<align>right</align>
 		<aligny>center</aligny>
@@ -258,7 +271,7 @@
 			<visible>[!Window.IsActive(visualisation) + !Skin.HasSetting(HideClock)] | [Window.IsActive(visualisation) + Player.ShowInfo + !Skin.HasSetting(HideVisClock) + !Window.IsVisible(120)]</visible>
 			<control type="label">
 				<description>Hours</description>
-				<posx>1182</posx>
+				<posx>1175</posx>
 				<posy>614</posy>
 				<width>150</width>
 				<font>METF_Hours</font>
@@ -269,24 +282,24 @@
 			</control>
 			<control type="label">
 				<description>Minutes</description>
-				<posx>1195</posx>
+				<posx>1240</posx>
 				<posy>596</posy>
 				<width>80</width>
 				<font>METF_Minutes</font>
-				<align>left</align>
+				<align>right</align>
 				<aligny>center</aligny>
 				<textcolor>Time</textcolor>
 				<label>$INFO[System.Time(mm)]</label>
 			</control>
 			<control type="label">
 				<description>AM/PM</description>
-				<posx>1186</posx>
+				<posx>1240</posx>
 				<posy>640</posy>
 				<width>80</width>
 				<font>METF_FontAMPM</font>
 				<textcolor>TimeAMPM</textcolor>
 				<label>[B]$INFO[System.Time(xx)][/B]</label>
-				<align>left</align>
+				<align>right</align>
 				<aligny>center</aligny>
 			</control>
 			<control type="label">
@@ -344,14 +357,14 @@
 	</include>
 	<include name="PlotBox">
 		<posx>300</posx>
-		<posy>565</posy>
+		<posy>560</posy>
 		<control type="textbox">
 			<include>Animation_FadedByMenuExceptions</include>
 			<include>Animation_OpenCloseFade</include>
 			<include>Animation_HiddenByInfo</include>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			<width>750</width>
-			<height>64</height>
+			<height>84</height>
 			<font>METF_PlotTextSmall</font>
 			<include condition="!Skin.HasSetting(AutoScrollFast)">AutoScrollShort</include>
 			<include condition="Skin.HasSetting(AutoScrollFast)">AutoScrollShortFast</include>
@@ -365,7 +378,7 @@
 			<include>Animation_OpenCloseFade</include>
 			<include>Animation_HiddenByInfo</include>
 			<width>750</width>
-			<height>126</height>
+			<height>132</height>
 			<font>METF_PlotTextSmall</font>
 			<include condition="!Skin.HasSetting(AutoScrollFast)">AutoScrollLong</include>
 			<include condition="Skin.HasSetting(AutoScrollFast)">AutoScrollLongFast</include>
@@ -1614,6 +1627,38 @@
 					<info>VideoPlayer.Cover</info>
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 				</control>
+				<!-- Game Boxart Poster -->
+				<control type="image">
+					<description>Game Boxart Poster</description>
+					<posx>42</posx>
+					<posy>370</posy>
+					<width>216</width>
+					<height>318</height>
+					<texture fallback="DefaultAddonGame.png">$INFO[Player.Filenameandpath].jpg</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>Window.IsActive(GameOSD)</visible>
+				</control>
+				<!-- Game Boxart Poster -->
+				<control type="image">
+					<description>Game Boxart Poster</description>
+					<posx>42</posx>
+					<posy>370</posy>
+					<width>216</width>
+					<height>318</height>
+					<texture diffuse="frames/EpisodeMatte.png">$INFO[Player.Filenameandpath].png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>Window.IsActive(GameOSD)</visible>
+				</control>
+				<control type="image">
+					<description>Game Boxart Poster Frame</description>
+					<posx>28</posx>
+					<posy>350</posy>
+					<width>244</width>
+					<height>358</height>
+					<texture>frames/ClassicFrame_PosterMedium.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>Window.IsActive(GameOSD)</visible>
+				</control>
 			</control>
 			<control type="group">
 				<visible>String.StartsWith(Player.FolderPath,http)</visible>
@@ -1916,6 +1961,25 @@
 					</control>
 				</control>
 			</control>
+			
+	<!-- GameOSD controls -->
+			<control type="group">
+				<posx>225</posx>
+				<posy>6</posy>
+				<visible>Window.IsActive(GameOSD)</visible>
+				<!-- Plot -->
+				<control type="textbox">
+					<width>830</width>
+					<height>66</height>
+					<align>justify</align>
+					<font>METF_PlotTextSmall</font>
+					<textcolor>TextNF</textcolor>
+                        <label>$LOCALIZE[35236] [CR]$LOCALIZE[35224] = Select + X      |      $LOCALIZE[13007] = Select + B [CR]$LOCALIZE[35222] = Select + Start      |      $LOCALIZE[13376] = Select + Right Stick</label>
+					<include condition="!Skin.HasSetting(AutoScrollFast)">AutoScrollShort</include>
+					<include condition="Skin.HasSetting(AutoScrollFast)">AutoScrollShortFast</include>
+				</control>	
+			</control>		
+			
 		</control>
 	</include>
 

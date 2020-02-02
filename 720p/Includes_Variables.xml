@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<variable name="HomeBackground">
+		<value condition="Control.HasFocus(8000) + !String.IsEmpty(Container(8000).ListItem.Art(thumb)) + [String.IsEqual(Skin.String(WidgetBackgroundOrder),thumb) | String.IsEmpty(Skin.String(WidgetBackgroundOrder))]">$INFO[Container(8000).ListItem.Art(thumb)]</value>
+		<value condition="Control.HasFocus(8000) + !String.IsEmpty(Container(8000).ListItem.Art(fanart)) + [String.IsEqual(Skin.String(WidgetBackgroundOrder),thumb) | String.IsEmpty(Skin.String(WidgetBackgroundOrder))]">$INFO[Container(8000).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(8000) + !String.IsEmpty(Container(8000).ListItem.Art(landscape)) + [String.IsEqual(Skin.String(WidgetBackgroundOrder),thumb) | String.IsEmpty(Skin.String(WidgetBackgroundOrder))]">$INFO[Container(8000).ListItem.Art(landscape)]</value>
+		<value condition="Control.HasFocus(8000) + !String.IsEmpty(Container(8000).ListItem.Art(fanart)) + String.IsEqual(Skin.String(WidgetBackgroundOrder),fanart)">$INFO[Container(8000).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(8000) + !String.IsEmpty(Container(8000).ListItem.Art(landscape)) + String.IsEqual(Skin.String(WidgetBackgroundOrder),fanart)">$INFO[Container(8000).ListItem.Art(landscape)]</value>
+		<value condition="Control.HasFocus(8000) + !String.IsEmpty(Container(8000).ListItem.Art(thumb)) + String.IsEqual(Skin.String(WidgetBackgroundOrder),fanart)">$INFO[Container(8000).ListItem.Art(thumb)]</value>
+		<value condition="Control.HasFocus(8000) + !String.IsEmpty(Container(8000).ListItem.Art(landscape)) + String.IsEqual(Skin.String(WidgetBackgroundOrder),landscape)">$INFO[Container(8000).ListItem.Art(landscape)]</value>
+		<value condition="Control.HasFocus(8000) + !String.IsEmpty(Container(8000).ListItem.Art(fanart)) + String.IsEqual(Skin.String(WidgetBackgroundOrder),landscape)">$INFO[Container(8000).ListItem.Art(fanart)]</value>
+		<value condition="Control.HasFocus(8000) + !String.IsEmpty(Container(8000).ListItem.Art(thumb)) + String.IsEqual(Skin.String(WidgetBackgroundOrder),landscape)">$INFO[Container(8000).ListItem.Art(thumb)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(background),home\dvd\)">home_art/playdisc.jpg</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(background),home\movies\)">home_art/movies.jpg</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(background),home\tvshows\)">home_art/tvshows.jpg</value>
@@ -41,6 +50,17 @@
 		<value>$INFO[Container(211).ListItem.Property(background)] + !String.StartsWith(Container(9000).ListItem.Property(background),home\)</value>
 	</variable>
 
+	<variable name="MusicDiscArt">	
+		<value condition="!String.IsEmpty(Player.Art(album.discart))">$INFO[Player.Art(album.discart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
+		<value condition="!String.IsEmpty(SkinHelper.Player.Music.DiscArt)">$INFO[SkinHelper.Player.Music.DiscArt]</value>
+		<value>$INFO[ListItem.Art(discart)]</value>		
+	</variable>
+	<variable name="WidgetBackgroundOrderLabel">
+		<value condition="String.IsEqual(Skin.String(WidgetBackgroundOrder),thumb) | String.IsEmpty(Skin.String(WidgetBackgroundOrder))">Thumbnail-Fanart-Landscape</value>
+		<value condition="String.IsEqual(Skin.String(WidgetBackgroundOrder),fanart)">Fanart-Landscape-Thumbnail</value>
+		<value condition="String.IsEqual(Skin.String(WidgetBackgroundOrder),landscape)">Landscape-Fanart-Thumbnail</value>
+	</variable>
 	<variable name="ListItemTitle">
 		<value condition="Container.Content(albums) | Container.Content(songs)">$INFO[ListItem.Label]$INFO[ListItem.Label2, - ]</value>
 		<value condition="String.Contains(Container.FolderPath,plugin)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Label]</value>
@@ -73,20 +93,20 @@
 		<value>FanartDiffuse</value>
 	</variable>
 
+
 	<variable name="GlobalWidgetIcon">
 		<value condition="!String.IsEmpty(Container(8000).ListItem.Art(poster))">$INFO[Container(8000).ListItem.Art(poster)]</value>
 		<value condition="![String.IsEmpty(Container(8000).ListItem.Icon) | String.StartsWith(Container(8000).ListItem.Icon, default)]">$INFO[Container(8000).ListItem.Icon]</value>
-	</variable>
+		<value>DefaultThumb.png</value>
+		</variable>
 	<variable name="GlobalWidgetLabel">
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetType), movies)">$INFO[ListItem.Title]$INFO[ListItem.Year, (,)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetType), episodes)">$INFO[ListItem.TVShowTitle] - $INFO[ListItem.Season]x$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetType), albums)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]$INFO[ListItem.Year, (,)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetType), songs)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetType), musicvideos)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value>
-		<!-- fixing the playlists content labels -->
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widget), Playlist) + String.IsEmpty(Container(8000).ListItem.TVShowTitle)">$INFO[ListItem.Title]$INFO[ListItem.Year, (,)]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widget), Playlist) + !String.IsEqual(ListItem.Title, ListItem.TVShowTitle) + !String.IsEmpty(Container(8000).ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle] - $INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
-		<!-- default -->
+		<value condition="String.IsEqual(ListItem.DBTYPE, movie)">$INFO[ListItem.Title]$INFO[ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE, episode)">$INFO[ListItem.TVShowTitle] - $INFO[ListItem.Season]x$INFO[ListItem.Episode,, - ]$INFO[ListItem.Title]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE, album)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]$INFO[ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE, song)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE, artist)">$INFO[ListItem.Artist]</value>
+		<value condition="String.IsEqual(ListItem.DBTYPE, musicvideo)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value>
+		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 
@@ -297,6 +317,7 @@
 	<variable name="PlotBox_Text">
 		<!-- Skin Shortcuts help text -->
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + Control.HasFocus(302)">$LOCALIZE[31720]</value>
+		<value condition="Window.IsActive(script-skinshortcuts.xml) + Control.HasFocus(313)">$LOCALIZE[31733]</value>
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + Control.HasFocus(303)">$LOCALIZE[31721]</value>
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + Control.HasFocus(304)">$LOCALIZE[31722]</value>
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + Control.HasFocus(401)">$LOCALIZE[31723]</value>
@@ -483,8 +504,10 @@
 	</variable>
 	<variable name="VideoPlayerTitle">
 		<value condition="!String.IsEmpty(VideoPlayer.Year) + !VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</value>
-		<value condition="String.IsEmpty(VideoPlayer.Year) + !VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Title]</value>
-		<value>$INFO[VideoPlayer.Title]</value>
+		<value condition="String.IsEmpty(VideoPlayer.Year) + !VideoPlayer.Content(MusicVideos) + !Window.IsActive(GameOSD)">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Title]</value>
+		<value condition="!String.IsEmpty(Game.Title) + Window.IsActive(GameOSD)">$INFO[Game.Title]</value>
+		<value condition="!String.IsEmpty(Player.Title) + Window.IsActive(GameOSD)">$INFO[Player.Title]</value>
+	<value>$INFO[VideoPlayer.Title]</value>
 	</variable>
 	<variable name="VideoPlayerTitle2">
 		<value condition="!String.IsEmpty(VideoPlayer.Year) + [!String.IsEmpty(VideoPlayer.Artist) | !String.IsEmpty(VideoPlayer.Album)] + VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Artist]$INFO[VideoPlayer.Album, - ]$INFO[VideoPlayer.Year, (,)]</value>
@@ -502,10 +525,25 @@
 		<value condition="Window.IsActive(videos) + !String.IsEqual(Playlist.Length(video),0)">ActivateWindow(videoplaylist)</value>
 		<value condition="Window.IsActive(music) + !String.IsEqual(Playlist.Length(music),0)">ActivateWindow(musicplaylist)</value>
 	</variable>
+	
+	<!-- Next Aired for Videoinfo -->
 	<variable name="TVShowStatus">
 		<value condition="!String.IsEmpty(Window(Home).Property(NextAired.Label))">$INFO[Window(Home).Property(NextAired.Status)]</value>
 		<value>$LOCALIZE[31472]</value>
 	</variable>
+	
+	<!-- Next Aired Center Sub-Heading -->
+	<variable name="GlobalSubHeadingCenter">
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.NextTitle))">Show Status: $INFO[Window(Home).Property(NextAired.Status)],  Next Episode: $INFO[Window(Home).Property(NextAired.NextDate),,: ]$INFO[Window(Home).Property(NextAired.NextNumber),, - ]$INFO[Window(Home).Property(NextAired.NextTitle)]</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(Window(Home).Property(NextAired.NextDate))">Show Status: $INFO[Window(Home).Property(NextAired.Status)],  Next Episode: $INFO[Window(Home).Property(NextAired.NextDate),,: ]$INFO[Window(Home).Property(NextAired.NextNumber),, - ]TBA</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(Window(Home).Property(NextAired.Label)) + String.Contains(Window(Home).Property(NextAired.Status),Continuing)">Show Status: $INFO[Window(Home).Property(NextAired.Status)],  Next Episode: TBA</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + String.Contains(Window(Home).Property(NextAired.Status),Ended) + !String.IsEmpty(Window(Home).Property(NextAired.LatestDate))">Show Status: $LOCALIZE[31472], Aired: $INFO[Window(Home).Property(NextAired.Started)] to $INFO[Window(Home).Property(NextAired.LatestDate)], Last Episode: $INFO[Window(Home).Property(NextAired.LatestNumber),, - ]$INFO[Window(Home).Property(NextAired.LatestTitle)]</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(Window(Home).Property(NextAired.Label)) + String.Contains(Window(Home).Property(NextAired.Status),Returning Series)">Show Status: $INFO[Window(Home).Property(NextAired.Status)], Last Episode: $INFO[Window(Home).Property(NextAired.LatestNumber),, - ]$INFO[Window(Home).Property(NextAired.LatestTitle)],  Next Episode: TBA</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(Window(Home).Property(NextAired.Label)) + String.Contains(Window(Home).Property(NextAired.Status),New Series)">Show Status: $INFO[Window(Home).Property(NextAired.Status)], Last Episode: $INFO[Window(Home).Property(NextAired.LatestNumber),, - ]$INFO[Window(Home).Property(NextAired.LatestTitle)],  Next Episode: TBA</value>
+		<!--String.Contains(Window(Home).Property(NextAired.Status),Final Season) + -->
+		<value>$INFO[Window(Home).Property(NextAired.Status)]</value>
+		</variable>
+	
 	<variable name="VideoHWDecoder">
 		<value condition="Player.Process(videohwdecoder)">HW</value>
 		<value>SW</value>
@@ -565,19 +603,19 @@
 		<value condition="String.StartsWith(Container.FolderPath, musicdb://roles/)">$INFO[System.CurrentWindow,, · ] $LOCALIZE[38046] · $INFO[Container.FolderName]</value>
 		<!-- Role Composer -->
 		<value condition="String.StartsWith(Container.FolderPath, musicdb://artists/?role=Composer)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29903]</value>
-		<value condition="String.Contains(Container.FolderPath, &role=Composer) + !String.IsEmpty(Container.ListItem.Property(Role.Composer)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29903] · $INFO[Container.ListItem.Property(Role.Composer)] · $INFO[Container.FolderName]</value>
+		<value condition="String.Contains(Container.FolderPath, &role=Composer) + !String.IsEmpty(Container.ListItem.Property(Role.Composer))">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29903] · $INFO[Container.ListItem.Property(Role.Composer)] · $INFO[Container.FolderName]</value>
 		<value condition="String.EndsWith(Container.FolderPath, &role=Composer)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29903] · $INFO[Container.FolderName]</value>
 		<!-- Role Conductor -->
 		<value condition="String.StartsWith(Container.FolderPath, musicdb://artists/?role=Conductor)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29990]</value>
-		<value condition="String.Contains(Container.FolderPath, &role=Conductor) + !String.IsEmpty(Container.ListItem.Property(Role.Conductor)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29990] · $INFO[Container.ListItem.Property(Role.Conductor)] · $INFO[Container.FolderName]</value>
+		<value condition="String.Contains(Container.FolderPath, &role=Conductor) + !String.IsEmpty(Container.ListItem.Property(Role.Conductor))">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29990] · $INFO[Container.ListItem.Property(Role.Conductor)] · $INFO[Container.FolderName]</value>
 		<value condition="String.EndsWith(Container.FolderPath, &role=Conductor)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29990] · $INFO[Container.FolderName]</value>
 		<!-- Role Lyricist -->
 		<value condition="String.StartsWith(Container.FolderPath, musicdb://artists/?role=Lyricist)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29992]</value>
-		<value condition="String.Contains(Container.FolderPath, &role=Lyricist) + !String.IsEmpty(Container.ListItem.Property(Role.Lyricist)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29992] · $INFO[Container.ListItem.Property(Role.Lyricist)] · $INFO[Container.FolderName]</value>
+		<value condition="String.Contains(Container.FolderPath, &role=Lyricist) + !String.IsEmpty(Container.ListItem.Property(Role.Lyricist))">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29992] · $INFO[Container.ListItem.Property(Role.Lyricist)] · $INFO[Container.FolderName]</value>
 		<value condition="String.EndsWith(Container.FolderPath, &role=Lyricist)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29992] · $INFO[Container.FolderName]</value>
 		<!-- Role Remixer -->
 		<value condition="String.StartsWith(Container.FolderPath, musicdb://artists/?role=Remixer)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29987]</value>
-		<value condition="String.Contains(Container.FolderPath, &role=Remixer) + !String.IsEmpty(Container.ListItem.Property(Role.Remixer)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29987] · $INFO[Container.ListItem.Property(Role.Remixer)] · $INFO[Container.FolderName]</value>
+		<value condition="String.Contains(Container.FolderPath, &role=Remixer) + !String.IsEmpty(Container.ListItem.Property(Role.Remixer))">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29987] · $INFO[Container.ListItem.Property(Role.Remixer)] · $INFO[Container.FolderName]</value>
 		<value condition="String.EndsWith(Container.FolderPath, &role=Remixer)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[29987] · $INFO[Container.FolderName]</value>
 		<!-- Roles -Album Artist -->
 		<value condition="String.StartsWith(Container.FolderPath, musicdb://artists/?albumartistsonly=true)">$INFO[System.CurrentWindow,, · ]$LOCALIZE[29994] · $LOCALIZE[38043]</value>

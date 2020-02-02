@@ -4,22 +4,22 @@
 	<visible>![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)]</visible>
 
 	<include name="HomeStatsPosition1">
-		<posx>1070</posx>
+		<posx>1060</posx>
 		<posy>45</posy>
-		<width>220</width>
-		<height>416</height>
+		<width>210</width>
+		<height>420</height>
 	</include>
 	<include name="HomeStatsDetails1">
-		<width>120</width>
-		<height>24</height>
+		<width>131</width>
+		<height>26</height>
 		<align>left</align>
 		<aligny>center</aligny>
 		<font>METF_HomeStatsText</font>
 		<textcolor>HomeStatsCategory</textcolor>
 	</include>
 	<include name="HomeStatsDetailsNumber1">
-		<width>60</width>
-		<height>24</height>
+		<width>75</width>
+		<height>26</height>
 		<align>right</align>
 		<aligny>center</aligny>
 		<font>METF_HomeStatsText</font>
@@ -70,7 +70,7 @@
 				<aspectratio>scale</aspectratio>
 				<visible>!Player.HasVideo</visible>
 				<visible>!String.IsEqual(Container(9000).ListItem.Property(background),home\weather\)</visible>
-				<visible allowhiddenfocus="true">!Skin.HasSetting(HomeStretchBackgrounds)</visible>
+				<visible allowhiddenfocus="true">!Skin.HasSetting(HomeStretchBackgrounds) + !Control.HasFocus(8000)</visible>
 			</control>
 			<control type="multiimage">
 				<posx>240</posx>
@@ -84,7 +84,7 @@
 				<aspectratio>stretch</aspectratio>
 				<visible>!Player.HasVideo</visible>
 				<visible>!String.IsEqual(Container(9000).ListItem.Property(background),home\weather\)</visible>
-				<visible allowhiddenfocus="true">Skin.HasSetting(HomeStretchBackgrounds)</visible>
+				<visible allowhiddenfocus="true">Skin.HasSetting(HomeStretchBackgrounds) | Control.HasFocus(8000)</visible>
 			</control>
 			<control type="multiimage">
 				<posx>240</posx>
