@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<views>55,905,58,559,501</views>
+	<views>55,59555,905,58,559,501</views>
 	<defaultcontrol always="true">55</defaultcontrol>
 	<onunload>ClearProperty(SkinHelper.Music.ExtraFanArt, Home)</onunload>
 	<controls>
@@ -8,6 +8,7 @@
 		<include>Global_Background_Fanart</include>
 		<include>Viewtype_List</include>
 		<include>Viewtype_LowList</include>
+		<include>Viewtype_Background</include>
 		<include>Viewtype_Gallery_Square</include>
 		<include>Viewtype_Panel_Square</include>
 		<include>Viewtype_TallGenre</include>
