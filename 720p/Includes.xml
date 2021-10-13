@@ -12,6 +12,7 @@
 	<include file="Includes_MediaFlags.xml" />
 	<include file="Includes_MediaFlags2.xml" />
 	<include file="Includes_Animations.xml" />
+	<include file="Includes_ExtraFanart.xml" />
 	<include file="Viewtype_Common.xml" />
 	<include file="Viewtype_Banner.xml" />			<!-- 511 -->
 	<include file="Viewtype_BannerPoster.xml" />		<!-- 510 -->
@@ -66,17 +67,45 @@
 		<control type="image">
 			<include>Global_Background_Fanart_Common</include>
 			<texture background="true" diffuse="FanartDiffuse.png">$VAR[GlobalFanart]</texture>
-			<visible>String.IsEmpty(Control.GetLabel(6999)) + [[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(HideVideoFanart)] | [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] | [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)] | Container.Content(addons)]</visible>
+			<visible>!Skin.HasSetting(SkinHelper.EnableExtraFanart) 
+				| [Skin.HasSetting(SkinHelper.EnableExtraFanart) + !Skin.HasSetting(SkinHelper.UseFanart1) + String.IsEmpty(Control.GetLabel(6999))]
+				| [Skin.HasSetting(SkinHelper.EnableExtraFanart) + Skin.HasSetting(SkinHelper.UseFanart1) + String.IsEmpty(Control.GetLabel(69999))]
+			</visible>
+			<visible>[[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)] + !Skin.HasSetting(HideVideoFanart)] | [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] | [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)] | Container.Content(addons)]</visible>
 		</control>
-		<!-- Extra Fanart -->
+		<!-- Extra Fanart from extrafanart directory-->
 		<control type="multiimage" id="6999">
 			<include>Global_Background_Fanart_Common</include>
 			<imagepath background="true" diffuse="FanartDiffuse.png">$VAR[GlobalExtraFanart]</imagepath>
 			<timeperimage>5000</timeperimage>
 			<randomize>true</randomize>
 			<loop>yes</loop>
-			<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + [[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(HideVideoFanart)] | [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] | [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)]]</visible>
+			<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + !Skin.HasSetting(SkinHelper.UseFanart1)</visible>
+			<visible>[[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)] + !Skin.HasSetting(HideVideoFanart)] | [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] | [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)]]</visible>
 		</control>
+		<!-- Extra Fanart from fanart1, fanart2, ... -->
+		<control type="fadelabel" id="69998">
+			<left>-100</left>
+			<top>-100</top>
+			<width>0</width>
+			<height>0</height>
+			<font>METF_MediaDetailsSmall</font>
+			<scrollspeed>200</scrollspeed>
+			<scrollout>false</scrollout>
+			<scroll>true</scroll>
+			<randomize>true</randomize>
+	        <include>ExtraFanartItems</include>
+	 	</control>
+		<control type="multiimage" id="69999">
+			<include>Dimensions_Fullscreen</include>
+			<colordiffuse>$VAR[GlobalFanartDiffuse]</colordiffuse>
+			<imagepath background="true" diffuse="FanartDiffuse.png">$INFO[Control.GetLabel(69998)]</imagepath>
+			<timeperimage>6000</timeperimage>
+			<fadetime>2000</fadetime>
+			<resetonlabelchange>true</resetonlabelchange>
+			<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + Skin.HasSetting(SkinHelper.UseFanart1)</visible>
+			<visible>[[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)] + !Skin.HasSetting(HideVideoFanart)] | [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] | [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)]]</visible>
+		</control>	
 	</include>
 	<include name="Global_ContextFilter">
 		<control type="image">

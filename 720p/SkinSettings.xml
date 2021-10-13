@@ -654,6 +654,13 @@
 						<onclick>Skin.ToggleSetting(SkinHelper.EnableExtraFanart)</onclick>
 						<selected>Skin.HasSetting(SkinHelper.EnableExtraFanart)</selected>
 					</control>
+					<control type="radiobutton" id="7081">
+						<include>SettingsLabel</include>
+						<label>    $LOCALIZE[33055] fanart1, fanart2, ...</label>
+						<onclick>Skin.ToggleSetting(SkinHelper.UseFanart1)</onclick>
+						<selected>Skin.HasSetting(SkinHelper.UseFanart1)</selected>
+						<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart)</visible>
+					</control>
 					<control type="image" id="709">
 						<include>Settings_Line</include>
 					</control>
