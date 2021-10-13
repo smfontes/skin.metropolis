@@ -595,6 +595,14 @@
 						<selected>Skin.HasSetting(NoViewGames)</selected>
 						<visible>System.HasAddon(plugin.program.advanced.launcher)</visible>
 					</control>
+					<!-- View 59555 -->
+					<control type="radiobutton" id="623">
+						<description>Background</description>
+						<include>SettingsLabel</include>
+						<label>$LOCALIZE[31441] $LOCALIZE[33068]</label>
+						<onclick>Skin.ToggleSetting(NoViewBackground)</onclick>
+						<selected>Skin.HasSetting(NoViewBackground)</selected>
+					</control>
 				</control>
 
 				<!-- Scripts/Extras -->

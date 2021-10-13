@@ -79,6 +79,9 @@
 	<color name="FilesDividerDiffuse">20FFFFFF</color>
 	<color name="FilesStarDiffuse">ff3c95c8</color>
 
+	<!-- Background View -->
+	<color name="DeckDiffuse">60ec89ed</color>
+
 	<!-- Settings -->
 	<color name="SettingsHeading">eeec89ed</color>
 	<color name="SettingsDetail">ddFFFFFF</color>

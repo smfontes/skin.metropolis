@@ -18,4 +18,5 @@
 	<color name="OSDDialogBackgroundColor">ff0000f0</color>
 	<color name="RatingStarDiffuse">ff5070f0</color>
 	<color name="RSSTitle">ff5070f0</color>
+	<color name="DeckDiffuse">600000f0</color>
 </colors>

@@ -13,6 +13,7 @@
 	<include file="Includes_MediaFlags2.xml" />
 	<include file="Includes_Animations.xml" />
 	<include file="Viewtype_Common.xml" />
+	<include file="Viewtype_Background.xml" />		<!-- 59555 -->
 	<include file="Viewtype_Banner.xml" />			<!-- 511 -->
 	<include file="Viewtype_BannerPoster.xml" />		<!-- 510 -->
 	<include file="Viewtype_BannerFanart.xml" />		<!-- 508 -->
@@ -60,22 +61,45 @@
 		<include>Animation_FadedByMenu</include>
 		<animation effect="fade" start="100" end="60" time="300" condition="Window.IsVisible(movieinformation)">Conditional</animation>
 		<fadetime>200</fadetime>
-		<colordiffuse>$VAR[GlobalFanartDiffuse]</colordiffuse>
+		<visible>
+			[[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)] + !Skin.HasSetting(HideVideoFanart)] 
+			| [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] 
+			| [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)]
+			| Container.Content(addons)]
+		</visible>
 	</include>
 	<include name="Global_Background_Fanart">
 		<control type="image">
+			<description>Allows fanart to show through on bottom deck in Background View</description>
+			<visible>Control.IsVisible(59555) + !Window.IsActive(movieinformation)</visible>
+			<colordiffuse>DeckDiffuse</colordiffuse>
 			<include>Global_Background_Fanart_Common</include>
-			<texture background="true" diffuse="FanartDiffuse.png">$VAR[GlobalFanart]</texture>
-			<visible>String.IsEmpty(Control.GetLabel(6999)) + [[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(HideVideoFanart)] | [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] | [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)] | Container.Content(addons)]</visible>
+			<texture background="true">$VAR[GlobalFanart]</texture>
+			<visible>!Skin.HasSetting(SkinHelper.EnableExtraFanart) | String.IsEmpty(Control.GetLabel(6999))</visible>
 		</control>
-		<!-- Extra Fanart -->
+		<control type="image">
+			<include>Global_Background_Fanart_Common</include>
+			<colordiffuse>$VAR[GlobalFanartDiffuse]</colordiffuse>
+			<texture background="true" diffuse="FanartDiffuse.png">$VAR[GlobalFanart]</texture>
+			<visible>!Skin.HasSetting(SkinHelper.EnableExtraFanart) | String.IsEmpty(Control.GetLabel(6999))</visible>
+		</control>
+		<!-- Extra Fanart from extrafanart directory-->
+		<control type="image">
+			<description>Allows fanart to show through on bottom deck in Background View</description>
+			<visible>Control.IsVisible(59555) + !Window.IsActive(movieinformation)</visible>
+			<colordiffuse>DeckDiffuse</colordiffuse>
+			<include>Global_Background_Fanart_Common</include>
+			<texture background="true">$INFO[Control.GetLabel(6999)]</texture>
+			<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart)</visible>
+		</control>
 		<control type="multiimage" id="6999">
 			<include>Global_Background_Fanart_Common</include>
+			<colordiffuse>$VAR[GlobalFanartDiffuse]</colordiffuse>
 			<imagepath background="true" diffuse="FanartDiffuse.png">$VAR[GlobalExtraFanart]</imagepath>
-			<timeperimage>5000</timeperimage>
+			<timeperimage>6000</timeperimage>
+			<fadetime>2000</fadetime>
 			<randomize>true</randomize>
-			<loop>yes</loop>
-			<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + [[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !Skin.HasSetting(HideVideoFanart)] | [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] | [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)]]</visible>
+			<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart)</visible>
 		</control>
 	</include>
 	<include name="Global_ContextFilter">
