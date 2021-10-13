@@ -13,6 +13,7 @@
 	<include file="Includes_MediaFlags2.xml" />
 	<include file="Includes_Animations.xml" />
 	<include file="Viewtype_Common.xml" />
+	<include file="Viewtype_Background.xml" />		<!-- 59555 -->
 	<include file="Viewtype_Banner.xml" />			<!-- 511 -->
 	<include file="Viewtype_BannerPoster.xml" />		<!-- 510 -->
 	<include file="Viewtype_BannerFanart.xml" />		<!-- 508 -->
