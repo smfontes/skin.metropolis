@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>40001</defaultcontrol>
+	<onload>SetProperty(onnext,SetFocus(40001))</onload>
+	<controls>
+		<control type="list" id="10051">
+			<description>Storage container for the item details</description>
+			<top>-3000</top>
+			<left>-3000</left>
+			<width>1</width>
+			<height>1</height>
+			<itemlayout/>
+			<focusedlayout/>
+		</control>
+
+		<control type="group">
+			<description>Everything</description>
+			<include>Dimensions_Fullscreen</include>
+			<include>Animation_FadedByMenu</include>
+			<include>Animation_CommonFade</include>
+			<include>Animation_OpenCloseFade</include>
+			<control type="group">
+				<description>Opaque background</description>
+				<control type="image">
+					<texture background="true" fallback="Background.png" colordiffuse="BackgroundColor">$INFO[Skin.String(CustomBackground)]</texture>
+				</control>
+				<control type="image">
+					<texture background="true" fallback="Background.png" colordiffuse="BackgroundColor">$INFO[Skin.String(CustomBackground)]</texture>
+				</control>
+			</control>
+			<control type="group">
+				<description>Top Line</description>
+				<top>20</top>
+				<left>20</left>
+				<width>1240</width>
+				<height>30</height>
+				<control type="label">
+					<description>Title on left hand side</description>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>METF_TitleTextLarge</font>
+					<textcolor>TextNF</textcolor>
+					<label>$INFO[Container(10051).ListItem.Title]</label>
+					<visible>!String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
+				</control>
+				<control type="label">
+					<description>Title on left hand side</description>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>METF_TitleTextLarge</font>
+					<textcolor>TextNF</textcolor>
+					<label>$INFO[Container(10051).ListItem.TVShowTitle] $INFO[Container(10051).ListItem.Title]</label>
+					<visible>String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
+				</control>
+				<control type="grouplist">
+					<description>Country, Year, and Duration on right hand side</description>
+					<align>right</align>
+					<itemgap>10</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<description>Country</description>
+						<width min="25" max="380">auto</width>
+						<aligny>center</aligny>
+						<font>METF_MediaDetailsSmall</font>
+						<textcolor>MediaDetailsYear</textcolor>
+						<label>$INFO[Container(10051).ListItem.Country]</label>
+						<visible>!String.IsEmpty(Container(10051).ListItem.Country) + [String.IsEqual(Container(10051).ListItem.DBType,tvshow) | String.IsEqual(Container(10051).ListItem.DBType,movie) | String.IsEqual(Container(10051).ListItem.DBType,musicvideo)]</visible>
+					</control>
+					<control type="image">
+						<description>Bullet</description>
+						<include>ViewDetailsBullet</include>
+						<visible>!String.IsEmpty(Container(10051).ListItem.Country) + [String.IsEqual(Container(10051).ListItem.DBType,tvshow) | String.IsEqual(Container(10051).ListItem.DBType,movie) | String.IsEqual(Container(10051).ListItem.DBType,musicvideo)]</visible>
+					</control>
+					<control type="label">
+						<description>Year</description>
+						<width min="25" max="220">auto</width>
+						<aligny>center</aligny>
+						<font>METF_MediaDetailsSmall</font>
+						<textcolor>MediaDetailsYear</textcolor>
+						<label>$INFO[Container(10051).ListItem.Year]</label>
+						<visible>!String.IsEmpty(Container(10051).ListItem.Year) + [String.IsEqual(Container(10051).ListItem.DBType,tvshow) | String.IsEqual(Container(10051).ListItem.DBType,movie) | String.IsEqual(Container(10051).ListItem.DBType,musicvideo)]</visible>
+					</control>
+					<control type="image">
+						<description>Bullet</description>
+						<include>ViewDetailsBullet</include>
+						<visible>![String.IsEmpty(Container(10051).ListItem.Year) | String.IsEmpty(Container(10051).ListItem.Duration)] + [String.IsEqual(Container(10051).ListItem.DBType,movie) | String.IsEqual(Container(10051).ListItem.DBType,musicvideo)]</visible>
+					</control>
+					<control type="label">
+						<description>Duration</description>
+						<width min="25" max="220">auto</width>
+						<aligny>center</aligny>
+						<font>METF_MediaDetailsSmall</font>
+						<textcolor>MediaDetailsDuration</textcolor>
+						<label>$INFO[Container(10051).ListItem.Duration]</label>
+						<visible>!String.IsEmpty(Container(10051).ListItem.Duration) + [String.IsEqual(Container(10051).ListItem.DBType,movie) | String.IsEqual(Container(10051).ListItem.DBType,episode) | String.IsEqual(Container(10051).ListItem.DBType,musicvideo)]</visible>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<description>Second Line</description>
+				<top>60</top>
+				<left>20</left>
+				<width>845</width>
+				<height>30</height>
+				<control type="label">
+					<description>Tagline on Left hand side for Movies</description>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>METF_PlotText</font>
+					<textcolor>TextNF</textcolor>
+					<label>$INFO[Container(10051).ListItem.Tagline]</label>
+					<visible>String.IsEqual(Container(10051).ListItem.DBType,movie)</visible>
+				</control>
+				<control type="label">
+					<description>Show status on Left hand side for TV Shows</description>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>METF_PlotText</font>
+					<textcolor>TextNF</textcolor>
+					<label>$INFO[Container(10051).ListItem.Status]</label>
+					<visible>String.IsEqual(Container(10051).ListItem.DBType,tvshow)</visible>
+				</control>
+				<control type="label">
+					<description>Number of Episodes on Left hand side for Seasons</description>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>METF_PlotText</font>
+					<textcolor>TextNF</textcolor>
+					<label>$INFO[Container(10051).ListItem.Property(TotalEpisodes)]</label>
+					<visible>String.IsEqual(Container(10051).ListItem.DBType,episode)</visible>
+				</control>
+				<control type="label">
+					<description>Next Aired on right hand side for TV Shows</description>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>METF_PlotText</font>
+					<textcolor>TextNF</textcolor>
+					<label>$ADDON[script.embuary.info 32048]: $INFO[Container(10051).ListItem.Property(NextEpisode_date)]</label>
+					<visible>!String.IsEmpty(Container(10051).ListItem.Property(NextEpisode_date)) + String.IsEqual(Container(10051).ListItem.DBType,tvshow)</visible>
+				</control>
+			</control>
+			<control type="label">
+				<description>Third Line - Genre</description>
+				<top>95</top>
+				<left>355</left>
+				<width>510</width>
+				<height>30</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>METF_InfoText</font>
+				<textcolor>MediaDetailsGenre</textcolor>
+				<label>$INFO[Container(10051).ListItem.Genre]</label>
+				<visible>!String.IsEmpty(Container(10051).ListItem.Genre) + !String.IsEqual(Container(10051).ListItem.DBType,episode)</visible>
+			</control>
+			<control type="group">
+				<description>Left box</description>
+				<left>0</left>
+				<top>90</top>
+				<width>335</width>
+				<height>453</height>
+				<control type="image">
+					<description>Background Image to show focus</description>
+					<left>-13</left>
+					<top>-10</top>
+					<width>361</width>
+					<height>473</height>
+					<visible>Control.HasFocus(10059)</visible>
+					<texture background="true" colordiffuse="MediaFlagBoxDiffuse">dialogs/DialogBG_Icon2.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="panel" id="10059">
+					<description>Poster Images</description>
+					<left>35</left>
+					<top>27</top>
+					<width>264</width>
+					<height>396</height>
+					<onup>10059</onup>
+					<ondown>10059</ondown>
+					<onright>10052</onright>
+					<onleft>40001</onleft>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					<itemlayout>
+						<control type="image">
+							<texture fallback="DefaultThumb.png" background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+					</itemlayout>
+					<focusedlayout>
+						<control type="image">
+							<texture fallback="DefaultThumb.png" background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="image">
+					<description>Default image if the list is empty</description>
+					<visible>!Integer.IsGreater(Container(10059).NumItems,0)</visible>
+					<left>35</left>
+					<top>27</top>
+					<width>264</width>
+					<height>396</height>
+					<texture>DefaultThumb.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<description>Frame for Poster Images</description>
+					<left>21</left>
+					<top>8</top>
+					<width>296</width>
+					<height>444</height>
+					<texture>frames/ClassicFrame_Poster.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="label">
+					<description>Count of the number of Poster Images</description>
+					<top>434</top>
+					<left>10</left>
+					<font>METF_DialogVerySmall</font>
+					<textcolor>MediaDetailsGenre</textcolor>
+					<visible>Control.HasFocus(10059)</visible>
+					<label>$INFO[Container(10059).CurrentItem]/$INFO[Container(10059).NumItems]</label>
+				</control>
+			</control>
+			<control type="group">
+				<description>Middle box</description>
+				<left>335</left>
+				<top>130</top>
+				<width>550</width>
+				<height>355</height>
+				<control type="image">
+					<description>Image to show middle box is focused</description>
+					<left>-15</left>
+					<top>-10</top>
+					<width>580</width>
+					<height>375</height>
+					<visible>Control.HasFocus(10052) | Control.HasFocus(10053) | Control.HasFocus(10054) | Control.HasFocus(10056) | Control.HasFocus(10057) | Control.HasFocus(10058)</visible>
+					<texture background="true" colordiffuse="MediaFlagBoxDiffuse">dialogs/DialogBG_Icon2.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="group">
+					<description>General Info</description>
+					<visible>String.IsEqual(Window.Property(MiddleInfo),General)</visible>
+					<control type="textbox">
+						<description>Plot</description>
+						<left>20</left>
+						<top>10</top>
+						<width>510</width>
+						<height>340</height>
+						<align>justify</align>
+						<font>METF_PlotText</font>
+						<textcolor>TextNF</textcolor>
+						<label>$INFO[Container(10051).ListItem.Plot]</label>
+						<include condition="!Skin.HasSetting(AutoScrollFast)">AutoScrollLong</include>
+						<include condition="Skin.HasSetting(AutoScrollFast)">AutoScrollLongFast</include>
+					</control>
+				</control>
+				<control type="group">
+					<description>The lists</description>
+					<left>20</left>
+					<top>10</top>
+					<width>510</width>
+					<height>340</height>
+					<control type="list" id="10052">
+						<description>Cast</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Cast)</visible>
+						<onright>10053</onright>
+						<onleft>10059</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Label2]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Label2][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="list" id="10053">
+						<description>Similar</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Similar)</visible>
+						<onright>10054</onright>
+						<onleft>10052</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Year]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Year][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="list" id="10054">
+						<description>Youtube</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Youtube)</visible>
+						<onright>10056</onright>
+						<onleft>10053</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Label2]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Label2][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="list" id="10056">
+						<description>Crew</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Crew)</visible>
+						<onright>10057</onright>
+						<onleft>10054</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Label2]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Label2][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="list" id="10057">
+						<description>Collection</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Collection)</visible>
+						<onright>10058</onright>
+						<onleft>10056</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Year]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Year][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="list" id="10058">
+						<description>Seasons</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Seasons)</visible>
+						<onright>10055</onright>
+						<onleft>10057</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextNF</textcolor>
+								<label>$INFO[ListItem.Year]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>METF_InfoText</font>
+								<textcolor>TextFO</textcolor>
+								<scrollspeed>30</scrollspeed>
+								<label>[B]$INFO[ListItem.Year][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<description>Right Top box</description>
+				<left>885</left>
+				<top>57</top>
+				<width>395</width>
+				<height>228</height>
+				<control type="image">
+					<description>Image to show Fanart has focus</description>
+					<left>-15</left>
+					<top>-10</top>
+					<width>420</width>
+					<height>248</height>
+					<visible>Control.HasFocus(10055)</visible>
+					<texture background="true" colordiffuse="MediaFlagBoxDiffuse">dialogs/DialogBG_Icon2.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="panel" id="10055">
+					<description>Fanart</description>
+					<left>30</left>
+					<top>20</top>
+					<width>335</width>
+					<height>188</height>
+					<onup>10055</onup>
+					<ondown>10055</ondown>
+					<onright>40001</onright>
+					<onleft>10058</onleft>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					<itemlayout>
+						<control type="image">
+							<texture background="true" fallback="DefaultThumb.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+					</itemlayout>
+					<focusedlayout>
+						<control type="image">
+							<texture background="true" fallback="DefaultThumb.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="image">
+					<description>Default image if the list is empty</description>
+					<visible>!Integer.IsGreater(Container(10055).NumItems,0)</visible>
+					<left>30</left>
+					<top>20</top>
+					<width>335</width>
+					<height>188</height>
+					<texture>DefaultThumb.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<description>Frame for Fanart</description>
+					<left>15</left>
+					<top>0</top>
+					<width>360</width>
+					<height>223</height>
+					<texture>frames/ClassicFrame_FanartSmall.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="label">
+					<description>Count of Fanart images</description>
+					<top>211</top>
+					<left>10</left>
+					<font>METF_DialogVerySmall</font>
+					<textcolor>MediaDetailsGenre</textcolor>
+					<visible>Control.HasFocus(10055)</visible>
+					<label>$INFO[Container(10055).CurrentItem]/$INFO[Container(10055).NumItems]</label>
+				</control>
+			</control>
+			<control type="group">
+				<description>Middle bottom box for Help text</description>
+				<visible>!Skin.HasSetting(HideHelpText)</visible>
+				<left>335</left>
+				<top>483</top>
+				<width>550</width>
+				<height>60</height>
+				<control type="grouplist">
+					<top>15</top>
+					<height>30</height>
+					<itemgap>5</itemgap>
+					<aligny>center</aligny>
+					<orientation>horizontal</orientation>
+					<control type="image">
+						<description>Up Arrow</description>
+						<visible>
+							[[Control.HasFocus(11049) | Control.HasFocus(11052) | Control.HasFocus(11058) | Control.HasFocus(11053) | Control.HasFocus(11052) | Control.HasFocus(11057) | Control.HasFocus(11054) | Control.HasFocus(11056)] + Integer.IsGreater(Container(10059).NumItems,0)]
+							|
+							 Control.HasFocus(10055) 
+							| 
+							 Control.HasFocus(10059)
+						</visible>
+						<width>30</width>
+						<texture>ArrowUp.png</texture>
+						<colordiffuse>HelpArrowDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Images</description>
+						<visible>Integer.IsGreater(Container(10059).NumItems,0)</visible>
+						<visible>Integer.IsGreater(Container(10055).NumItems,0)</visible>
+						<visible>Control.HasFocus(11049) | Control.HasFocus(11052) | Control.HasFocus(11058) | Control.HasFocus(11053) | Control.HasFocus(11052) | Control.HasFocus(11057) | Control.HasFocus(11054) | Control.HasFocus(11056)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32010]</label>
+					</control>
+					<control type="image">
+						<description>Down Arrow</description>
+						<visible>
+							[[Control.HasFocus(11049) | Control.HasFocus(11052) | Control.HasFocus(11058) | Control.HasFocus(11053) | Control.HasFocus(11052) | Control.HasFocus(11057) | Control.HasFocus(11054) | Control.HasFocus(11056)] + Integer.IsGreater(Container(10055).NumItems,0)]
+							|
+							 Control.HasFocus(10055) 
+							| 
+							 Control.HasFocus(10059)
+						</visible>
+						<width>30</width>
+						<texture>ArrowDown.png</texture>
+						<colordiffuse>HelpArrowDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Fanart</description>
+						<visible>Integer.IsGreater(Container(10055).NumItems,0)</visible>
+						<visible>[Control.HasFocus(10055) | Control.HasFocus(11049) | Control.HasFocus(11052) | Control.HasFocus(11058) | Control.HasFocus(11053) | Control.HasFocus(11052) | Control.HasFocus(11057) | Control.HasFocus(11054) | Control.HasFocus(11056)]</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[20445]</label>
+					</control>
+					<control type="label">
+						<description>Images</description>
+						<visible>
+							Control.HasFocus(10059) |
+							[Integer.IsGreater(Container(10059).NumItems,0) + !Integer.IsGreater(Container(10055).NumItems,0) +
+							[Control.HasFocus(11049) | Control.HasFocus(11052) | Control.HasFocus(11058) | Control.HasFocus(11053) | Control.HasFocus(11052) | Control.HasFocus(11057) | Control.HasFocus(11054) | Control.HasFocus(11056) | Control.HasFocus(10055)]]
+						</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32010]</label>
+					</control>
+					<control type="image">
+						<description>Left Arrow</description>
+						<visible>Control.HasFocus(10052) | Control.HasFocus(10053) | Control.HasFocus(10054) | Control.HasFocus(10055) | Control.HasFocus(10056) | Control.HasFocus(10057) | Control.HasFocus(10058) | Control.HasFocus(10059)</visible>
+						<width>30</width>
+						<texture>ArrowLeft.png</texture>
+						<colordiffuse>HelpArrowDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Images</description>
+						<visible>Integer.IsGreater(Container(10059).NumItems,0)</visible>
+						<visible>[Control.HasFocus(10052) | Control.HasFocus(10053) | Control.HasFocus(10054) | Control.HasFocus(10056) | Control.HasFocus(10057) | Control.HasFocus(10058)]
+							|
+							[Control.HasFocus(10055) + String.IsEqual(Window.Property(MiddleInfo),General)]</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32010]</label>
+					</control>
+					<control type="label">
+						<description>Cast</description>
+						<visible>Control.HasFocus(10055) + Control.IsVisible(10052)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[206]</label>
+					</control>
+					<control type="label">
+						<description>Similar</description>
+						<visible>Control.HasFocus(10055) + Control.IsVisible(10053)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32009]</label>
+					</control>
+					<control type="label">
+						<description>Videos</description>
+						<visible>Control.HasFocus(10055) + Control.IsVisible(10054)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[3]</label>
+					</control>
+					<control type="label">
+						<description>Crew</description>
+						<visible>Control.HasFocus(10055) + Control.IsVisible(10056) + !String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32018]</label>
+					</control>
+					<control type="label">
+						<description>Guest Stars</description>
+						<visible>Control.HasFocus(10055) + Control.IsVisible(10056) + String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32039]</label>
+					</control>
+					<control type="label">
+						<description>Collection</description>>
+						<visible>Control.HasFocus(10055) + Control.IsVisible(10057)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32037]</label>
+					</control>
+					<control type="label">
+						<description>Seasons</description>
+						<visible>Control.HasFocus(10055) + Control.IsVisible(10058)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[33054]</label>
+					</control>
+					<control type="label">
+						<description>Control Buttons</description>
+						<visible>
+							[Control.HasFocus(10059) + String.IsEqual(Window.Property(MiddleInfo),General) + Integer.IsGreater(Container(10055).NumItems,0)]
+							|
+							[Control.HasFocus(10059) + !String.IsEqual(Window.Property(MiddleInfo),General)]
+						</visible>
+						<description>Control Buttons</description>
+						<width>auto</width>
+						<aligny>center</aligny>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[14223] $LOCALIZE[35059]</label>
+					</control>
+					<control type="image">
+						<description>Right Arrow</description>
+						<visible>Control.HasFocus(10052) | Control.HasFocus(10053) | Control.HasFocus(10054) | Control.HasFocus(10055) | Control.HasFocus(10056) | Control.HasFocus(10057) | Control.HasFocus(10058) | Control.HasFocus(10059)</visible>
+						<width>30</width>
+						<texture>ArrowRight.png</texture>
+						<colordiffuse>HelpArrowDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Fanart</description>
+						<visible>Integer.IsGreater(Container(10055).NumItems,0)</visible>
+						<visible>[Control.HasFocus(10059) + !Control.IsVisible(10052) + !Control.IsVisible(10053) + !Control.IsVisible(10054) + !Control.IsVisible(10056) + !Control.IsVisible(10057) + !Control.IsVisible(10058)]</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[20445]</label>
+					</control>
+					<control type="label">
+						<description>Fanart</description>
+						<visible>Integer.IsGreater(Container(10055).NumItems,0)</visible>
+						<visible>!Control.HasFocus(10055)</visible>
+						<visible>Integer.IsGreater(Container(10055).NumItems,0) +  [Control.HasFocus(10052) | Control.HasFocus(10053) | Control.HasFocus(10054) | Control.HasFocus(10056) | Control.HasFocus(10057) | Control.HasFocus(10058)]</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[20445]</label>
+					</control>
+					<control type="label">
+						<description>Cast</description>
+						<visible>Control.HasFocus(10059) + Control.IsVisible(10052)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[206]</label>
+					</control>
+					<control type="label">
+						<description>Similar</description>
+						<visible>Control.HasFocus(10059) + Control.IsVisible(10053)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32009]</label>
+					</control>
+					<control type="label">
+						<description>Videos</description>
+						<visible>Control.HasFocus(10059) + Control.IsVisible(10054)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[3]</label>
+					</control>
+					<control type="label">
+						<description>Crew</description>
+						<visible>Control.HasFocus(10059) + Control.IsVisible(10056) + !String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32018]</label>
+					</control>
+					<control type="label">
+						<description>Guest Stars</description>
+						<visible>Control.HasFocus(10059) + Control.IsVisible(10056) + String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32039]</label>
+					</control>
+					<control type="label">
+						<description>Collection</description>
+						<visible>Control.HasFocus(10059) + Control.IsVisible(10057)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$ADDON[script.embuary.info 32037]</label>
+					</control>
+					<control type="label">
+						<description>Seasons</description>
+						<visible>Control.HasFocus(10059) + Control.IsVisible(10058)</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[33054]</label>
+					</control>
+					<control type="label">
+						<description>Control Buttons</description>
+						<visible>
+						[!Integer.IsGreater(Container(10055).NumItems,0) +
+						[Control.HasFocus(10052) | Control.HasFocus(10053) | Control.HasFocus(10054) | Control.HasFocus(10056) | Control.HasFocus(10057) | Control.HasFocus(10058)]]
+						| 
+						Control.HasFocus(10055)
+						|
+						[Control.HasFocus(10059) + String.IsEqual(Window.Property(MiddleInfo),General) + !Integer.IsGreater(Container(10055).NumItems,0)]
+						</visible>
+						<aligny>center</aligny>
+						<width>auto</width>
+						<font>METF_HelpText</font>
+						<textcolor>HelpText</textcolor>
+						<label>$LOCALIZE[14223] $LOCALIZE[35059]</label>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<description>Right bottom box</description>
+				<left>885</left>
+				<top>285</top>
+				<width>395</width>
+				<height>258</height>
+				<control type="group">
+					<control type="image">
+						<description>Poster image</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Cast)</visible>
+						<top>20</top>
+						<left>125</left>
+						<width>146</width>
+						<height>218</height>
+						<texture fallback="DefaultThumb.png">$INFO[Container(10052).Listitem.Icon]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Crew image</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Crew)</visible>
+						<top>20</top>
+						<left>125</left>
+						<width>146</width>
+						<height>218</height>
+						<texture fallback="DefaultThumb.png">$INFO[Container(10056).Listitem.Icon]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Similar movie poster</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Similar)</visible>
+						<top>20</top>
+						<left>125</left>
+						<width>146</width>
+						<height>218</height>
+						<texture fallback="DefaultThumb.png">$INFO[Container(10053).Listitem.Icon]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Collection member poster</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Collection)</visible>
+						<top>20</top>
+						<left>125</left>
+						<width>146</width>
+						<height>218</height>
+						<texture fallback="DefaultThumb.png">$INFO[Container(10057).Listitem.Icon]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Youtube video image</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Youtube)</visible>
+						<top>38</top>
+						<left>20</left>
+						<width>355</width>
+						<height>188</height>
+						<texture fallback="DefaultThumb.png">$INFO[Container(10054).Listitem.Icon]</texture>
+						<aspectratio align="center" aligny="center">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Frame for all but youtube videos</description>
+						<visible>
+							String.IsEqual(Window.Property(MiddleInfo),Cast) |
+							String.IsEqual(Window.Property(MiddleInfo),Crew) |
+						    String.IsEqual(Window.Property(MiddleInfo),Similar) |
+						    String.IsEqual(Window.Property(MiddleInfo),Collection)
+						</visible>
+						<top>0</top>
+						<left>110</left>
+						<width>186</width>
+						<height>258</height>
+						<texture background="true">frames/ClassicFrame_PosterSmall.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Frame for Youtube videos</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Youtube)</visible>
+						<left>5</left>
+						<top>18</top>
+						<width>380</width>
+						<height>223</height>
+						<texture>frames/ClassicFrame_FanartSmall.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+				</control>
+				<control type="grouplist">
+					<description>General Info for right hand side</description>
+					<visible>String.IsEqual(Window.Property(MiddleInfo),General)</visible>
+					<left>20</left>
+					<top>10</top>
+					<width>355</width>
+					<height>238</height>
+					<itemgap>5</itemgap>
+					<orientation>vertical</orientation>
+					<aligny>top</aligny>
+					<font>font12</font>
+					<textcolor>ffffffff</textcolor>
+					<shadowcolor>50000000</shadowcolor>
+					<aligny>top</aligny>
+					<control type="group">
+						<height>30</height>
+						<scroll>false</scroll>
+						<visible>!String.IsEmpty(Container(10051).ListItem.Property(network.0))</visible>
+						<control type="label">
+							<align>left</align>
+							<textcolor>MediaDetailsGenre</textcolor>
+							<label>$LOCALIZE[705]:</label>
+						</control>
+						<control type="label">
+							<align>right</align>
+							<label>$INFO[Container(10051).ListItem.Property(network.0)]</label>
+						</control>
+					</control>
+					<control type="group">
+						<height>30</height>
+						<scroll>false</scroll>
+						<visible>!String.IsEmpty(Container(10051).ListItem.Property(budget))</visible>
+						<control type="label">
+							<align>left</align>
+							<textcolor>MediaDetailsGenre</textcolor>
+							<label>$ADDON[script.embuary.info 32013]:</label>
+						</control>
+						<control type="label">
+							<align>right</align>
+							<label>$INFO[Container(10051).ListItem.Property(budget),$]</label>
+						</control>
+					</control>
+					<control type="group">
+						<height>30</height>
+						<scroll>false</scroll>
+						<visible>!String.IsEmpty(Container(10051).ListItem.Property(revenue))</visible>
+						<control type="label">
+							<align>left</align>
+							<textcolor>MediaDetailsGenre</textcolor>
+							<label>$ADDON[script.embuary.info 32014]:</label>
+						</control>
+						<control type="label">
+							<align>right</align>
+							<label>$INFO[Container(10051).ListItem.Property(revenue),$]</label>
+						</control>
+					</control>
+					<control type="group">
+						<height>30</height>
+						<scroll>false</scroll>
+						<visible>!String.IsEmpty(Container(10051).ListItem.Property(awards))</visible>
+						<control type="label">
+							<align>left</align>
+							<textcolor>MediaDetailsGenre</textcolor>
+							<label>$ADDON[script.embuary.info 32015]:</label>
+						</control>
+						<control type="label">
+							<align>right</align>
+							<label>$INFO[Container(10051).ListItem.Property(awards)]</label>
+						</control>
+					</control>
+				</control>
+			</control>
+			<control type="grouplist" id="40001">
+				<description>Control Buttons</description>
+				<include>Animation_FadedByMenu</include>
+				<include>Animation_CommonFade</include>
+				<include>Animation_OpenCloseFade</include>
+				<posx>334</posx>
+				<posy>555</posy>
+				<width>552</width>
+				<height>70</height>
+				<itemgap>10</itemgap>
+				<align>center</align>
+				<orientation>horizontal</orientation>
+				<onleft>40001</onleft>
+				<onright>40001</onright>
+				<onup>10059</onup>
+				<ondown>10055</ondown>
+				<control type="button" id="11049">
+					<description>Information</description>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_information.png</texturenofocus>
+					<texturefocus>buttons/button_informationFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,General)</onfocus>
+					<onclick>noop</onclick>
+				</control>
+				<control type="button" id="11058">
+					<description>Seasons</description>
+					<visible>Integer.IsGreater(Container(10058).NumItems,0) | Container(10058).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_list.png</texturenofocus>
+					<texturefocus>buttons/button_listFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,Seasons)</onfocus>
+					<onclick>SetFocus(10058)</onclick>
+				</control>
+				<control type="button" id="11053">
+					<description>Similar</description>
+					<visible>Integer.IsGreater(Container(10053).NumItems,0) | Container(10053).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_layers.png</texturenofocus>
+					<texturefocus>buttons/button_layersFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,Similar)</onfocus>
+					<onclick>SetFocus(10053)</onclick>
+				</control>
+				<control type="button" id="11052">
+					<description>Cast</description>
+					<visible>Integer.IsGreater(Container(10052).NumItems,0) | Container(10052).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_cast.png</texturenofocus>
+					<texturefocus>buttons/button_castFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,Cast)</onfocus>
+					<onclick>SetFocus(10052)</onclick>
+				</control>
+				<control type="button" id="11057">
+					<description>Collection</description>
+					<visible>Integer.IsGreater(Container(10057).NumItems,0) | Container(10057).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_list.png</texturenofocus>
+					<texturefocus>buttons/button_listFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,Collection)</onfocus>
+					<onclick>SetFocus(10057)</onclick>
+				</control>
+				<control type="button" id="11054">
+					<description>Videos</description>
+					<visible>Integer.IsGreater(Container(10054).NumItems,0) | Container(10054).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_videos.png</texturenofocus>
+					<texturefocus>buttons/button_videosFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,Youtube)</onfocus>
+					<onclick>SetFocus(10054)</onclick>
+				</control>
+				<control type="button" id="11056">
+					<description>Crew</description>
+					<visible>Integer.IsGreater(Container(10056).NumItems,0) | Container(10056).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_crew.png</texturenofocus>
+					<texturefocus>buttons/button_crewFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,Crew)</onfocus>
+					<onclick>SetFocus(10056)</onclick>
+				</control>
+			</control>
+			<control type="group">
+				<description>Control Button Text</description>
+				<include>Animation_FadedByMenu</include>
+				<include>Animation_CommonFade</include>
+				<include>Animation_OpenCloseFade</include>
+				<control type="label">
+					<description>Information</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$LOCALIZE[29943]</label>
+					<visible>ControlGroup(40001).HasFocus(11049)</visible>
+				</control>
+				<control type="label">
+					<description>Seasons</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$LOCALIZE[33054]</label>
+					<visible>ControlGroup(40001).HasFocus(11058)</visible>
+				</control>
+				<control type="label">
+					<description>Similar</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$ADDON[script.embuary.info 32009]</label>
+					<visible>ControlGroup(40001).HasFocus(11053)</visible>
+				</control>
+				<control type="label">
+					<description>Cast</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$LOCALIZE[206]</label>
+					<visible>ControlGroup(40001).HasFocus(11052)</visible>
+				</control>
+				<control type="label">
+					<description>Collection</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$ADDON[script.embuary.info 32037]</label>
+					<visible>ControlGroup(40001).HasFocus(11057)</visible>
+				</control>
+				<control type="label">
+					<description>Videos</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$LOCALIZE[3]</label>
+					<visible>ControlGroup(40001).HasFocus(11054)</visible>
+				</control>
+				<control type="label">
+					<description>Crew</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$ADDON[script.embuary.info 32018]</label>
+					<visible>ControlGroup(40001).HasFocus(11056) + !String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
+				</control>
+				<control type="label">
+					<description>Guest Stars</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$ADDON[script.embuary.info 32039]</label>
+					<visible>ControlGroup(40001).HasFocus(11056) + String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
+				</control>
+			</control>
+			<control type="group">
+				<description>Studio Icon</description>
+				<posx>30</posx>
+				<posy>550</posy>
+				<width>160</width>
+				<height>90</height>
+				<control type="image">
+					<width>112</width>
+					<height>110</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture fallback="flags/default-studio.png">resource://resource.images.studios.coloured/$INFO[Container(10051).ListItem.Property(studio.0)].png</texture>
+					<colordiffuse>MediaFlagDiffuse</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>-14</posx>
+					<posy>10</posy>
+					<width>140</width>
+					<height>90</height>
+					<texture>flags/flag_frame.png</texture>
+					<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+				</control>
+			</control>
+			<control type="image">
+				<description>Powered by TMDB</description>
+				<top>650</top>
+				<left>-55</left>
+				<height>65</height>
+				<width>200</width>
+				<texture>tmdb.png</texture>
+				<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+				<aspectratio align="right">keep</aspectratio>
+			</control>
+			<include>Object_InfoLines</include>
+			<include>Global_Time</include>
+			<include condition="Skin.HasSetting(DebugGrid)">Object_DebugGrid</include>
+		</control>
+	</controls>
+</window>
