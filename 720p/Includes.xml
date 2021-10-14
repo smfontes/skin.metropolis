@@ -930,6 +930,7 @@
 				<height>2</height>
 				<texture>VideoInfoLine3.png</texture>
 				<colordiffuse>InfoLines</colordiffuse>
+				<visible>!String.EndsWith(Window.Property(xmlfile),script-embuary-person.xml)</visible>
 			</control>
 			<control type="image">
 				<posx>336</posx>
@@ -946,6 +947,7 @@
 				<height>2</height>
 				<texture flipx="true">VideoInfoLine2.png</texture>
 				<colordiffuse>InfoLines</colordiffuse>
+				<visible>!String.EndsWith(Window.Property(xmlfile),script-embuary-person.xml)</visible>
 			</control>
 			<control type="image">
 				<posx>335</posx>
