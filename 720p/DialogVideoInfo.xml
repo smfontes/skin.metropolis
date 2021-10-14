@@ -22,6 +22,7 @@
 			<onfocus>SetFocus(50)</onfocus>
 		</control>
 		<control type="group">
+			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<posx>360</posx>
 			<posy>0</posy>
 			<include>Animation_FadedByMenu</include>
@@ -430,6 +431,7 @@
 
 		<!-- Year and Duration -->
 		<control type="grouplist">
+			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<posx>625</posx>
 			<posy>23</posy>
 			<width>620</width>
@@ -484,6 +486,7 @@
 
 		<!-- Control Buttons -->
 		<control type="grouplist" id="7003">
+			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<include>Animation_FadedByMenu</include>
 			<include>Animation_CommonFade</include>
 			<include>Animation_OpenCloseFade</include>
@@ -572,9 +575,24 @@
 				<texturenofocus>buttons/button_thumb.png</texturenofocus>
 				<texturefocus>buttons/button_thumbFO.png</texturefocus>
 			</control>
+			<!-- Embuary Info -->
+			<control type="button" id="23">
+				<description>Extra Info</description>
+				<include>VideoInfoButton</include>
+				<texturenofocus>buttons/button_informationplus.png</texturenofocus>
+				<texturefocus>buttons/button_informationplusFO.png</texturefocus>
+				<include>Animation_ButtonFocus</include>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.embuary.info,call=movie,query='"$INFO[ListItem.Title]"',year=$INFO[ListItem.Year])</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow)">RunScript(script.embuary.info,call=tv,query='"$INFO[ListItem.Title]"',year=$INFO[ListItem.Year])</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,episode)">RunScript(script.embuary.info,call=tv,query='"$INFO[ListItem.TVShowTitle]"',year=$INFO[ListItem.Year])</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,season)">RunScript(script.embuary.info,call=tv,query='"$INFO[ListItem.TVShowTitle]"',year=$INFO[ListItem.Year],season='"$INFO[ListItem.Title]"')</onclick>
+				<visible>System.HasAddon(script.embuary.info)</visible>
+				<visible>String.IsEqual(ListItem.DBType,movie)  | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,season)</visible>
+			</control>
 		</control>
 		<!-- Control Button Text -->
 		<control type="group">
+			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<include>Animation_FadedByMenu</include>
 			<include>Animation_CommonFade</include>
 			<include>Animation_OpenCloseFade</include>
@@ -632,10 +650,17 @@
 				<label>$LOCALIZE[38023]</label>
 				<visible>ControlGroup(7003).HasFocus(7)</visible>
 			</control>
+			<control type="label">
+				<description>Embuary Info</description>
+				<include>VideoInfoButtonLabel</include>
+				<label>$INFO[System.AddonTitle(script.embuary.info)]</label>
+				<visible>ControlGroup(7003).HasFocus(23)</visible>
+			</control>
 		</control>
 
 		<!-- Images -->
 		<control type="group">
+			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<control type="group">
 				<include>Animation_FadedByMenu</include>
 				<include>Animation_CommonFade</include>
@@ -793,9 +818,12 @@
 				</control>
 			</control>
 		</control>
-		<include>Object_InfoLines</include>
-		<include>Global_ContextFilter</include>
-		<include condition="Skin.HasSetting(Hide_ExtraMediaFlags)">MediaInfo2</include>
+		<control type="group">
+			<visible>!Window.IsActive(fullscreenvideo)</visible>
+			<include>Object_InfoLines</include>
+			<include>Global_ContextFilter</include>
+			<include condition="Skin.HasSetting(Hide_ExtraMediaFlags)">MediaInfo2</include>
+		</control>
 		<include condition="Skin.HasSetting(DebugGrid)">Object_DebugGrid</include>
 	</controls>
 </window>
