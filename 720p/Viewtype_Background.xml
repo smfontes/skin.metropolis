@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="Viewtype_Background">
+		<description>
+			Tries to take up as little space in the lower right corner so that background fanart can be seen
+		</description>
+		<control type="group">
+			<visible>Control.IsVisible(59555)</visible>
+			<visible>!Skin.HasSetting(NoViewBackground)</visible>
+			<include>Animation_OpenCloseFade</include>
+			<include>Animation_FadedByMenu</include>
+			<include>Animation_HiddenByInfo</include>
+			<left>685</left>
+			<top>295</top>
+			<height>250</height>
+			<width>595</width>
+			<control type="image">
+				<description>Grey background for info to go on</description>
+				<texture>frames/square_matte.png</texture>
+			    <colordiffuse>Grey</colordiffuse>
+			</control>
+			<control type="list" id="59555">
+				<description>The list of selectable items</description>
+				<viewtype label="Background">list</viewtype>
+				<left>5</left>
+				<top>40</top>
+				<height>205</height>
+				<width>585</width>
+				<aligny>top</aligny>
+				<onup>59555</onup>
+				<ondown>59555</ondown>
+				<onright>998</onright>
+				<include condition="!Skin.HasSetting(ViewLockdown)">OnLeft7000</include>
+				<scrolltime>160</scrolltime>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>998</pagecontrol>
+				<itemlayout width="0" height="35">
+					<control type="image">
+						<left>35</left>
+						<top>33</top>
+						<width>580</width>
+						<height>2</height>
+						<aligny>center</aligny>
+						<texture>VideoInfoLine.png</texture>
+						<colordiffuse>FilesDividerDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Items</description>
+						<left>40</left>
+						<width>500</width>
+						<height>35</height>
+						<aligny>center</aligny>
+						<font>METF_TitleText</font>
+						<textcolor>TextNF</textcolor>
+						<selectedcolor>TextFO</selectedcolor>
+						<label>$VAR[ListItemTitle]</label>
+						<scroll>false</scroll>
+					</control>
+					<control type="image">
+						<description>Watched Overlay for Items in Video Library</description>
+						<left>5</left>
+						<top>5</top>
+						<width>25</width>
+						<height>25</height>
+						<aspectratio align="left">keep</aspectratio>
+						<texture>$INFO[ListItem.Overlay]</texture>
+						<colordiffuse>WatchedOverlay</colordiffuse>
+						<visible>!ListItem.IsResumable + Window.IsActive(videos) + [[[Container.Content(movies) | Container.Content(sets)] + !Skin.HasSetting(HideMovieWatchedOverlays)] | [![Container.Content(movies) | Container.Content(sets)] + !Skin.HasSetting(HideTVWatchedOverlays)]]</visible>
+					</control>
+					<control type="image">
+						<description>Watched Overlay for In-Progress Items in Video Library</description>
+						<left>-2</left>
+						<top>0</top>
+						<width>35</width>
+						<height>35</height>
+						<texture>flags/Progress/$INFO[ListItem.PercentPlayed].png</texture>
+						<colordiffuse>WatchedOverlay</colordiffuse>
+						<visible>ListItem.IsResumable + Window.IsActive(videos) + [[[Container.Content(movies) | Container.Content(sets)] + !Skin.HasSetting(HideMovieWatchedOverlays)] | [![Container.Content(movies) | Container.Content(sets)] + !Skin.HasSetting(HideTVWatchedOverlays)]]</visible>
+					</control>
+					<control type="image">
+						<description>HD/SD icons</description>
+						<left>540</left>
+						<top>5</top>
+						<height>24</height>
+						<width>24</width>
+						<texture>$INFO[ListItem.VideoResolution,flags/VideoResolutionIcons/,.png]</texture>
+						<visible>Window.IsActive(videos)
+							+ ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)]
+							| [Container.Content(seasons) + String.IsEmpty(ListItem.Property(UnWatchedEpisodes))] 
+							| [[Container.Content(movies) | Container.Content(episodes)]]
+							+ !String.IsEmpty(ListItem.VideoResolution)</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout width="0" height="35">
+					<control type="image">
+						<description>Focus Bar</description>
+						<left>35</left>
+						<top>0</top>
+						<width>580</width>
+						<height>33</height>
+						<aligny>center</aligny>
+						<texture>FocusLine.png</texture>
+						<colordiffuse>FocusBar</colordiffuse>
+					</control>
+					<control type="image">
+						<left>35</left>
+						<top>33</top>
+						<width>580</width>
+						<height>2</height>
+						<aligny>center</aligny>
+						<texture>VideoInfoLine.png</texture>
+						<colordiffuse>FilesDividerDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Items</description>
+						<left>40</left>
+						<width>500</width>
+						<height>35</height>
+						<aligny>center</aligny>
+						<scrollout>false</scrollout>
+						<pauseatend>1800</pauseatend>
+						<scrollspeed>40</scrollspeed>
+						<scroll>true</scroll>
+						<font>METF_TitleText</font>
+						<textcolor>FocusBarText</textcolor>
+						<selectedcolor>FocusBarText</selectedcolor>
+						<label>$VAR[ListItemTitle]</label>
+					</control>
+					<control type="image">
+						<description>Watched Overlay for Items in Video Library</description>
+						<left>5</left>
+						<top>5</top>
+						<width>24</width>
+						<height>24</height>
+						<texture>$INFO[ListItem.Overlay]</texture>
+						<colordiffuse>WatchedOverlay</colordiffuse>
+						<visible>!ListItem.IsResumable + Window.IsActive(videos) + [[[Container.Content(movies) | Container.Content(sets)] + !Skin.HasSetting(HideMovieWatchedOverlays)] | [![Container.Content(movies) | Container.Content(sets)] + !Skin.HasSetting(HideTVWatchedOverlays)]]</visible>
+					</control>
+					<control type="image">
+						<description>Watched Overlay for In-Progress Items in Video Library</description>
+						<left>-2</left>
+						<top>0</top>
+						<width>35</width>
+						<height>35</height>
+						<texture>flags/Progress/$INFO[ListItem.PercentPlayed].png</texture>
+						<colordiffuse>WatchedOverlay</colordiffuse>
+						<visible>ListItem.IsResumable + Window.IsActive(videos) + [[[Container.Content(movies) | Container.Content(sets)] + !Skin.HasSetting(HideMovieWatchedOverlays)] | [![Container.Content(movies) | Container.Content(sets)] + !Skin.HasSetting(HideTVWatchedOverlays)]]</visible>
+					</control>
+					<control type="image">
+						<description>HD/SD icons</description>
+						<left>540</left>
+						<top>5</top>
+						<height>24</height>
+						<width>24</width>
+						<texture>$INFO[ListItem.VideoResolution,flags/VideoResolutionIcons/,.png]</texture>
+						<visible>Window.IsActive(videos)
+							+ ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)]
+							| [Container.Content(seasons) + String.IsEmpty(ListItem.Property(UnWatchedEpisodes))] 
+							| [[Container.Content(movies) | Container.Content(episodes)]]
+							+ !String.IsEmpty(ListItem.VideoResolution)</visible>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="group">
+				<description>Info Details</description>
+				<top>4</top>
+				<control type="image">
+					<top>35</top>
+					<height>3</height>
+					<texture>VideoInfoLine.png</texture>
+					<colordiffuse>LowListDivider</colordiffuse>
+				</control>
+				<control type="grouplist">
+					<description>Left hand side info</description>
+					<left>10</left>
+					<top>5</top>
+					<width>560</width>
+					<align>left</align>
+					<itemgap>10</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<description>Picture Date / time</description>
+						<width min="25" max="1200">auto</width>
+						<height>30</height>
+						<aligny>center</aligny>
+						<font>METF_MediaDetailsSmall</font>
+						<textcolor>MediaDetailsYear</textcolor>
+						<label>$INFO[ListItem.PictureLongDateTime]</label>
+						<visible>!String.IsEmpty(ListItem.PictureLongDateTime)</visible>
+					</control>
+					<control type="label">
+						<description>Year</description>
+						<width min="25" max="1200">auto</width>
+						<height>30</height>
+						<aligny>center</aligny>
+						<font>METF_MediaDetailsSmall</font>
+						<textcolor>MediaDetailsYear</textcolor>
+						<label>$INFO[ListItem.Year]</label>
+						<visible>!String.IsEmpty(ListItem.Year) + !Container.Content(episodes)</visible>
+					</control>
+					<control type="image">
+						<include>ViewDetailsBullet</include>
+						<visible>!Container.Content(episodes) + [![String.IsEmpty(ListItem.Year) | String.IsEmpty(ListItem.Duration)] | [![String.IsEmpty(ListItem.Year) | String.IsEmpty(ListItem.Property(TotalEpisodes))] + [Container.Content(tvshows) | Container.Content(seasons)]]]</visible>
+					</control>
+					<control type="label">
+						<description>Duration</description>
+						<width min="25" max="1200">auto</width>
+						<height>30</height>
+						<aligny>center</aligny>
+						<font>METF_MediaDetailsSmall</font>
+						<textcolor>MediaDetailsDuration</textcolor>
+						<label>$INFO[ListItem.Duration]</label>
+						<visible>!String.IsEmpty(ListItem.Duration) + ![Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					</control>
+					<control type="image">
+						<include>ViewDetailsBullet</include>
+						<visible>!String.IsEmpty(ListItem.Property(Duration)) + [Container.Content(seasons) | Container.Content(tvshows)]</visible>
+					</control>
+					<control type="label">
+						<description>Unwatched Episode Count</description>
+						<width min="25" max="1200">auto</width>
+						<height>30</height>
+						<aligny>center</aligny>
+						<font>METF_MediaDetailsSmall</font>
+						<textcolor>MediaDetailsEpisodes</textcolor>
+						<label>$LOCALIZE[16101] $INFO[ListItem.Property(UnWatchedEpisodes)]/$INFO[ListItem.Property(TotalEpisodes)] </label>
+						<visible>!String.IsEmpty(ListItem.Property(TotalEpisodes)) + [Container.Content(seasons) | Container.Content(tvshows)]</visible>
+					</control>
+				</control>
+				<control type="group">
+					<description>Right hand side info</description>
+					<top>5</top>
+					<left>285</left>
+					<width>280</width>
+					<height>27</height>
+					<pauseatend>1800</pauseatend>
+					<scrollspeed>40</scrollspeed>
+					<scroll>true</scroll>
+					<control type="label">
+						<description>Episode Aired Date</description>
+						<align>right</align>
+						<label>$LOCALIZE[20416] $INFO[ListItem.Premiered]</label>
+						<font>METF_MediaDetails</font>
+						<textcolor>MediaDetailsInfo</textcolor>
+						<visible>!String.IsEmpty(ListItem.Premiered) + Container.Content(episodes)</visible>
+					</control>
+					<control type="label">
+						<description>Genre</description>
+						<align>right</align>
+						<label>$INFO[ListItem.Genre]</label>
+						<font>METF_DialogMediumBold</font>
+						<textcolor>MediaDetailsGenre</textcolor>
+						<visible>!String.IsEmpty(ListItem.Genre) + [Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos)]</visible>
+					</control>
+				</control>
+			</control>
+			<control type="scrollbar" id="998">
+				<description>Scroll Bar</description>
+				<include>Animation_OpenCloseFade</include>
+				<include>Animation_FadedByMenu</include>
+				<top>30</top>
+				<left>585</left>
+				<width>22</width>
+				<visible allowhiddenfocus="true">Control.HasFocus(998) | Container.Scrolling</visible>
+				<textureslidernib>ScrollbarVnibFO.png</textureslidernib>
+				<textureslidernibfocus>ScrollbarVnibFO.png</textureslidernibfocus>
+				<onleft>59555</onleft>
+				<onright>999</onright>
+				<showonepage>true</showonepage>
+				<orientation>vertical</orientation>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(998) | Container.Scrolling">Conditional</animation>
+			</control>	
+			<control type="panel" id="999">
+				<description>Vertical menu to jump to specific starting letter in list</description>
+				<animation effect="fade" start="100" end="0" time="150" condition="!Control.HasFocus(999)">Conditional</animation>
+				<top>-160</top>
+				<left>575</left>
+				<height>700</height>
+				<width>17</width>
+				<orientation>vertical</orientation>
+				<onleft>998</onleft>
+				<onright>noop</onright>
+				<ondown>noop</ondown>
+				<visible>Integer.IsGreater(Container.NumPages,1)</visible>
+				<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos)</visible>
+				<itemlayout height="15" width="16">
+					<control type="label">
+						<width>100%</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>MediaDetailsGenre</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<font>METF_DialogSmallBold</font>
+						<animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+						<visible>!String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
+					</control>
+					<control type="label">
+						<width>100%</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>MediaDetailsGenre</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<font>METF_DialogSmallBold</font>
+						<visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout height="15" width="16">
+					<control type="label">
+						<width>100%</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>METF_DialogSmallBold</font>
+						<textcolor>MediaDetailsInfo</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
+						<animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>#</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS2</onclick>
+						<onclick>JumpSMS2</onclick>
+						<onclick>JumpSMS2</onclick>
+						<onclick>JumpSMS2</onclick>
+					</item>
+					<item id="1">
+						<label>A</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS2</onclick>
+					</item>
+					<item id="2">
+						<label>B</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS2</onclick>
+						<onclick>JumpSMS2</onclick>
+					</item>
+					<item id="3">
+						<label>C</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS2</onclick>
+						<onclick>JumpSMS2</onclick>
+						<onclick>JumpSMS2</onclick>
+					</item>
+					<item id="4">
+						<label>D</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS3</onclick>
+					</item>
+					<item id="5">
+						<label>E</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS3</onclick>
+						<onclick>JumpSMS3</onclick>
+					</item>
+					<item id="6">
+						<label>F</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS3</onclick>
+						<onclick>JumpSMS3</onclick>
+						<onclick>JumpSMS3</onclick>
+					</item>
+					<item id="7">
+						<label>G</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS4</onclick>
+					</item>
+					<item id="8">
+						<label>H</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS4</onclick>
+						<onclick>JumpSMS4</onclick>
+					</item>
+					<item id="9">
+						<label>I</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS4</onclick>
+						<onclick>JumpSMS4</onclick>
+						<onclick>JumpSMS4</onclick>
+					</item>
+					<item id="10">
+						<label>J</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS5</onclick>
+					</item>
+					<item id="11">
+						<label>K</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS5</onclick>
+						<onclick>JumpSMS5</onclick>
+					</item>
+					<item id="12">
+						<label>L</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS5</onclick>
+						<onclick>JumpSMS5</onclick>
+						<onclick>JumpSMS5</onclick>
+					</item>
+					<item id="13">
+						<label>M</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS6</onclick>
+					</item>
+					<item id="14">
+						<label>N</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS6</onclick>
+						<onclick>JumpSMS6</onclick>
+					</item>
+					<item id="15">
+						<label>O</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS6</onclick>
+						<onclick>JumpSMS6</onclick>
+						<onclick>JumpSMS6</onclick>
+					</item>
+					<item id="16">
+						<label>P</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS7</onclick>
+					</item>
+					<item id="17">
+						<label>Q</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS7</onclick>
+						<onclick>JumpSMS7</onclick>
+					</item>
+					<item id="18">
+						<label>R</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS7</onclick>
+						<onclick>JumpSMS7</onclick>
+						<onclick>JumpSMS7</onclick>
+					</item>
+					<item id="19">
+						<label>S</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS7</onclick>
+						<onclick>JumpSMS7</onclick>
+						<onclick>JumpSMS7</onclick>
+						<onclick>JumpSMS7</onclick>
+					</item>
+					<item id="20">
+						<label>T</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS8</onclick>
+					</item>
+					<item id="21">
+						<label>U</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS8</onclick>
+						<onclick>JumpSMS8</onclick>
+					</item>
+					<item id="22">
+						<label>V</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS8</onclick>
+						<onclick>JumpSMS8</onclick>
+						<onclick>JumpSMS8</onclick>
+					</item>
+					<item id="23">
+						<label>W</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS8</onclick>
+						<onclick>JumpSMS9</onclick>
+					</item>
+					<item id="24">
+						<label>X</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS8</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS9</onclick>
+					</item>
+					<item id="25">
+						<label>Y</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS8</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS9</onclick>
+					</item>
+					<item id="26">
+						<label>Z</label>
+						<onclick>SetFocus(59555)</onclick>
+						<onclick>JumpSMS8</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS9</onclick>
+						<onclick>JumpSMS9</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+	</include>
+</includes>
