@@ -42,6 +42,18 @@
 						<texture>$INFO[ListItem.Icon]</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
+					<control type="label">
+						<posx>15</posx>
+						<posy>328</posy>
+						<width>150</width>
+						<height>30</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>METF_StarRating</font>
+						<textcolor>TextNF</textcolor>
+						<shadowcolor>Black</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
 					<control type="image">
 						<posx>5</posx>
 						<posy>59</posy>
@@ -61,6 +73,18 @@
 						<aspectratio>stretch</aspectratio>
 						<animation reversible="false" effect="zoom" center="auto" start="100" end="112" time="200" tween="sine" easing="inout">focus</animation>
 						<animation reversible="false" effect="zoom" center="auto" start="112" end="100" time="200" tween="sine" easing="inout">unfocus</animation>
+					</control>
+					<control type="label">
+						<posx>15</posx>
+						<posy>335</posy>
+						<width>150</width>
+						<height>30</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>METF_StarRating</font>
+						<textcolor>TextNF</textcolor>
+						<shadowcolor>Black</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="image">
 						<posx>5</posx>
@@ -130,7 +154,7 @@
 					</item>
 					<item id="10">
 						<description>Games</description>
-						<label>Game Settings</label>
+						<label>$LOCALIZE[31460]</label>
 						<icon>settings/settings_games.png</icon>
 						<onclick>ActivateWindow(GameSettings)</onclick>
 					</item>
