@@ -949,8 +949,8 @@
 					<control type="radiobutton" id="906">
 						<include>SettingsLabel</include>
 						<label>$LOCALIZE[31454]</label>
-						<onclick>Skin.ToggleSetting(ShowMusicTime)</onclick>
-						<selected>Skin.HasSetting(ShowMusicTime)</selected>
+						<onclick>Skin.ToggleSetting(ShowMusicExtraInfo)</onclick>
+						<selected>Skin.HasSetting(ShowMusicExtraInfo)</selected>
 					</control>
 					<control type="radiobutton" id="907">
 						<include>SettingsLabel</include>
