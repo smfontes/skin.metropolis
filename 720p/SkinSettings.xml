@@ -595,6 +595,14 @@
 						<selected>Skin.HasSetting(NoViewGames)</selected>
 						<visible>System.HasAddon(plugin.program.advanced.launcher)</visible>
 					</control>
+					<!-- View 59555 -->
+					<control type="radiobutton" id="623">
+						<description>Background</description>
+						<include>SettingsLabel</include>
+						<label>$LOCALIZE[31441] $LOCALIZE[33068]</label>
+						<onclick>Skin.ToggleSetting(NoViewBackground)</onclick>
+						<selected>Skin.HasSetting(NoViewBackground)</selected>
+					</control>
 				</control>
 
 				<!-- Scripts/Extras -->
@@ -653,6 +661,13 @@
 						<label>$LOCALIZE[31332]</label>
 						<onclick>Skin.ToggleSetting(SkinHelper.EnableExtraFanart)</onclick>
 						<selected>Skin.HasSetting(SkinHelper.EnableExtraFanart)</selected>
+					</control>
+					<control type="radiobutton" id="7081">
+						<include>SettingsLabel</include>
+						<label>    $LOCALIZE[33055] fanart1, fanart2, ...</label>
+						<onclick>Skin.ToggleSetting(SkinHelper.UseFanart1)</onclick>
+						<selected>Skin.HasSetting(SkinHelper.UseFanart1)</selected>
+						<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart)</visible>
 					</control>
 					<control type="image" id="709">
 						<include>Settings_Line</include>
@@ -934,8 +949,8 @@
 					<control type="radiobutton" id="906">
 						<include>SettingsLabel</include>
 						<label>$LOCALIZE[31454]</label>
-						<onclick>Skin.ToggleSetting(ShowMusicTime)</onclick>
-						<selected>Skin.HasSetting(ShowMusicTime)</selected>
+						<onclick>Skin.ToggleSetting(ShowMusicExtraInfo)</onclick>
+						<selected>Skin.HasSetting(ShowMusicExtraInfo)</selected>
 					</control>
 					<control type="radiobutton" id="907">
 						<include>SettingsLabel</include>
