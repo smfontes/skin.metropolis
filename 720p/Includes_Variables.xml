@@ -86,7 +86,7 @@
 		<value></value>
 	</variable>
 	<variable name="GlobalFanartDiffuse">
-		<value condition="Control.IsVisible(59555)">White</value> <!-- For Background view -->
+		<value condition="Control.IsVisible(59555) + !Window.IsActive(movieinformation)">White</value> <!-- For Background view -->
 		<value condition="Skin.HasSetting(GlobalFanartLight)">FanartDiffuseLight</value>
 		<value>FanartDiffuse</value>
 	</variable>
