@@ -23,16 +23,15 @@
 
 		<control type="group">
 			<visible>!VideoPlayer.Content(LiveTV) + ![Window.IsVisible(SliderDialog) | Window.IsVisible(VideoBookmarks)]</visible>
-			<include>Animation_OpenCloseFade</include>
 			<include>Animation_FadedByOSDSettings</include>
-			<include>OSD_Player_Banner</include>
-			<include>OSD_Progress_Bar2</include>
-			<include>OSD_Player_Details</include>
-			<include>OSD_Player_Time</include>
+			<include>OSD_Deck_Full</include>
 			<control type="grouplist" id="2001">
-				<posx>292</posx>
+				<include>Animation_SlideUpFadeOut</include>
+				<include>OSD_Fade_Animation</include>
+				<align>center</align>
+				<posx>300</posx>
 				<posy>650</posy>
-				<width>780</width>
+				<width>835</width>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<onleft>800</onleft>
@@ -256,13 +255,15 @@
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 			<include>Animation_OpenCloseFade</include>
 			<include>Animation_FadedByOSDSettings</include>
-			<include>OSD_Progress_Bar2</include>
-			<include>OSD_Player_Details</include>
+			<include>OSD_Deck_Full</include>
 
 			<control type="grouplist" id="2002">
-				<posx>292</posx>
+				<include>Animation_SlideUpFadeOut</include>
+				<include>OSD_Fade_Animation</include>
+				<posx>300</posx>
 				<posy>650</posy>
-				<width>775</width>
+				<width>835</width>
+				<align>center</align>
 				<itemgap>5</itemgap>
 				<orientation>horizontal</orientation>
 				<onleft>121</onleft>

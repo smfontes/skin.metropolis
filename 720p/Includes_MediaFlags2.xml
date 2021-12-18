@@ -13,7 +13,7 @@
 			<include>Animation_FadedByMenu</include>
 			<include>Animation_CommonFade</include>
 			<visible>!String.Contains(Container.FolderPath,plugin)</visible>
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(MusicVideos) | Window.IsActive(fullscreeninfo) | Window.IsActive(115)</visible>
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(MusicVideos) | Window.IsActive(fullscreeninfo) | Window.IsActive(115) | Window.IsActive(visualisation)</visible>
 			<include>VisibleIfNotMovieSet</include>
 
 			<!-- Video Source (not shown in fullscreen video info) -->
@@ -85,6 +85,7 @@
 
 			<!-- Video Resolution -->
 			<control type="group">
+				<visible>!Window.IsActive(visualisation)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -102,6 +103,7 @@
 
 			<!-- Video Aspect -->
 			<control type="group">
+				<visible>!Window.IsActive(visualisation)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -119,6 +121,7 @@
 
 			<!-- Video Codec -->
 			<control type="group">
+				<visible>!Window.IsActive(visualisation)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -136,6 +139,7 @@
 
 			<!-- Audio Codec -->
 			<control type="group">
+				<visible>!Window.IsActive(musicosd)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -153,6 +157,7 @@
 
 			<!-- Audio Channels -->
 			<control type="group">
+				<visible>!Window.IsActive(musicosd)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
