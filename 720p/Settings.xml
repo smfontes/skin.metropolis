@@ -50,7 +50,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<font>METF_StarRating</font>
-						<textcolor>TextNF</textcolor>
+						<textcolor>HelpText</textcolor>
 						<shadowcolor>Black</shadowcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
@@ -82,7 +82,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<font>METF_StarRating</font>
-						<textcolor>TextNF</textcolor>
+						<textcolor>HelpText</textcolor>
 						<shadowcolor>Black</shadowcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
