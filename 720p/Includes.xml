@@ -100,9 +100,10 @@
 	 	</control>
 		<control type="multiimage" id="69999">
 			<include>Dimensions_Fullscreen</include>
+			<colordiffuse>$VAR[GlobalFanartDiffuse]</colordiffuse>
 			<imagepath background="true" diffuse="FanartDiffuse.png">$INFO[Control.GetLabel(69998)]</imagepath>
-			<timeperimage>12000</timeperimage>
-			<fadetime>3000</fadetime>
+			<timeperimage>6000</timeperimage>
+			<fadetime>2000</fadetime>
 			<resetonlabelchange>true</resetonlabelchange>
 			<visible>Skin.HasSetting(SkinHelper.EnableExtraFanart) + Skin.HasSetting(SkinHelper.UseFanart1)</visible>
 			<visible>[[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)] + !Skin.HasSetting(HideVideoFanart)] | [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] | [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)]]</visible>
