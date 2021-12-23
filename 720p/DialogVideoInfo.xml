@@ -4,6 +4,8 @@
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(NextAired) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)]">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<defaultcontrol always="true">7003</defaultcontrol>
 	<controls>
+	<control type="group">
+		<visible>!Window.IsActive(fullscreenvideo)</visible>
 		<control type="button" id="7050">
 			<texturefocus></texturefocus>
 			<texturenofocus></texturenofocus>
@@ -798,5 +800,6 @@
 		<include>Global_ContextFilter</include>
 		<include condition="Skin.HasSetting(Hide_ExtraMediaFlags)">MediaInfo2</include>
 		<include condition="Skin.HasSetting(DebugGrid)">Object_DebugGrid</include>
+	</control>
 	</controls>
 </window>
