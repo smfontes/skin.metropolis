@@ -311,7 +311,7 @@
 						<align>center</align>
 						<label>$INFO[ListItem.Label]</label>
 						<font>METF_DialogSmallBold</font>
-						<textcolor>MediaDetailsInfo</textcolor>
+						<textcolor>DialogTextFO</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<animation effect="zoom" end="120,120" center="auto" time="100">Focus</animation>
 						<animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
