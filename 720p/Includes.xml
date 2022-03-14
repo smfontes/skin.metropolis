@@ -63,7 +63,12 @@
 		<include>Animation_FadedByMenu</include>
 		<animation effect="fade" start="100" end="60" time="300" condition="Window.IsVisible(movieinformation)">Conditional</animation>
 		<fadetime>200</fadetime>
-		<visible>[[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)] + !Skin.HasSetting(HideVideoFanart)] | [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] | [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)] | Container.Content(addons)]</visible>
+		<visible>
+			[[[Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)] + !Skin.HasSetting(HideVideoFanart)] 
+			| [[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(HideMusicFanart)] 
+			| [Window.IsActive(pictures) + !Skin.HasSetting(HidePictureFanart)]
+			| Container.Content(addons)]
+		</visible>
 	</include>
 	<include name="Global_Background_Fanart">
 		<control type="image">
