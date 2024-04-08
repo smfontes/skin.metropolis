@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<views>55,509,59,58,559,500</views>
+	<views>55,59555,509,59,58,559,500</views>
 	<defaultcontrol>55</defaultcontrol>
 	<controls>
 		<include>Global_Background</include>
 		<include>Global_Background_Fanart</include>
 		<include>Viewtype_List</include>
+		<include>Viewtype_Background</include>
 		<include>Viewtype_ListFanart</include>
 		<include>Viewtype_Gallery_Fanart</include>
 		<include>Viewtype_Gallery_Square</include>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<views>55,905,509,54,58,59,559,53,57,552,551,550,504,511,508,510,52,56,512,501</views>
+	<views>55,905,59555,509,54,58,59,559,53,57,552,551,550,504,511,508,510,52,56,512,501</views>
 	<defaultcontrol always="true">55</defaultcontrol>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(NextAired) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onload condition="!System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(NextAired) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">InstallAddon(script.tv.show.next.aired)</onload>
@@ -28,9 +28,12 @@
 		<include>Viewtype_Panel_Square</include>		<!-- 559 -->
 		<include>Viewtype_Logo</include>			<!-- 56 -->
 		<include>Viewtype_TallGenre</include>			<!-- 501 -->
+		<include>Viewtype_Background</include>      <!--59555-->
 		<include>Global_ContextFilter</include>
 		<include condition="!Skin.HasSetting(Hide_MediaFlags)">MediaInfo</include>
-		<include condition="!Skin.HasSetting(Hide_ExtraMediaFlags)">MediaInfo2</include>
+		<include condition="!Skin.HasSetting(Hide_ExtraMediaFlags)" content="MediaInfo2">
+			<param name="bottom">5</param>
+		</include>
 		<include>Global_VideoPlot</include>
 		<include>Global_AddonInfo</include>
 		<include>Global_ScrollOffsetLabel</include>
