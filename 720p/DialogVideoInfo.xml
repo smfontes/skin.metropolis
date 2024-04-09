@@ -825,7 +825,6 @@
 		</control>
 		<include>Object_InfoLines</include>
 		<include>Global_ContextFilter</include>
-		<include condition="Skin.HasSetting(Hide_ExtraMediaFlags)">MediaInfo2</include>
 		<include condition="Skin.HasSetting(DebugGrid)">Object_DebugGrid</include>
 	</controls>
 </window>

@@ -7,23 +7,23 @@ msgstr ""
 "Project-Id-Version: KODI Skins\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-12-26 00:05+0000\n"
-"Last-Translator: Andrei Stepanov <adem4ik@gmail.com>\n"
+"PO-Revision-Date: 2021-08-03 21:29+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Russian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-metropolis/ru_ru/>\n"
 "Language: ru_ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15\n"
+"X-Generator: Weblate 4.7.2\n"
 
 msgctxt "Addon Summary"
 msgid "A Mix of Retro and Modern."
-msgstr "Смесь стилей ретро и модерна."
+msgstr "Смесь ретро и модерна"
 
 msgctxt "Addon Description"
 msgid "Metropolis is designed to show as much media info as possible with easy to read text and icons. All while trying to keep the skin smooth and simple to use for all family members with multiple themes and customizable menus and views. Credit to Hitcher for Alaska Revisited which was used as a base for Metropolis."
-msgstr "Обложка Метрополис запроектирована так, чтобы показывать как можно больше информации о медиа, используя легко читаемые иконки и шрифты. При этом мы стараемся сохранить обложку быстрой и легкой в использовании для всех членов семьи. Метрополис также предлагает дополнительные темы оформления и настраиваемые меню и режимы просмотра. [CR]Благодарности для Hitcher за его обложку Alaska Revisited, которая была взята за основу Метрополиса."
+msgstr "Обложка Метрополис запроектирована так, чтобы показывать как можно больше информации о медиа, используя легко читаемые иконки и шрифты. При этом мы стараемся сохранить обложку быстрой и легкой в использовании для всех членов семьи. Метрополис также предлагает дополнительные темы оформления и настраиваемые меню и режимы просмотра. &#10;Благодарности для Hitcher за его обложку Alaska Revisited, которая была взята за основу Метрополиса."
 
 msgctxt "#31001"
 msgid "View Options"
@@ -67,27 +67,27 @@ msgstr "Увеличить рейтинг"
 
 msgctxt "#31013"
 msgid "Select Weather icons"
-msgstr "Выберите иконки погоды"
+msgstr ""
 
 msgctxt "#31014"
 msgid "Select Weather fanart"
-msgstr "Выберите фан-арт для раздела \"Погода\""
+msgstr ""
 
 msgctxt "#31015"
 msgid "Select Studio Logo icons"
-msgstr "Выберите иконки для логотипа студии"
+msgstr ""
 
 msgctxt "#31016"
 msgid "Select Record Label icons"
-msgstr "Выберите иконки для логотипа записей"
+msgstr ""
 
 msgctxt "#31017"
 msgid "Select Language Flag icons"
-msgstr "Выберите иконки для флагов для каждого языка"
+msgstr ""
 
 msgctxt "#31018"
 msgid "Show User Rating instead of scraped Rating in Media Flag"
-msgstr "Показывать пользовательские оценки вместо обобщённых оценок в области форматов медиа контента (Media Flag)"
+msgstr ""
 
 msgctxt "#31021"
 msgid "Decrease Star Rating"
@@ -99,7 +99,7 @@ msgstr "Основное меню в виде Иконок"
 
 msgctxt "#31025"
 msgid "Horizontal Text Home layout"
-msgstr "Формат горизонтального текста домашнего раздела"
+msgstr ""
 
 msgctxt "#31031"
 msgid "Hide Movie Watched Status"
@@ -123,11 +123,11 @@ msgstr "Показывать \"Очистить медиатеку\" в подм
 
 msgctxt "#31036"
 msgid "Hide Widgets until focused"
-msgstr "Спрятать виджеты, пока они не будут активны"
+msgstr ""
 
 msgctxt "#31037"
 msgid "Stretch background fanart to fit into viewable area"
-msgstr "Растянуть фан-арт, используемый в качестве фона, так, чтобы он умещался в видимую область"
+msgstr ""
 
 msgctxt "#31054"
 msgid "Logo"
@@ -136,7 +136,7 @@ msgstr "Лого"
 # empty string with id 31055
 msgctxt "#31056"
 msgid "Enable Video/Album Art overlay"
-msgstr "Включить оверлей для изображений в разделах \"Видео\" и \"Альбом\""
+msgstr ""
 
 msgctxt "#31057"
 msgid "Enable Song Info text overlay"
@@ -164,11 +164,11 @@ msgstr "Убрать корневую папка видео"
 
 msgctxt "#31126"
 msgid "Extra Artwork Downloader"
-msgstr "Загрузчик дополнительных изображений"
+msgstr ""
 
 msgctxt "#31127"
 msgid "TvTunes Downloader"
-msgstr "Загрузчик для TVTunes"
+msgstr ""
 
 msgctxt "#31133"
 msgid "Mute"
@@ -177,15 +177,15 @@ msgstr "Без звука"
 # empty strings from id 31134 to 31135
 msgctxt "#31136"
 msgid "Video Info"
-msgstr "Информация о видео"
+msgstr ""
 
 msgctxt "#31137"
 msgid "Audio Info"
-msgstr "Информация об аудио"
+msgstr ""
 
 msgctxt "#31138"
 msgid "System Info"
-msgstr "Сведения о системе"
+msgstr "Информация о системе"
 
 msgctxt "#31139"
 msgid "Video decoder"
@@ -197,15 +197,15 @@ msgstr "Формат пикселей"
 
 msgctxt "#31141"
 msgid "Audio channels"
-msgstr "Аудиоканалы"
+msgstr ""
 
 msgctxt "#31142"
 msgid "CPU used"
-msgstr "ЦП использовано"
+msgstr ""
 
 msgctxt "#31143"
 msgid "Memory used"
-msgstr "Использовано памяти"
+msgstr ""
 
 msgctxt "#31159"
 msgid "ffx2"
@@ -265,38 +265,38 @@ msgstr "Основное меню по-умолчанию"
 
 msgctxt "#31211"
 msgid "Configure actions that can be used during playback · Configure how media content is played"
-msgstr "Настроить действия, которые можно использовать во время воспроизведения · Настроить способ воспроизведения медиаданных"
+msgstr ""
 
 msgctxt "#31212"
 msgid "Manage your installed add-ons · Browse for and install add-ons from kodi.tv · Modify add-on settings"
-msgstr "Управление дополнениями · Поиск и установка дополнений с kodi.tv · Настройки дополнений"
+msgstr ""
 
 msgctxt "#31213"
 msgid "Configure display · Configure audio · Configure internet access · Configure power saving · Configure logging"
-msgstr "Настроить дисплей · Настроить аудио · Настроить интернет-доступ · Настроить энергосбережение · Настроить журналирование"
+msgstr ""
 
 # empty strings from id 31214 to 31215
 msgctxt "#31216"
 msgid "Configure skin · Configure region · Configure control · Configure screensaver · Configure master lock"
-msgstr "Настроить внешний вид · Настроить регион · Настроить управление · Настроить хранитель экрана · Настроить блокировку"
+msgstr ""
 
 # empty string with id 31217
 msgctxt "#31218"
 msgid "Configure & manage media sharing services · Configure & manage the weather service"
-msgstr "Настройка и управление службами общего доступа к мультимедиа · Настройка и управление службой погоды"
+msgstr ""
 
 msgctxt "#31219"
 msgid "Configure controller settings · Configure rewind and autosave functions"
-msgstr "Настроить параметры контроллера · Настроить функции перемотки и автосохранения"
+msgstr ""
 
 # empty string with id 31219
 msgctxt "#31220"
 msgid "Configure TV settings · Change full screen info · Manage EPG data settings"
-msgstr "Настройка параметров телевизора · Изменение полноэкранной информации · Управление настройками программы телепередач"
+msgstr ""
 
 msgctxt "#31221"
 msgid "Configure library sources · Show the media lists display content · Configure how library lists are navigated"
-msgstr "Настройка источников библиотеки · Отображение содержимого · Настройка навигации по библиотеке"
+msgstr ""
 
 msgctxt "#31244"
 msgid "Playing"
@@ -356,7 +356,7 @@ msgstr "Плакаты"
 
 msgctxt "#31284"
 msgid "Single Image"
-msgstr "Одно изображение"
+msgstr "Одно изобр."
 
 msgctxt "#31285"
 msgid "List"
@@ -400,7 +400,7 @@ msgstr "Показывать количество медиа"
 
 msgctxt "#31323"
 msgid "Widget Background Display Order"
-msgstr "Порядок фонового дисплея виджета"
+msgstr ""
 
 msgctxt "#31324"
 msgid "Home Options"
@@ -408,7 +408,7 @@ msgstr "Настройка главного меню"
 
 msgctxt "#31325"
 msgid "Image Resources"
-msgstr "Источники изображений"
+msgstr ""
 
 msgctxt "#31328"
 msgid "Show Random Items"
@@ -456,7 +456,7 @@ msgstr "Создавать и изменять профили пользоват
 
 msgctxt "#31343"
 msgid "Action films usually include high energy, big-budget physical stunts and chases, possibly with rescues, battles, fights, escapes, destructive crises (floods, explosions, natural disasters, fires, etc.), non-stop motion, spectacular rhythm and pacing, and adventurous, often two-dimensional 'good-guy' heroes (or recently, heroines) battling 'bad guys' - all designed for pure audience escapism."
-msgstr "Боевики (экшены) чаще всего характеризуются насыщенным ходом развития событий и сюжета, высокими бюджетами, трюками и погонями, спасениями, схватками и боями, побегами, катастрофами (потопы, взрывы, стихийные бедствия, пожары и т.п.), непрерывным движением, бешеным ритмом и динамикой и авантюрными, чаще всего типичными, \"хорошими парнями\" (или, как с недавних пор, героинями), которые сражаются с \"плохими парнями\". Всё спланировано так, чтобы доставить зрителю максимум удовольствия и отвлечь от ежедневной рутины."
+msgstr ""
 
 msgctxt "#31344"
 msgid "Adventure films are usually exciting stories, with new experiences or exotic locales, very similar to or often paired with the action film genre. They can include traditional swashbucklers, serialized films, and historical spectacles, searches or expeditions for lost continents, \"jungle\" and \"desert\" epics, treasure hunts, disaster films, or searches for the unknown."
@@ -1004,7 +1004,7 @@ msgstr ""
 
 msgctxt "#31484"
 msgid "Order"
-msgstr "Заказ"
+msgstr ""
 
 msgctxt "#31600"
 msgid "Enable Live TV (PVR) support"

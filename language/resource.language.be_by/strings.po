@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KODI Skins\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-08-03 14:14+0000\n"
+"PO-Revision-Date: 2021-08-28 17:45+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Belarusian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-metropolis/be_by/>\n"
 "Language: be_by\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 4.13\n"
+"X-Generator: Weblate 4.8\n"
 
 msgctxt "Addon Summary"
 msgid "A Mix of Retro and Modern."
-msgstr ""
+msgstr "A Mix of Retro and Modern. Original Metropolis skin by Amra - continued by Stoli, jingai and Macgyver"
 
 msgctxt "Addon Description"
 msgid "Metropolis is designed to show as much media info as possible with easy to read text and icons. All while trying to keep the skin smooth and simple to use for all family members with multiple themes and customizable menus and views. Credit to Hitcher for Alaska Revisited which was used as a base for Metropolis."
@@ -27,11 +27,11 @@ msgstr ""
 
 msgctxt "#31001"
 msgid "View Options"
-msgstr "Налады выгляду"
+msgstr "View Options"
 
 msgctxt "#31002"
 msgid "Home Artwork"
-msgstr ""
+msgstr "Home Artwork"
 
 msgctxt "#31004"
 msgid "Debug"
@@ -96,7 +96,7 @@ msgstr ""
 
 msgctxt "#31024"
 msgid "Icon Home layout"
-msgstr ""
+msgstr "Icon Home layout"
 
 msgctxt "#31025"
 msgid "Horizontal Text Home layout"
@@ -198,7 +198,7 @@ msgstr "Фармат пікселяў"
 
 msgctxt "#31141"
 msgid "Audio channels"
-msgstr "Аўдыяканалы"
+msgstr ""
 
 msgctxt "#31142"
 msgid "CPU used"
@@ -206,7 +206,7 @@ msgstr ""
 
 msgctxt "#31143"
 msgid "Memory used"
-msgstr "Выкарыстанне памяці"
+msgstr ""
 
 msgctxt "#31159"
 msgid "ffx2"
@@ -262,29 +262,29 @@ msgstr "Апошняе абнаўленьне:"
 
 msgctxt "#31210"
 msgid "Default Home layout"
-msgstr ""
+msgstr "Default Home layout"
 
 msgctxt "#31211"
 msgid "Configure actions that can be used during playback · Configure how media content is played"
-msgstr "Наладка дзеянняў, якія можна выкарыстоўваць падчас прайгравання · Наладка спосабу прайгравання медыяфайлаў"
+msgstr ""
 
 msgctxt "#31212"
 msgid "Manage your installed add-ons · Browse for and install add-ons from kodi.tv · Modify add-on settings"
-msgstr "Кіраванне дапаўненнямі · Пошук і ўсталёўка дапаўненняў з kodi.tv · Наладка дапаўненняў"
+msgstr ""
 
 msgctxt "#31213"
 msgid "Configure display · Configure audio · Configure internet access · Configure power saving · Configure logging"
-msgstr "Наладжванне дысплэя · Наладжванне аўдыё · Наладжванне доступу ў інтэрнэт · Наладжванне эканоміі энергіі · Наладжванне журналаў"
+msgstr ""
 
 # empty strings from id 31214 to 31215
 msgctxt "#31216"
 msgid "Configure skin · Configure region · Configure control · Configure screensaver · Configure master lock"
-msgstr "Наладка абалонкі · Наладка рэгіёна · Наладка кантролю · Наладка ахоўніка экрана · Наладка блакавання"
+msgstr ""
 
 # empty string with id 31217
 msgctxt "#31218"
 msgid "Configure & manage media sharing services · Configure & manage the weather service"
-msgstr "Наладка і кіраванне службамі доступу да медыяфайлаў · Наладка і кіраванне службай надвор'я"
+msgstr ""
 
 msgctxt "#31219"
 msgid "Configure controller settings · Configure rewind and autosave functions"
@@ -293,11 +293,11 @@ msgstr ""
 # empty string with id 31219
 msgctxt "#31220"
 msgid "Configure TV settings · Change full screen info · Manage EPG data settings"
-msgstr "Наладка ТБ · Змена поўнаэкраннай інфармацыі · Кіраванне наладамі тэлепраграмы"
+msgstr ""
 
 msgctxt "#31221"
 msgid "Configure library sources · Show the media lists display content · Configure how library lists are navigated"
-msgstr "Наладка крыніц бібліятэкі · Наладка адлюстравання змесціва · Наладка навігацыі па бібліятэцы"
+msgstr ""
 
 msgctxt "#31244"
 msgid "Playing"
@@ -329,11 +329,11 @@ msgstr ""
 
 msgctxt "#31277"
 msgid "Item"
-msgstr ""
+msgstr "Item"
 
 msgctxt "#31278"
 msgid "Open Playlist"
-msgstr ""
+msgstr "Open Playlist"
 
 msgctxt "#31279"
 msgid "Save Playlist"
@@ -345,7 +345,7 @@ msgstr "Закрыць спіс прайгравання"
 
 msgctxt "#31281"
 msgid "Items"
-msgstr "складнікаў"
+msgstr "Items"
 
 msgctxt "#31282"
 msgid "Poster Wrap"
@@ -361,15 +361,15 @@ msgstr ""
 
 msgctxt "#31285"
 msgid "List"
-msgstr "Спіс"
+msgstr "List"
 
 msgctxt "#31286"
 msgid "Banner"
-msgstr "Банер"
+msgstr "Banner"
 
 msgctxt "#31289"
 msgid "Files"
-msgstr "Файлы"
+msgstr "Files"
 
 msgctxt "#31291"
 msgid "Landscape"
@@ -405,7 +405,7 @@ msgstr ""
 
 msgctxt "#31324"
 msgid "Home Options"
-msgstr ""
+msgstr "Home Options"
 
 msgctxt "#31325"
 msgid "Image Resources"
@@ -421,11 +421,11 @@ msgstr ""
 
 msgctxt "#31330"
 msgid "Scripts/Extras"
-msgstr ""
+msgstr "Scripts/Extras"
 
 msgctxt "#31331"
 msgid "Home Items"
-msgstr ""
+msgstr "Home Items"
 
 msgctxt "#31332"
 msgid "Enable Extra Fanart"
@@ -761,7 +761,7 @@ msgstr ""
 
 msgctxt "#31423"
 msgid "Author"
-msgstr "Аўтар"
+msgstr "Author"
 
 msgctxt "#31424"
 msgid "Poster & Fanart"
@@ -821,7 +821,7 @@ msgstr ""
 
 msgctxt "#31438"
 msgid "Recent"
-msgstr "Апошняе"
+msgstr "Recent"
 
 msgctxt "#31439"
 msgid "Banner & Poster"
@@ -901,7 +901,7 @@ msgstr "Цэтлікі"
 
 msgctxt "#31458"
 msgid "Set Timer"
-msgstr ""
+msgstr "Set Timer"
 
 msgctxt "#31459"
 msgid "Cancel Timer"
@@ -941,7 +941,7 @@ msgstr ""
 
 msgctxt "#31468"
 msgid "Services"
-msgstr "Сэрвісы"
+msgstr "Services"
 
 msgctxt "#31469"
 msgid "Appearance"
@@ -1005,7 +1005,7 @@ msgstr ""
 
 msgctxt "#31484"
 msgid "Order"
-msgstr "Чарга"
+msgstr ""
 
 msgctxt "#31600"
 msgid "Enable Live TV (PVR) support"
@@ -1013,7 +1013,7 @@ msgstr ""
 
 msgctxt "#31601"
 msgid "Live TV"
-msgstr "Жывое ТВ"
+msgstr "Live TV"
 
 msgctxt "#31602"
 msgid "Live Radio"
@@ -1106,7 +1106,7 @@ msgstr ""
 
 msgctxt "#31715"
 msgid "Icon"
-msgstr ""
+msgstr "Icon"
 
 msgctxt "#31716"
 msgid "Wallpaper"
