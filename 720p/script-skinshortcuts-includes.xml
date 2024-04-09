@@ -279,9 +279,9 @@
 			<property name="defaultID">favourites</property>
 			<property name="background">home\favourites\</property>
 			<property name="backgroundName">1036</property>
-			<onclick>ActivateWindow(favourites)</onclick>
-			<property name="path">ActivateWindow(favourites)</property>
-			<property name="list">favourites</property>
+			<onclick>ActivateWindow(favouritesbrowser)</onclick>
+			<property name="path">ActivateWindow(favouritesbrowser)</property>
+			<property name="list">favouritesbrowser</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">num-1036</property>
 			<property name="group">mainmenu</property>
@@ -5206,5 +5206,27 @@
 			<include>Widget_WeatherForecast</include>
 			<content target="" />
 		</control>
-	</include>
-</includes>
+		<control type="image">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
+			<include>Animation_CommonFadeNoHide</include>
+			<include>Animation_FadedByMenu</include>
+			<include>Animation_HiddenByInfo</include>
+			<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
+			<posx>265</posx>
+			<posy>560</posy>
+			<width>250</width>
+			<height>140</height>
+			<aspectratio align="right" aligny="center">keep</aspectratio>
+			<bordertexture border="6">frames/thumb_border_round.png</bordertexture>
+			<bordersize>6</bordersize>
+			<texture diffuse="frames/EpisodeMatte.png">$VAR[GlobalWidgetIcon]</texture>
+			<visible>[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] | Control.HasFocus(8000)</visible>
+		</control>
+		<control type="list" id="8000">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
+			<include>Widget_VerticalList</include>
+			<content target="videos">favourites://</content>
+			</control>
+		</include>
+	</includes>
