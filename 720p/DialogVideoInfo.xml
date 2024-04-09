@@ -22,7 +22,6 @@
 			<onfocus>SetFocus(50)</onfocus>
 		</control>
 		<control type="group">
-			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<posx>360</posx>
 			<posy>0</posy>
 			<include>Animation_FadedByMenu</include>
@@ -431,7 +430,6 @@
 
 		<!-- Year and Duration -->
 		<control type="grouplist">
-			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<posx>625</posx>
 			<posy>23</posy>
 			<width>620</width>
@@ -486,7 +484,6 @@
 
 		<!-- Control Buttons -->
 		<control type="grouplist" id="7003">
-			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<include>Animation_FadedByMenu</include>
 			<include>Animation_CommonFade</include>
 			<include>Animation_OpenCloseFade</include>
@@ -510,6 +507,13 @@
 				<include>Animation_ButtonFocus</include>
 				<visible>String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
 			</control>
+			<!-- Refresh -->
+			<control type="button" id="6">
+				<include>VideoInfoButton</include>
+				<texturenofocus>buttons/button_refresh.png</texturenofocus>
+				<texturefocus>buttons/button_refreshFO.png</texturefocus>
+				<include>Animation_ButtonFocus</include>
+			</control>
 			<!-- Trailer -->
 			<control type="button" id="11">
 				<include>VideoInfoButton</include>
@@ -525,6 +529,31 @@
 				<texturefocus>buttons/button_fanartFO.png</texturefocus>
 				<include>Animation_ButtonFocus</include>
 			</control>
+			<!-- User ratings -->
+			<control type="button" id="7">
+				<description>Set rating</description>
+				<include>VideoInfoButton</include>
+				<texturenofocus>buttons/button_thumb.png</texturenofocus>
+				<texturefocus>buttons/button_thumbFO.png</texturefocus>
+				<include>Animation_ButtonFocus</include>
+			</control>
+			<!-- Director -->
+			<control type="button" id="13">
+				<description>Director</description>
+				<include>VideoInfoButton</include>
+				<texturenofocus>buttons/button_director.png</texturenofocus>
+				<texturefocus>buttons/button_directorFO.png</texturefocus>
+				<include>Animation_ButtonFocus</include>
+			</control>
+			<!-- Versions -->
+			<control type="button" id="14">
+				<description>Versions</description>
+				<include>VideoInfoButton</include>
+				<texturenofocus>buttons/button_layers.png</texturenofocus>
+				<texturefocus>buttons/button_layersFO.png</texturefocus>
+				<include>Animation_ButtonFocus</include>
+			</control>
+
 			<!-- Artwork Downloading Button, artwork.beef -->
 			<control type="button" id="20">
 				<include>VideoInfoButton</include>
@@ -561,20 +590,6 @@
 				<visible>System.HasAddon(script.extendedinfo)</visible>
 				<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
 			</control>
-			<!-- Refresh -->
-			<control type="button" id="6">
-				<include>VideoInfoButton</include>
-				<texturenofocus>buttons/button_refresh.png</texturenofocus>
-				<texturefocus>buttons/button_refreshFO.png</texturefocus>
-				<include>Animation_ButtonFocus</include>
-			</control>
-			<!-- User ratings -->
-			<control type="button" id="7">
-				<description>Set rating</description>
-				<include>VideoInfoButton</include>
-				<texturenofocus>buttons/button_thumb.png</texturenofocus>
-				<texturefocus>buttons/button_thumbFO.png</texturefocus>
-			</control>
 			<!-- Embuary Info -->
 			<control type="button" id="23">
 				<description>Extra Info</description>
@@ -592,7 +607,6 @@
 		</control>
 		<!-- Control Button Text -->
 		<control type="group">
-			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<include>Animation_FadedByMenu</include>
 			<include>Animation_CommonFade</include>
 			<include>Animation_OpenCloseFade</include>
@@ -651,6 +665,18 @@
 				<visible>ControlGroup(7003).HasFocus(7)</visible>
 			</control>
 			<control type="label">
+				<description>Director</description>
+				<include>VideoInfoButtonLabel</include>
+				<label>$LOCALIZE[20339]</label>
+				<visible>ControlGroup(7003).HasFocus(13)</visible>
+			</control>
+			<control type="label">
+				<description>Versions</description>
+				<include>VideoInfoButtonLabel</include>
+				<label>$LOCALIZE[40000]</label>
+				<visible>ControlGroup(7003).HasFocus(14)</visible>
+			</control>
+			<control type="label">
 				<description>Embuary Info</description>
 				<include>VideoInfoButtonLabel</include>
 				<label>$INFO[System.AddonTitle(script.embuary.info)]</label>
@@ -660,7 +686,6 @@
 
 		<!-- Images -->
 		<control type="group">
-			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<control type="group">
 				<include>Animation_FadedByMenu</include>
 				<include>Animation_CommonFade</include>
@@ -818,12 +843,8 @@
 				</control>
 			</control>
 		</control>
-		<control type="group">
-			<visible>!Window.IsActive(fullscreenvideo)</visible>
-			<include>Object_InfoLines</include>
-			<include>Global_ContextFilter</include>
-			<include condition="Skin.HasSetting(Hide_ExtraMediaFlags)">MediaInfo2</include>
-		</control>
+		<include>Object_InfoLines</include>
+		<include>Global_ContextFilter</include>
 		<include condition="Skin.HasSetting(DebugGrid)">Object_DebugGrid</include>
 	</controls>
 </window>
