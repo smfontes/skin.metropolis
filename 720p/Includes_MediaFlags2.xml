@@ -16,8 +16,7 @@
 				<include>Animation_CommonFade</include>
 				<visible>!String.Contains(Container.FolderPath,plugin)</visible>
 				<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(MusicVideos) | Window.IsActive(fullscreeninfo) | Window.IsActive(115) | Window.IsActive(visualisation)</visible>
-				<include>VisibleIfNotMovieSet</include>
-
+        <include>VisibleIfNotMovieSet</include>
 				<!-- Video Source (not shown in fullscreen video info) -->
 				<control type="group">
 					<width>90</width>
@@ -85,41 +84,57 @@
 					</control>
 				</control>
 
-				<!-- Video Resolution -->
-				<control type="group">
-					<visible>!Window.IsActive(visualisation)</visible>
-					<width>90</width>
-					<height>62</height>
-					<control type="image">
-						<include>MediaFlagsVarsWide</include>
-						<texture fallback="flags/default.png">$VAR[MediaFlag_VideoResolution]</texture>
-						<colordiffuse>MediaFlagDiffuse</colordiffuse>
-					</control>
-					<control type="image">
-						<width>104</width>
-						<height>54</height>
-						<texture>flags/flag_frame.png</texture>
-						<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
-					</control>
-				</control>
+        <!-- Video Resolution -->
+        <control type="group">
+          <width>90</width>
+          <height>62</height>
+          <control type="image">
+            <include>MediaFlagsVarsWide</include>
+            <texture fallback="flags/default.png">$VAR[MediaFlag_VideoResolution]</texture>
+            <colordiffuse>MediaFlagDiffuse</colordiffuse>
+          </control>
+          <control type="image">
+            <width>104</width>
+            <height>54</height>
+            <texture>flags/flag_frame.png</texture>
+            <colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+          </control>
+        </control>
 
-				<!-- Video Aspect -->
-				<control type="group">
-					<visible>!Window.IsActive(visualisation)</visible>
-					<width>90</width>
-					<height>62</height>
-					<control type="image">
-						<include>MediaFlagsVarsWide</include>
-						<texture fallback="flags/VideoAspect/default.png">$VAR[MediaFlag_VideoAspect]</texture>
-						<colordiffuse>MediaFlagDiffuse</colordiffuse>
-					</control>
-					<control type="image">
-						<width>104</width>
-						<height>54</height>
-						<texture>flags/flag_frame.png</texture>
-						<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
-					</control>
-				</control>
+        <!-- HDR Video -->
+        <control type="group">
+          <width>90</width>
+          <height>62</height>
+          <control type="image">
+            <include>MediaFlagsVarsWide</include>
+            <texture fallback="flags/VideoHDR/sdr.png">$VAR[MediaFlag_HDRVideo]</texture>
+            <colordiffuse>MediaFlagDiffuse</colordiffuse>
+          </control>
+          <control type="image">
+            <width>104</width>
+            <height>54</height>
+            <texture>flags/flag_frame.png</texture>
+            <colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+          </control>
+        <visible>!String.IsEmpty(ListItem.HdrType) | !String.IsEmpty(VideoPlayer.HdrType)</visible>
+        </control>
+
+        <!-- Video Aspect -->
+        <control type="group">
+          <width>90</width>
+          <height>62</height>
+          <control type="image">
+            <include>MediaFlagsVarsWide</include>
+            <texture fallback="flags/VideoAspect/default.png">$VAR[MediaFlag_VideoAspect]</texture>
+            <colordiffuse>MediaFlagDiffuse</colordiffuse>
+          </control>
+          <control type="image">
+            <width>104</width>
+            <height>54</height>
+            <texture>flags/flag_frame.png</texture>
+            <colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+          </control>
+        </control>
 
 				<!-- Video Codec -->
 				<control type="group">
