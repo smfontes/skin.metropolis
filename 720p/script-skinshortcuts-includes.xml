@@ -18,7 +18,7 @@
 			<property name="submenuVisibility">dvd</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<label>$LOCALIZE[342]</label>
@@ -42,7 +42,7 @@
 			<property name="submenuVisibility">movies</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<label>$LOCALIZE[20343]</label>
@@ -66,7 +66,7 @@
 			<property name="submenuVisibility">tvshows</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<label>$LOCALIZE[3]</label>
@@ -84,7 +84,7 @@
 			<property name="submenuVisibility">videos</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<label>$LOCALIZE[15016]</label>
@@ -103,7 +103,7 @@
 			<property name="submenuVisibility">num-15016</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<label>$LOCALIZE[31334]</label>
@@ -122,7 +122,7 @@
 			<property name="submenuVisibility">plugin-video-imdb-trailers</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<label>$ADDON[script.skinshortcuts 32022]</label>
@@ -144,7 +144,7 @@
 			<property name="submenuVisibility">livetv</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<label>$LOCALIZE[2]</label>
@@ -167,7 +167,7 @@
 			<property name="submenuVisibility">music</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<label>$LOCALIZE[20389]</label>
@@ -191,7 +191,7 @@
 			<property name="submenuVisibility">musicvideos</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<label>$ADDON[script.skinshortcuts 32087]</label>
@@ -210,7 +210,7 @@
 			<property name="submenuVisibility">radio</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="11">
 			<property name="id">$NUMBER[11]</property>
 			<label>$LOCALIZE[10002]</label>
@@ -228,7 +228,7 @@
 			<property name="submenuVisibility">pictures</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="12">
 			<property name="id">$NUMBER[12]</property>
 			<label>$LOCALIZE[10001]</label>
@@ -246,7 +246,7 @@
 			<property name="submenuVisibility">programs</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="13">
 			<property name="id">$NUMBER[13]</property>
 			<label>$LOCALIZE[12600]</label>
@@ -268,7 +268,7 @@
 			<property name="submenuVisibility">weather</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
-			</item>
+		</item>
 		<item id="14">
 			<property name="id">$NUMBER[14]</property>
 			<label>$LOCALIZE[1036]</label>
@@ -277,11 +277,6 @@
 			<thumb />
 			<property name="labelID">1036</property>
 			<property name="defaultID">favourites</property>
-			<property name="widget">Favourites</property>
-			<property name="widgetName">1036</property>
-			<property name="widgetType">movies</property>
-			<property name="widgetPath">plugin://script.skin.helper.widgets/?action=favourites&amp;mediatype=favourites&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
-			<property name="widgetTarget">videos</property>
 			<property name="background">home\favourites\</property>
 			<property name="backgroundName">1036</property>
 			<onclick>ActivateWindow(favourites)</onclick>
@@ -291,7 +286,7 @@
 			<property name="submenuVisibility">num-1036</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
-			</item>
+		</item>
 		<item id="15">
 			<property name="id">$NUMBER[15]</property>
 			<label>$LOCALIZE[137]</label>
@@ -310,7 +305,7 @@
 			<property name="submenuVisibility">script-globalsearch</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="16">
 			<property name="id">$NUMBER[16]</property>
 			<label>$LOCALIZE[10004]</label>
@@ -328,7 +323,7 @@
 			<property name="submenuVisibility">settings</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
+		</item>
 		<item id="17">
 			<property name="id">$NUMBER[17]</property>
 			<label>$LOCALIZE[13005]</label>
@@ -346,8 +341,8 @@
 			<property name="submenuVisibility">num-13005</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include />
 	<include name="skinshortcuts-submenu">
 		<item id="1">
@@ -365,7 +360,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),dvd)</visible>
 			<property name="group">dvd</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">2</property>
@@ -381,7 +376,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">2</property>
@@ -398,7 +393,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">2</property>
@@ -415,7 +410,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">2</property>
@@ -432,7 +427,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">2</property>
@@ -449,7 +444,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">2</property>
@@ -466,7 +461,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">2</property>
@@ -483,7 +478,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">2</property>
@@ -499,7 +494,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">2</property>
@@ -515,7 +510,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">2</property>
@@ -531,7 +526,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">3</property>
@@ -547,7 +542,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">3</property>
@@ -564,7 +559,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">3</property>
@@ -581,7 +576,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">3</property>
@@ -598,7 +593,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">3</property>
@@ -615,7 +610,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">3</property>
@@ -632,7 +627,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">3</property>
@@ -649,7 +644,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">3</property>
@@ -666,7 +661,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">3</property>
@@ -682,7 +677,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">3</property>
@@ -698,7 +693,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">4</property>
@@ -714,7 +709,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">4</property>
@@ -731,7 +726,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">4</property>
@@ -748,7 +743,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">4</property>
@@ -765,7 +760,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">4</property>
@@ -781,7 +776,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">4</property>
@@ -797,7 +792,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">4</property>
@@ -813,7 +808,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">4</property>
@@ -829,7 +824,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">7</property>
@@ -846,7 +841,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">7</property>
@@ -863,7 +858,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">7</property>
@@ -880,7 +875,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">7</property>
@@ -897,7 +892,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">7</property>
@@ -914,7 +909,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">8</property>
@@ -931,7 +926,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">8</property>
@@ -947,7 +942,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">8</property>
@@ -964,7 +959,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">8</property>
@@ -980,7 +975,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">8</property>
@@ -997,7 +992,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">8</property>
@@ -1014,7 +1009,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">8</property>
@@ -1031,7 +1026,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">8</property>
@@ -1048,7 +1043,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">8</property>
@@ -1064,7 +1059,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">8</property>
@@ -1080,7 +1075,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="11">
 			<property name="id">$NUMBER[11]</property>
 			<property name="mainmenuid">8</property>
@@ -1096,7 +1091,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="12">
 			<property name="id">$NUMBER[12]</property>
 			<property name="mainmenuid">8</property>
@@ -1112,7 +1107,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">9</property>
@@ -1128,7 +1123,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),musicvideos)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">9</property>
@@ -1145,7 +1140,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">9</property>
@@ -1162,7 +1157,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">9</property>
@@ -1179,7 +1174,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">9</property>
@@ -1196,7 +1191,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">9</property>
@@ -1213,7 +1208,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">9</property>
@@ -1230,7 +1225,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">9</property>
@@ -1246,7 +1241,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),musicvideos)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">9</property>
@@ -1262,7 +1257,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),musicvideos)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">10</property>
@@ -1279,7 +1274,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">10</property>
@@ -1296,7 +1291,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">10</property>
@@ -1313,7 +1308,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">10</property>
@@ -1330,7 +1325,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">10</property>
@@ -1347,7 +1342,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">11</property>
@@ -1363,7 +1358,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),pictures)</visible>
 			<property name="group">pictures</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">12</property>
@@ -1379,7 +1374,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">12</property>
@@ -1395,7 +1390,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">12</property>
@@ -1411,7 +1406,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">12</property>
@@ -1427,7 +1422,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),programs)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">15</property>
@@ -1443,7 +1438,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">15</property>
@@ -1459,7 +1454,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">15</property>
@@ -1475,7 +1470,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">15</property>
@@ -1491,7 +1486,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">15</property>
@@ -1507,7 +1502,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">15</property>
@@ -1523,7 +1518,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">15</property>
@@ -1539,7 +1534,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">15</property>
@@ -1555,7 +1550,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">15</property>
@@ -1571,7 +1566,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">15</property>
@@ -1587,7 +1582,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">16</property>
@@ -1603,7 +1598,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">16</property>
@@ -1619,7 +1614,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">16</property>
@@ -1635,7 +1630,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">16</property>
@@ -1651,7 +1646,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">16</property>
@@ -1667,7 +1662,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">16</property>
@@ -1683,7 +1678,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">16</property>
@@ -1699,7 +1694,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">16</property>
@@ -1715,7 +1710,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">16</property>
@@ -1731,7 +1726,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">16</property>
@@ -1748,7 +1743,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">17</property>
@@ -1765,7 +1760,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">17</property>
@@ -1782,7 +1777,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">17</property>
@@ -1799,7 +1794,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">17</property>
@@ -1816,7 +1811,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">17</property>
@@ -1833,7 +1828,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">17</property>
@@ -1850,7 +1845,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">17</property>
@@ -1867,7 +1862,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">17</property>
@@ -1883,7 +1878,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-13005)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">17</property>
@@ -1900,8 +1895,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-dvd">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -1918,8 +1913,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">dvd</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-dvd">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -1936,8 +1931,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),dvd)</visible>
 			<property name="group">dvd</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-movies">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -1954,7 +1949,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">2</property>
@@ -1971,7 +1966,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">2</property>
@@ -1988,7 +1983,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">2</property>
@@ -2005,7 +2000,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">2</property>
@@ -2022,7 +2017,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">2</property>
@@ -2039,7 +2034,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">2</property>
@@ -2056,7 +2051,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">2</property>
@@ -2072,7 +2067,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">2</property>
@@ -2088,7 +2083,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">2</property>
@@ -2104,8 +2099,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-movies">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -2122,7 +2117,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">2</property>
@@ -2139,7 +2134,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">2</property>
@@ -2156,7 +2151,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">2</property>
@@ -2173,7 +2168,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">2</property>
@@ -2190,7 +2185,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">2</property>
@@ -2207,7 +2202,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">2</property>
@@ -2224,7 +2219,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">2</property>
@@ -2240,7 +2235,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">2</property>
@@ -2256,7 +2251,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">2</property>
@@ -2272,8 +2267,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-tvshows">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -2290,7 +2285,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">3</property>
@@ -2307,7 +2302,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">3</property>
@@ -2324,7 +2319,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">3</property>
@@ -2341,7 +2336,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">3</property>
@@ -2358,7 +2353,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">3</property>
@@ -2375,7 +2370,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">3</property>
@@ -2392,7 +2387,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">3</property>
@@ -2409,7 +2404,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">3</property>
@@ -2425,7 +2420,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">3</property>
@@ -2441,8 +2436,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-tvshows">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -2459,7 +2454,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">3</property>
@@ -2476,7 +2471,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">3</property>
@@ -2493,7 +2488,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">3</property>
@@ -2510,7 +2505,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">3</property>
@@ -2527,7 +2522,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">3</property>
@@ -2544,7 +2539,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">3</property>
@@ -2561,7 +2556,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">3</property>
@@ -2578,7 +2573,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">3</property>
@@ -2594,7 +2589,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">3</property>
@@ -2610,8 +2605,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvshows)</visible>
 			<property name="group">tvshows</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-videos">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -2628,7 +2623,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">4</property>
@@ -2645,7 +2640,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">4</property>
@@ -2662,7 +2657,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">4</property>
@@ -2679,7 +2674,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">4</property>
@@ -2695,7 +2690,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">4</property>
@@ -2711,7 +2706,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">4</property>
@@ -2727,7 +2722,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">4</property>
@@ -2743,8 +2738,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-videos">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -2761,7 +2756,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">4</property>
@@ -2778,7 +2773,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">4</property>
@@ -2795,7 +2790,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">4</property>
@@ -2812,7 +2807,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">4</property>
@@ -2828,7 +2823,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">4</property>
@@ -2844,7 +2839,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">4</property>
@@ -2860,7 +2855,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">4</property>
@@ -2876,20 +2871,20 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
 			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-num-15016">
 		<description>No items</description>
-		</include>
+	</include>
 	<include name="skinshortcuts-group-alt-num-15016">
 		<description>No items</description>
-		</include>
+	</include>
 	<include name="skinshortcuts-group-plugin-video-imdb-trailers">
 		<description>No items</description>
-		</include>
+	</include>
 	<include name="skinshortcuts-group-alt-plugin-video-imdb-trailers">
 		<description>No items</description>
-		</include>
+	</include>
 	<include name="skinshortcuts-group-livetv">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -2907,7 +2902,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">7</property>
@@ -2924,7 +2919,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">7</property>
@@ -2941,7 +2936,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">7</property>
@@ -2958,7 +2953,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">7</property>
@@ -2975,8 +2970,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-livetv">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -2994,7 +2989,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">7</property>
@@ -3011,7 +3006,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">7</property>
@@ -3028,7 +3023,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">7</property>
@@ -3045,7 +3040,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">7</property>
@@ -3062,8 +3057,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">livetv</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-music">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -3081,7 +3076,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">8</property>
@@ -3097,7 +3092,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">8</property>
@@ -3114,7 +3109,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">8</property>
@@ -3130,7 +3125,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">8</property>
@@ -3147,7 +3142,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">8</property>
@@ -3164,7 +3159,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">8</property>
@@ -3181,7 +3176,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">8</property>
@@ -3198,7 +3193,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">8</property>
@@ -3214,7 +3209,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">8</property>
@@ -3230,7 +3225,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="11">
 			<property name="id">$NUMBER[11]</property>
 			<property name="mainmenuid">8</property>
@@ -3246,7 +3241,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="12">
 			<property name="id">$NUMBER[12]</property>
 			<property name="mainmenuid">8</property>
@@ -3262,8 +3257,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-music">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -3281,7 +3276,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">8</property>
@@ -3297,7 +3292,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">8</property>
@@ -3314,7 +3309,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">8</property>
@@ -3330,7 +3325,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">8</property>
@@ -3347,7 +3342,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">8</property>
@@ -3364,7 +3359,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">8</property>
@@ -3381,7 +3376,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">8</property>
@@ -3398,7 +3393,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">8</property>
@@ -3414,7 +3409,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">8</property>
@@ -3430,7 +3425,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="11">
 			<property name="id">$NUMBER[11]</property>
 			<property name="mainmenuid">8</property>
@@ -3446,7 +3441,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="12">
 			<property name="id">$NUMBER[12]</property>
 			<property name="mainmenuid">8</property>
@@ -3462,8 +3457,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-musicvideos">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -3480,7 +3475,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">9</property>
@@ -3497,7 +3492,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">9</property>
@@ -3514,7 +3509,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">9</property>
@@ -3531,7 +3526,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">9</property>
@@ -3548,7 +3543,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">9</property>
@@ -3565,7 +3560,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">9</property>
@@ -3582,7 +3577,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">9</property>
@@ -3598,7 +3593,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">9</property>
@@ -3614,8 +3609,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-musicvideos">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -3632,7 +3627,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),musicvideos)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">9</property>
@@ -3649,7 +3644,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">9</property>
@@ -3666,7 +3661,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">9</property>
@@ -3683,7 +3678,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">9</property>
@@ -3700,7 +3695,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">9</property>
@@ -3717,7 +3712,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">9</property>
@@ -3734,7 +3729,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">9</property>
@@ -3750,7 +3745,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),musicvideos)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">9</property>
@@ -3766,8 +3761,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),musicvideos)</visible>
 			<property name="group">musicvideos</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-radio">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -3785,7 +3780,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">10</property>
@@ -3802,7 +3797,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">10</property>
@@ -3819,7 +3814,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">10</property>
@@ -3836,7 +3831,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">10</property>
@@ -3853,8 +3848,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-radio">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -3872,7 +3867,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">10</property>
@@ -3889,7 +3884,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">10</property>
@@ -3906,7 +3901,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">10</property>
@@ -3923,7 +3918,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">10</property>
@@ -3940,8 +3935,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">radio</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-pictures">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -3958,8 +3953,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">pictures</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-pictures">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -3976,8 +3971,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),pictures)</visible>
 			<property name="group">pictures</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-programs">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -3994,7 +3989,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">12</property>
@@ -4010,7 +4005,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">12</property>
@@ -4026,7 +4021,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">12</property>
@@ -4042,8 +4037,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-programs">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -4060,7 +4055,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),programs)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">12</property>
@@ -4076,7 +4071,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),programs)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">12</property>
@@ -4092,7 +4087,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),programs)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">12</property>
@@ -4108,20 +4103,20 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),programs)</visible>
 			<property name="group">programs</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-weather">
 		<description>No items</description>
-		</include>
+	</include>
 	<include name="skinshortcuts-group-alt-weather">
 		<description>No items</description>
-		</include>
+	</include>
 	<include name="skinshortcuts-group-num-1036">
 		<description>No items</description>
-		</include>
+	</include>
 	<include name="skinshortcuts-group-alt-num-1036">
 		<description>No items</description>
-		</include>
+	</include>
 	<include name="skinshortcuts-group-script-globalsearch">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -4138,7 +4133,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">15</property>
@@ -4154,7 +4149,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">15</property>
@@ -4170,7 +4165,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">15</property>
@@ -4186,7 +4181,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">15</property>
@@ -4202,7 +4197,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">15</property>
@@ -4218,7 +4213,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">15</property>
@@ -4234,7 +4229,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">15</property>
@@ -4250,7 +4245,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">15</property>
@@ -4266,7 +4261,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">15</property>
@@ -4282,8 +4277,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-script-globalsearch">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -4300,7 +4295,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">15</property>
@@ -4316,7 +4311,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">15</property>
@@ -4332,7 +4327,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">15</property>
@@ -4348,7 +4343,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">15</property>
@@ -4364,7 +4359,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">15</property>
@@ -4380,7 +4375,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">15</property>
@@ -4396,7 +4391,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">15</property>
@@ -4412,7 +4407,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">15</property>
@@ -4428,7 +4423,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">15</property>
@@ -4444,8 +4439,8 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),script-globalsearch)</visible>
 			<property name="group">script.globalsearch</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-settings">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -4462,7 +4457,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">16</property>
@@ -4478,7 +4473,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">16</property>
@@ -4494,7 +4489,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">16</property>
@@ -4510,7 +4505,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">16</property>
@@ -4526,7 +4521,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">16</property>
@@ -4542,7 +4537,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">16</property>
@@ -4558,7 +4553,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">16</property>
@@ -4574,7 +4569,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">16</property>
@@ -4590,7 +4585,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">16</property>
@@ -4607,8 +4602,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-settings">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -4625,7 +4620,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">16</property>
@@ -4641,7 +4636,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">16</property>
@@ -4657,7 +4652,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">16</property>
@@ -4673,7 +4668,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">16</property>
@@ -4689,7 +4684,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">16</property>
@@ -4705,7 +4700,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">16</property>
@@ -4721,7 +4716,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">16</property>
@@ -4737,7 +4732,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">16</property>
@@ -4753,7 +4748,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),settings)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">16</property>
@@ -4770,8 +4765,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-num-13005">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -4789,7 +4784,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">17</property>
@@ -4806,7 +4801,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">17</property>
@@ -4823,7 +4818,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">17</property>
@@ -4840,7 +4835,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">17</property>
@@ -4857,7 +4852,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">17</property>
@@ -4874,7 +4869,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">17</property>
@@ -4891,7 +4886,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">17</property>
@@ -4907,7 +4902,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">17</property>
@@ -4924,8 +4919,8 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-alt-num-13005">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
@@ -4943,7 +4938,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="2">
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">17</property>
@@ -4960,7 +4955,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">17</property>
@@ -4977,7 +4972,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">17</property>
@@ -4994,7 +4989,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="5">
 			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">17</property>
@@ -5011,7 +5006,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">17</property>
@@ -5028,7 +5023,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="7">
 			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">17</property>
@@ -5045,7 +5040,7 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="8">
 			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">17</property>
@@ -5061,7 +5056,7 @@
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),num-13005)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
+		</item>
 		<item id="9">
 			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">17</property>
@@ -5078,11 +5073,11 @@
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">13005</property>
 			<property name="isSubmenu">True</property>
-			</item>
-		</include>
+		</item>
+	</include>
 	<include name="skinshortcuts-template-widget">
 		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget-Master user</include>
-		</include>
+	</include>
 	<include name="skinshortcuts-template-widget-Master user">
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
@@ -5100,12 +5095,12 @@
 			<bordersize>6</bordersize>
 			<texture diffuse="frames/EpisodeMatte.png">$VAR[GlobalWidgetIcon]</texture>
 			<visible>[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] | Control.HasFocus(8000)</visible>
-			</control>
+		</control>
 		<control type="list" id="8000">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),movies)</visible>
 			<include>Widget_VerticalList</include>
 			<content target="videos">library://video/movies/recentlyaddedmovies.xml/</content>
-			</control>
+		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<include>Animation_CommonFadeNoHide</include>
@@ -5122,12 +5117,12 @@
 			<bordersize>6</bordersize>
 			<texture diffuse="frames/EpisodeMatte.png">$VAR[GlobalWidgetIcon]</texture>
 			<visible>[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] | Control.HasFocus(8000)</visible>
-			</control>
+		</control>
 		<control type="list" id="8000">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),tvshows)</visible>
 			<include>Widget_VerticalList</include>
 			<content target="videos">library://video/tvshows/recentlyaddedepisodes.xml/</content>
-			</control>
+		</control>
 		<control type="button" id="8002">
 			<left>1</left>
 			<top>1</top>
@@ -5141,13 +5136,13 @@
 			<onclick>ActivateWindow(TVTimers)</onclick>
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
 			<visible>PVR.IsRecording | PVR.HasNonRecordingTimer</visible>
-			</control>
+		</control>
 		<control type="grouplist">
 			<visible>[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] | Control.HasFocus(8002)</visible>
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),livetv)</visible>
 			<include>Widget_PVRStatus</include>
 			<content target="" />
-			</control>
+		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<include>Animation_CommonFadeNoHide</include>
@@ -5164,12 +5159,12 @@
 			<bordersize>6</bordersize>
 			<texture diffuse="frames/EpisodeMatte.png">$VAR[GlobalWidgetIcon]</texture>
 			<visible>[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] | Control.HasFocus(8000)</visible>
-			</control>
+		</control>
 		<control type="list" id="8000">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<include>Widget_VerticalList</include>
 			<content target="music">musicdb://recentlyaddedalbums/</content>
-			</control>
+		</control>
 		<control type="image">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),musicvideos)</visible>
 			<include>Animation_CommonFadeNoHide</include>
@@ -5186,12 +5181,12 @@
 			<bordersize>6</bordersize>
 			<texture diffuse="frames/EpisodeMatte.png">$VAR[GlobalWidgetIcon]</texture>
 			<visible>[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] | Control.HasFocus(8000)</visible>
-			</control>
+		</control>
 		<control type="list" id="8000">
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),musicvideos)</visible>
 			<include>Widget_VerticalList</include>
 			<content target="videos">library://video/musicvideos/recentlyaddedmusicvideos.xml/</content>
-			</control>
+		</control>
 		<control type="button" id="8003">
 			<left>1</left>
 			<top>1</top>
@@ -5204,34 +5199,12 @@
 			<ondown>9000</ondown>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
-			</control>
+		</control>
 		<control type="grouplist">
 			<visible>[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] | Control.HasFocus(8003)</visible>
 			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),weather)</visible>
 			<include>Widget_WeatherForecast</include>
 			<content target="" />
-			</control>
-		<control type="image">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
-			<include>Animation_CommonFadeNoHide</include>
-			<include>Animation_FadedByMenu</include>
-			<include>Animation_HiddenByInfo</include>
-			<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
-			<animation effect="fade" start="0" end="100" time="200" delay="100">Visible</animation>
-			<posx>265</posx>
-			<posy>560</posy>
-			<width>250</width>
-			<height>140</height>
-			<aspectratio align="right" aligny="center">keep</aspectratio>
-			<bordertexture border="6">frames/thumb_border_round.png</bordertexture>
-			<bordersize>6</bordersize>
-			<texture diffuse="frames/EpisodeMatte.png">$VAR[GlobalWidgetIcon]</texture>
-			<visible>[![Skin.HasSetting(Home2) | Skin.HasSetting(Home3)] + !Skin.HasSetting(HideUnfocusedWidgets)] | Control.HasFocus(8000)</visible>
-			</control>
-		<control type="list" id="8000">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1036)</visible>
-			<include>Widget_VerticalList</include>
-			<content target="videos">plugin://script.skin.helper.widgets/?action=favourites&amp;mediatype=favourites&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</content>
-			</control>
-		</include>
-	</includes>
+		</control>
+	</include>
+</includes>
