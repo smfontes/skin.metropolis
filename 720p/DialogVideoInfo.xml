@@ -590,6 +590,20 @@
 				<visible>System.HasAddon(script.extendedinfo)</visible>
 				<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
 			</control>
+			<!-- Embuary Info -->
+			<control type="button" id="23">
+				<description>Extra Info</description>
+				<include>VideoInfoButton</include>
+				<texturenofocus>buttons/button_informationplus.png</texturenofocus>
+				<texturefocus>buttons/button_informationplusFO.png</texturefocus>
+				<include>Animation_ButtonFocus</include>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.embuary.info,call=movie,query='"$INFO[ListItem.Title]"',year=$INFO[ListItem.Year])</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,tvshow)">RunScript(script.embuary.info,call=tv,query='"$INFO[ListItem.Title]"',year=$INFO[ListItem.Year])</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,episode)">RunScript(script.embuary.info,call=tv,query='"$INFO[ListItem.TVShowTitle]"',year=$INFO[ListItem.Year])</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,season)">RunScript(script.embuary.info,call=tv,query='"$INFO[ListItem.TVShowTitle]"',year=$INFO[ListItem.Year],season='"$INFO[ListItem.Title]"')</onclick>
+				<visible>System.HasAddon(script.embuary.info)</visible>
+				<visible>String.IsEqual(ListItem.DBType,movie)  | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,season)</visible>
+			</control>
 		</control>
 		<!-- Control Button Text -->
 		<control type="group">
@@ -661,6 +675,12 @@
 				<include>VideoInfoButtonLabel</include>
 				<label>$LOCALIZE[40000]</label>
 				<visible>ControlGroup(7003).HasFocus(14)</visible>
+			</control>
+			<control type="label">
+				<description>Embuary Info</description>
+				<include>VideoInfoButtonLabel</include>
+				<label>$INFO[System.AddonTitle(script.embuary.info)]</label>
+				<visible>ControlGroup(7003).HasFocus(23)</visible>
 			</control>
 		</control>
 
