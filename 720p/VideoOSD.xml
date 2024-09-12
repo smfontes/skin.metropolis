@@ -23,16 +23,15 @@
 
 		<control type="group">
 			<visible>!VideoPlayer.Content(LiveTV) + ![Window.IsVisible(SliderDialog) | Window.IsVisible(VideoBookmarks)]</visible>
-			<include>Animation_OpenCloseFade</include>
 			<include>Animation_FadedByOSDSettings</include>
-			<include>OSD_Player_Banner</include>
-			<include>OSD_Progress_Bar2</include>
-			<include>OSD_Player_Details</include>
-			<include>OSD_Player_Time</include>
+			<include>OSD_Deck_Full</include>
 			<control type="grouplist" id="2001">
-				<posx>292</posx>
-				<posy>650</posy>
-				<width>780</width>
+				<include>Animation_SlideUpFadeOut</include>
+				<include>OSD_Fade_Animation</include>
+				<align>center</align>
+				<posx>300</posx>
+				<posy>615</posy>
+				<width>835</width>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<onleft>800</onleft>
@@ -42,8 +41,8 @@
 				<control type="button" id="11">
 					<description>Playlists</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_playlist_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_playlist_nf.png</texturenofocus>
 					<onclick>ActivateWindow(videoplaylist)</onclick>
@@ -51,8 +50,8 @@
 				<control type="button" id="12">
 					<description>Bookmarks</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_book_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_book_nf.png</texturenofocus>
 					<onclick>ActivateWindow(videobookmarks)</onclick>
@@ -60,8 +59,8 @@
 				<control type="button" id="14">
 					<description>OSD Subtitles</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_sub_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_sub_nf.png</texturenofocus>
 					<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
@@ -70,8 +69,8 @@
 				<control type="button" id="15">
 					<description>One Button OSD Subtitles</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_sub_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_sub_nf.png</texturenofocus>
 					<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
@@ -80,8 +79,8 @@
 				<control type="button" id="16">
 					<description>One Button OSD Subtitles</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_sub_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_sub_nf.png</texturenofocus>
 					<onclick>Dialog.Close(VideoOSD,true)</onclick>
@@ -91,8 +90,8 @@
 				<control type="button" id="7">
 					<description>DVD Menu</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_dvd_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_dvd_nf.png</texturenofocus>
 					<onclick>PlayerControl(ShowVideoMenu)</onclick>
@@ -101,8 +100,8 @@
 				<control type="button" id="9">
 					<description>Previous</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_prev_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_prev_nf.png</texturenofocus>
 					<onclick>PlayerControl(Previous)</onclick>
@@ -110,8 +109,8 @@
 				<control type="button" id="3">
 					<description>Rewind</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_rew_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_rew_nf.png</texturenofocus>
 					<onclick>PlayerControl(rewind)</onclick>
@@ -119,8 +118,8 @@
 				<control type="button" id="5">
 					<description>Stop</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_stop_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_stop_nf.png</texturenofocus>
 					<onclick>PlayerControl(stop)</onclick>
@@ -128,8 +127,8 @@
 				<control type="togglebutton" id="4">
 					<description>Play</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_pause_tempo_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_pause_nf.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -144,8 +143,8 @@
 				<control type="button" id="6">
 					<description>Forward</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_ff_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_ff_nf.png</texturenofocus>
 					<onclick condition="!Player.Paused">PlayerControl(forward)</onclick>
@@ -154,8 +153,8 @@
 				<control type="button" id="10">
 					<description>Next</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_next_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_next_nf.png</texturenofocus>
 					<onclick>PlayerControl(Next)</onclick>
@@ -163,8 +162,8 @@
 				<control type="button" id="801">
 					<description>Repeat</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<label></label>
 					<texturefocus></texturefocus>
 					<texturenofocus></texturenofocus>
@@ -172,49 +171,49 @@
 				</control>
 				<control type="group" id="802">
 					<control type="image">
-						<posx>-60</posx>
-						<height>60</height>
-						<width>60</width>
+						<posx>-55</posx>
+						<height>55</height>
+						<width>55</width>
 						<texture>osd/osd_button_repeat_nf.png</texture>
 						<visible>!Playlist.IsRepeat | !Playlist.IsRepeatOne</visible>
 						<visible>!Control.HasFocus(801)</visible>
 					</control>
 					<control type="image">
-						<posx>-60</posx>
-						<height>60</height>
-						<width>60</width>
+						<posx>-55</posx>
+						<height>55</height>
+						<width>55</width>
 						<texture>osd/osd_button_repeat_fo.png</texture>
 						<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
 						<visible>Control.HasFocus(801)</visible>
 					</control>
 					<control type="image">
-						<posx>-60</posx>
-						<height>60</height>
-						<width>60</width>
+						<posx>-55</posx>
+						<height>55</height>
+						<width>55</width>
 						<texture>osd/osd_button_repeat_one_nf.png</texture>
 						<visible>Playlist.IsRepeatOne</visible>
 						<visible>!Control.HasFocus(801)</visible>
 					</control>
 					<control type="image">
-						<posx>-60</posx>
-						<height>60</height>
-						<width>60</width>
+						<posx>-55</posx>
+						<height>55</height>
+						<width>55</width>
 						<texture>osd/osd_button_repeat_one_fo.png</texture>
 						<visible>Playlist.IsRepeatOne</visible>
 						<visible>Control.HasFocus(801)</visible>
 					</control>
 					<control type="image">
-						<posx>-60</posx>
-						<height>60</height>
-						<width>60</width>
+						<posx>-55</posx>
+						<height>55</height>
+						<width>55</width>
 						<texture>osd/osd_button_repeat_all_nf.png</texture>
 						<visible>Playlist.IsRepeat</visible>
 						<visible>!Control.HasFocus(801)</visible>
 					</control>
 					<control type="image">
-						<posx>-60</posx>
-						<height>60</height>
-						<width>60</width>
+						<posx>-55</posx>
+						<height>55</height>
+						<width>55</width>
 						<texture>osd/osd_button_repeat_all_fo.png</texture>
 						<visible>Playlist.IsRepeat</visible>
 						<visible>Control.HasFocus(801)</visible>
@@ -223,8 +222,8 @@
 				<control type="button" id="11105">
 					<description>OSDCMS Settings</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_osdcmssettings_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_osdcmssettings_nf.png</texturenofocus>
 					<onclick>ActivateWindow(osdcmssettings)</onclick>
@@ -233,8 +232,8 @@
 				<control type="button" id="13">
 					<description>Video Settings</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_settings_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_settings_nf.png</texturenofocus>
 					<onclick>ActivateWindow(osdvideosettings)</onclick>
@@ -242,8 +241,8 @@
 				<control type="button" id="800">
 					<description>Audio Settings</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_audio_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_audio_nf.png</texturenofocus>
 					<onclick>ActivateWindow(osdaudiosettings)</onclick>
@@ -256,13 +255,15 @@
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 			<include>Animation_OpenCloseFade</include>
 			<include>Animation_FadedByOSDSettings</include>
-			<include>OSD_Progress_Bar2</include>
-			<include>OSD_Player_Details</include>
+			<include>OSD_Deck_Full</include>
 
 			<control type="grouplist" id="2002">
-				<posx>292</posx>
-				<posy>650</posy>
-				<width>775</width>
+				<include>Animation_SlideUpFadeOut</include>
+				<include>OSD_Fade_Animation</include>
+				<posx>300</posx>
+				<posy>610</posy>
+				<width>835</width>
+				<align>center</align>
 				<itemgap>5</itemgap>
 				<orientation>horizontal</orientation>
 				<onleft>121</onleft>
@@ -272,8 +273,8 @@
 				<control type="button" id="100">
 					<description>Previous Channel</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_channel_previous_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_channel_previous_nf.png</texturenofocus>
 					<onclick>PlayerControl(Previous)</onclick>
@@ -281,8 +282,8 @@
 				<control type="button" id="101">
 					<description>Next Channel</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_channel_next_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_channel_next_nf.png</texturenofocus>
 					<onclick>PlayerControl(Next)</onclick>
@@ -290,8 +291,8 @@
 				<control type="button" id="105">
 					<description>Telext</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_teletext_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_teletext_nf.png</texturenofocus>
 					<onclick>ActivateWindow(Teletext)</onclick>
@@ -299,8 +300,8 @@
 				<control type="button" id="106">
 					<description>OSD EPG</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_epg_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_epg_nf.png</texturenofocus>
 					<onclick>ActivateWindow(PVROSDGuide)</onclick>
@@ -308,8 +309,8 @@
 				<control type="button" id="107">
 					<description>OSD Channel</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_channels_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_channels_nf.png</texturenofocus>
 					<font>METF_PVRChannelList</font>
@@ -318,8 +319,8 @@
 				<control type="button" id="115">
 					<description>Rewind</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_rew_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_rew_nf.png</texturenofocus>
 					<onclick>PlayerControl(Rewind)</onclick>
@@ -328,8 +329,8 @@
 				<control type="button" id="110">
 					<description>Stop</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_stop_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_stop_nf.png</texturenofocus>
 					<onclick>PlayerControl(stop)</onclick>
@@ -337,8 +338,8 @@
 				<control type="togglebutton" id="4">
 					<description>Play</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_pause_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_pause_nf.png</texturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -351,8 +352,8 @@
 				<control type="button" id="114">
 					<description>Forward</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_ff_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_ff_nf.png</texturenofocus>
 					<onclick>PlayerControl(Forward)</onclick>
@@ -361,8 +362,8 @@
 				<control type="button" id="112">
 					<description>Record</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_record_off_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_record_off_nf.png</texturenofocus>
 					<onclick>PVR.ToggleRecordPlayingChannel</onclick>
@@ -372,8 +373,8 @@
 				<control type="button" id="113">
 					<description>Record</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_record_on_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_record_on_nf.png</texturenofocus>
 					<onclick>PVR.ToggleRecordPlayingChannel</onclick>
@@ -383,8 +384,8 @@
 				<control type="button" id="120">
 					<description>Video Settings</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_settings_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_settings_nf.png</texturenofocus>
 					<onclick>ActivateWindow(osdvideosettings)</onclick>
@@ -392,8 +393,8 @@
 				<control type="button" id="121">
 					<description>Audio Settings</description>
 					<include>Animation_ButtonFocus</include>
-					<height>60</height>
-					<width>60</width>
+					<height>55</height>
+					<width>55</width>
 					<texturefocus>osd/osd_button_audio_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_audio_nf.png</texturenofocus>
 					<onclick>ActivateWindow(osdaudiosettings)</onclick>

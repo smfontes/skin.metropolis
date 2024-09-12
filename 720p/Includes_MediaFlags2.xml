@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="MediaInfo2">
+		<param name="bottom">43</param>
 		<!-- Additional Media Flags -->
+		<definition>
 		<control type="grouplist" id="9902">
 			<posx>293</posx>
-			<posy>651</posy>
+			<bottom>$PARAM[bottom]</bottom>
 			<width>765</width>
 			<height>62</height>
 			<align>left</align>
@@ -13,9 +15,8 @@
 			<include>Animation_FadedByMenu</include>
 			<include>Animation_CommonFade</include>
 			<visible>!String.Contains(Container.FolderPath,plugin)</visible>
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(MusicVideos) | Window.IsActive(fullscreeninfo) | Window.IsActive(115)</visible>
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(MusicVideos) | Window.IsActive(fullscreeninfo) | Window.IsActive(115) | Window.IsActive(visualisation)</visible>
 			<include>VisibleIfNotMovieSet</include>
-
 			<!-- Video Source (not shown in fullscreen video info) -->
 			<control type="group">
 				<width>90</width>
@@ -85,6 +86,7 @@
 
 			<!-- Video Resolution -->
 			<control type="group">
+				<visible>!Window.IsActive(visualisation)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -102,6 +104,7 @@
 
 			<!-- HDR Video -->
 			<control type="group">
+				<visible>!Window.IsActive(visualisation)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -120,6 +123,7 @@
 
 			<!-- Video Aspect -->
 			<control type="group">
+				<visible>!Window.IsActive(visualisation)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -137,6 +141,7 @@
 
 			<!-- Video Codec -->
 			<control type="group">
+				<visible>!Window.IsActive(visualisation)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -154,6 +159,7 @@
 
 			<!-- Audio Codec -->
 			<control type="group">
+				<visible>!Window.IsActive(musicosd)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -171,6 +177,7 @@
 
 			<!-- Audio Channels -->
 			<control type="group">
+				<visible>!Window.IsActive(musicosd)</visible>
 				<width>90</width>
 				<height>62</height>
 				<control type="image">
@@ -190,7 +197,14 @@
 			<control type="group">
 				<width>58</width>
 				<height>62</height>
-				<visible>[[!String.IsEmpty(ListItem.SubtitleLanguage) + String.IsEmpty(VideoPlayer.SubtitleLanguage)] | [String.IsEmpty(ListItem.SubtitleLanguage) + !String.IsEmpty(VideoPlayer.SubtitleLanguage)]] | [!String.IsEmpty(ListItem.AudioLanguage) + ![String.Contains(ListItem.AudioLanguage,und) | String.Contains(ListItem.AudioLanguage,unk)]]</visible>
+				<visible>
+					!String.IsEmpty(ListItem.SubtitleLanguage) | [!String.IsEmpty(ListItem.AudioLanguage) + !String.Contains(ListItem.AudioLanguage,und)]
+					|
+					[Window.IsActive(fullscreenInfo) +
+						[!String.IsEmpty(VideoPlayer.SubtitlesLanguage)
+						|[!String.IsEmpty(VideoPlayer.AudioLanguage) + !String.Contains(VideoPlayer.AudioLanguage,und)]]
+					]
+				</visible>
 				<control type="image">
 					<posx>2</posx>
 					<width>66</width>
@@ -199,33 +213,52 @@
 					<texture>flags/flag_framesquare.png</texture>
 				</control>
 				<control type="image">
+					<description>Audio language available but no subtitles</description>
 					<top>-2</top>
 					<left>6</left>
 					<width>60</width>
 					<height>55</height>
 					<texture background="true" diffuse="flags/nocc.png">$VAR[Language_Icons]</texture>
 					<aspectratio aligny="center" scalediffuse="true">stretch</aspectratio>
-					<visible>[String.IsEmpty(ListItem.SubtitleLanguage) + String.IsEmpty(VideoPlayer.SubtitleLanguage)] + !String.IsEmpty(ListItem.AudioLanguage) + !String.Contains(ListItem.AudioLanguage,und)</visible>
+					<visible>
+						[String.IsEmpty(ListItem.SubtitleLanguage) + !String.IsEmpty(ListItem.AudioLanguage) + !String.Contains(ListItem.AudioLanguage,und)] 
+						|
+						[Window.IsActive(fullscreenInfo) +
+							[String.IsEmpty(VideoPlayer.SubtitlesLanguage) + !String.IsEmpty(VideoPlayer.AudioLanguage) + !String.Contains(VideoPlayer.AudioLanguage,und)]]
+					</visible>
 				</control>
 				<control type="image">
+					<description>Audio language and subtitles available</description>
 					<top>-2</top>
 					<left>6</left>
 					<width>60</width>
 					<height>55</height>
 					<texture background="true" diffuse="flags/cc.png">$VAR[Language_Icons]</texture>
-					<visible>[[!String.IsEmpty(ListItem.SubtitleLanguage) + String.IsEmpty(VideoPlayer.SubtitleLanguage)] | [String.IsEmpty(ListItem.SubtitleLanguage) + !String.IsEmpty(VideoPlayer.SubtitleLanguage)]] + [!String.IsEmpty(ListItem.AudioLanguage) + ![String.Contains(ListItem.AudioLanguage,und) | String.Contains(ListItem.AudioLanguage,unk)]]</visible>
+					<visible>
+						[!String.IsEmpty(ListItem.SubtitleLanguage) + !String.IsEmpty(ListItem.AudioLanguage) + !String.Contains(ListItem.AudioLanguage,und)]
+						|
+						[Window.IsActive(fullscreenInfo) +
+							[!String.IsEmpty(VideoPlayer.SubtitlesLanguage) + !String.IsEmpty(VideoPlayer.AudioLanguage) + !String.Contains(VideoPlayer.AudioLanguage,und)]]
+					</visible>
 					<aspectratio aligny="center" scalediffuse="true">stretch</aspectratio>
 				</control>
 				<control type="image">
+					<description>Subtitles available but no audio language</description>
 					<top>-2</top>
 					<left>6</left>
 					<width>60</width>
 					<height>55</height>
 					<texture background="true">flags/cc.png</texture>
-					<visible>[[!String.IsEmpty(ListItem.SubtitleLanguage) + String.IsEmpty(VideoPlayer.SubtitleLanguage)] | [String.IsEmpty(ListItem.SubtitleLanguage) + !String.IsEmpty(VideoPlayer.SubtitleLanguage)]] + [String.IsEmpty(ListItem.AudioLanguage) | [String.Contains(ListItem.AudioLanguage,und) | String.Contains(ListItem.AudioLanguage,unk)]]</visible>
+					<visible>
+						[!String.IsEmpty(ListItem.SubtitleLanguage) + [String.IsEmpty(ListItem.AudioLanguage) | String.Contains(ListItem.AudioLanguage,und)]]
+						|
+						[Window.IsActive(fullscreenInfo) +
+							[!String.IsEmpty(VideoPlayer.SubtitlesLanguage) + [String.IsEmpty(VideoPlayer.AudioLanguage) | String.Contains(VideoPlayer.AudioLanguage,und)]]]
+					</visible>
 					<aspectratio aligny="center" scalediffuse="true">stretch</aspectratio>
 				</control>
 			</control>
 		</control>
+		</definition>
 	</include>
 </includes>

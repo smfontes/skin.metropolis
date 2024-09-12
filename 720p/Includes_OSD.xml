@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="PlayerDetails">
+		<value condition="Player.Forwarding2x">[UPPERCASE]$LOCALIZE[31159][/UPPERCASE]</value>
+		<value condition="Player.Forwarding4x">[UPPERCASE]$LOCALIZE[31160][/UPPERCASE]</value>
+		<value condition="Player.Forwarding8x">[UPPERCASE]$LOCALIZE[31161][/UPPERCASE]</value>
+		<value condition="Player.Forwarding16x">[UPPERCASE]$LOCALIZE[31162][/UPPERCASE]</value>
+		<value condition="Player.Forwarding32x">[UPPERCASE]$LOCALIZE[31163][/UPPERCASE]</value>
+		<value condition="Player.Rewinding2x">[UPPERCASE]$LOCALIZE[31164][/UPPERCASE]</value>
+		<value condition="Player.Rewinding4x">[UPPERCASE]$LOCALIZE[31165][/UPPERCASE]</value>
+		<value condition="Player.Rewinding8x">[UPPERCASE]$LOCALIZE[31166][/UPPERCASE]</value>
+		<value condition="Player.Rewinding16x">[UPPERCASE]$LOCALIZE[31167][/UPPERCASE]</value>
+		<value condition="Player.Rewinding32x">[UPPERCASE]$LOCALIZE[31168][/UPPERCASE]</value>
+		<value condition="Player.Paused">[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</value>
+		<value condition="Player.DisplayAfterSeek">[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</value>
+		<value>[UPPERCASE]$LOCALIZE[31244][/UPPERCASE]</value>
+	</variable>
+
+	<variable name="OSD_Banner_Line1">
+		<value condition="!String.IsEmpty(VideoPlayer.Director)">[COLOR TextFO][B]$LOCALIZE[20339]:[/B][/COLOR] [COLOR TextNF]$INFO[VideoPlayer.Director][/COLOR]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Episode)">[COLOR TextFO][B]$LOCALIZE[20416]:[/B][/COLOR] [COLOR TextNF]$INFO[ListItem.Premiered][/COLOR]</value>
+		<value condition="!String.IsEmpty(MusicPlayer.Album)">[COLOR TextFO][B]$LOCALIZE[558]:[/B][/COLOR] [COLOR TextNF]$INFO[MusicPlayer.Album][/COLOR]</value>
+	</variable>
+	<variable name="OSD_Banner_Line2">
+		<value condition="!String.IsEmpty(VideoPlayer.Genre)">[COLOR TextFO][B]$LOCALIZE[515]:[/B][/COLOR] [COLOR TextNF]$INFO[VideoPlayer.Genre][/COLOR]</value>
+		<value condition="!String.IsEmpty(MusicPlayer.Genre)">[COLOR TextFO][B]$LOCALIZE[515]:[/B][/COLOR] [COLOR TextNF]$INFO[MusicPlayer.Genre][/COLOR]</value>
+	</variable>
+	<variable name="OSD_Banner_Line3">
+		<value condition="!String.IsEmpty(VideoPlayer.Year)">[COLOR TextFO][B]$LOCALIZE[345]:[/B][/COLOR] [COLOR TextNF]$INFO[VideoPlayer.Year][/COLOR]</value>
+		<value condition="!String.IsEmpty(MusicPlayer.Year)">[COLOR TextFO][B]$LOCALIZE[345]:[/B][/COLOR] [COLOR TextNF]$INFO[MusicPlayer.Year][/COLOR]</value>
+	</variable>
+
+    <include name="OSD_Fade_Animation">
+    	<include>Animation_CommonFade</include>
+		<include>Animation_FadedByOSDSettings</include>
+		<include condition="!String.IsEqual(Skin.String(OSDFade),Disabled) + String.IsEqual(Skin.String(OSDFadeTime),5)">Animation_FadeOSD5</include>
+		<include condition="!String.IsEqual(Skin.String(OSDFade),Disabled) + String.IsEqual(Skin.String(OSDFadeTime),10)">Animation_FadeOSD10</include>
+		<include condition="!String.IsEqual(Skin.String(OSDFade),Disabled) + String.IsEqual(Skin.String(OSDFadeTime),15)">Animation_FadeOSD15</include>
+		<include condition="!String.IsEqual(Skin.String(OSDFade),Disabled) + String.IsEqual(Skin.String(OSDFadeTime),20)">Animation_FadeOSD20</include>
+		<include condition="!String.IsEqual(Skin.String(OSDFade),Disabled) + String.IsEqual(Skin.String(OSDFadeTime),25)">Animation_FadeOSD25</include>
+		<include condition="!String.IsEqual(Skin.String(OSDFade),Disabled) + String.IsEqual(Skin.String(OSDFadeTime),30)">Animation_FadeOSD30</include>
+	</include>
+	<include name="OSD_PartialFade_Animation">
+		<include>Animation_CommonFade</include>
+		<include>Animation_FadedByOSDSettings</include>
+		<include condition="String.IsEqual(Skin.String(OSDFade),Complete) + String.IsEqual(Skin.String(OSDFadeTime),5)">Animation_FadeOSD5</include>
+		<include condition="String.IsEqual(Skin.String(OSDFade),Complete) + String.IsEqual(Skin.String(OSDFadeTime),10)">Animation_FadeOSD10</include>
+		<include condition="String.IsEqual(Skin.String(OSDFade),Complete) + String.IsEqual(Skin.String(OSDFadeTime),15)">Animation_FadeOSD15</include>
+		<include condition="String.IsEqual(Skin.String(OSDFade),Complete) + String.IsEqual(Skin.String(OSDFadeTime),20)">Animation_FadeOSD20</include>
+		<include condition="String.IsEqual(Skin.String(OSDFade),Complete) + String.IsEqual(Skin.String(OSDFadeTime),25)">Animation_FadeOSD25</include>
+		<include condition="String.IsEqual(Skin.String(OSDFade),Complete) + String.IsEqual(Skin.String(OSDFadeTime),30)">Animation_FadeOSD30</include>
+	</include>
+
+	<include name="OSD_MediaBoxes">
+		<control type="grouplist">
+			<width>260</width>
+			<height>62</height>
+			<align>left</align>
+			<itemgap>8</itemgap>
+			<orientation>horizontal</orientation>
+			<control type="group">
+				<description>MPAA Flag (or Game Platform when in Advanced Launcher addon)</description>
+				<visible>!Player.HasAudio</visible>
+				<width>58</width>
+				<height>62</height>
+				<control type="image">
+					<include>MediaFlagsVarsSquare</include>
+					<texture>$VAR[MediaFlag_MPAA]</texture>
+					<colordiffuse>MediaFlagDiffuse</colordiffuse>
+					<visible>!String.Contains(Container.FolderPath,advanced.launcher)</visible>
+				</control>
+				<control type="image">
+					<include>MediaFlagsVarsSquare</include>
+					<texture>special://skin/extras/games/platforms/$INFO[ListItem.Writer,,.png]</texture>
+					<colordiffuse>MediaFlagDiffuse</colordiffuse>
+					<visible>!String.IsEmpty(ListItem.Writer) + String.Contains(Container.FolderPath,advanced.launcher)</visible>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<width>66</width>
+					<height>54</height>
+					<texture>flags/flag_framesquare.png</texture>
+					<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+				</control>
+			</control>
+			<control type="group">
+				<description>Star Rating (or Game Genre when in Advanced Launcher addon)</description>
+				<width>58</width>
+				<height>62</height>
+				<visible>!Player.HasAudio</visible>
+				<control type="image">
+					<include>MediaFlagsVarsSquare</include>
+					<texture>Star.png</texture>
+					<colordiffuse>RatingStarDiffuse</colordiffuse>
+					<visible>!String.Contains(Container.FolderPath,advanced.launcher)</visible>
+				</control>
+				<control type="label">
+					<include>MediaFlagsVarsSquare</include>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$VAR[MediaFlag_Rating]</label>
+					<textcolor>MediaFlagDiffuse</textcolor>
+					<font>METF_StarRating</font>
+					<visible>!String.Contains(Container.FolderPath,advanced.launcher)</visible>
+				</control>
+				<control type="image">
+					<include>MediaFlagsVarsSquare</include>
+					<texture>special://skin/extras/games/genres/$INFO[ListItem.Genre,,.png]</texture>
+					<colordiffuse>MediaFlagDiffuse</colordiffuse>
+					<visible>!String.IsEmpty(ListItem.Genre) + String.Contains(Container.FolderPath,advanced.launcher)</visible>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<width>66</width>
+					<height>54</height>
+					<texture>flags/flag_framesquare.png</texture>
+					<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Skin.HasSetting(Show_IMDbMediaFlag)</visible>
+				<visible>!Player.HasAudio</visible>
+				<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
+				<control type="group">
+					<description>IMDb Top250 Flag</description>
+					<width>58</width>
+					<height>62</height>
+					<visible>
+						!Skin.HasSetting(Show_VotesMediaFlagAlways) + 
+						[
+							[!String.IsEmpty(ListItem.Top250) + !String.StartsWith(ListItem.Top250,0)]
+							|
+							[!String.IsEmpty(VideoPlayer.Top250) + !String.StartsWith(VideoPlayer.Top250,0)]
+						]
+					</visible>
+					<control type="image">
+						<include>MediaFlagsVarsSquareHalfTop</include>
+						<texture>flags/IMDB-Logo.png</texture>
+						<colordiffuse>IMDbDiffuseTop250</colordiffuse>
+					</control>
+					<control type="label">
+						<include>MediaFlagsVarsSquareHalfBottom</include>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[MediaFlag_Top250]</label>
+						<textcolor>MediaFlagDiffuse</textcolor>
+						<font>METF_DialogSmallBold</font>
+					</control>
+					<control type="image">
+						<left>2</left>
+						<width>66</width>
+						<height>54</height>
+						<texture>flags/flag_framesquare.png</texture>
+						<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+					</control>
+				</control>
+				<control type="group">
+					<description>IMDb Votes Flag (if not in Top250)</description>
+					<width>58</width>
+					<height>62</height>
+					<visible>
+						[
+							Skin.HasSetting(Show_VotesMediaFlagAlways) | 
+							[
+								[
+									String.IsEmpty(ListItem.Top250) | 
+									[!String.IsEmpty(ListItem.Top250) + String.StartsWith(ListItem.Top250,0)]
+								] + 
+								!String.IsEmpty(ListItem.Votes) + !String.StartsWith(ListItem.Votes,0)
+							] | 
+							[
+								[
+							 		String.IsEmpty(VideoPlayer.Top250) | 
+							 		[!String.IsEmpty(VideoPlayer.Top250) + String.StartsWith(VideoPlayer.Top250,0)]
+								] + 
+								!String.IsEmpty(VideoPlayer.Votes) + !String.StartsWith(VideoPlayer.Votes,0)
+							]
+						]
+					</visible>
+					<control type="image">
+						<include>MediaFlagsVarsSquareHalfTop</include>
+						<texture>flags/IMDB-Logo.png</texture>
+						<colordiffuse>IMDbDiffuseVotes</colordiffuse>
+					</control>
+					<control type="label">
+						<include>MediaFlagsVarsSquareHalfBottom</include>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[MediaFlag_Votes]</label>
+						<textcolor>MediaFlagDiffuse</textcolor>
+						<font>METF_DialogVerySmallBold</font>
+					</control>
+					<control type="image">
+						<left>2</left>
+						<width>66</width>
+						<height>54</height>
+						<texture>flags/flag_framesquare.png</texture>
+						<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<control type="image">
+					<top>5</top>
+					<left>20</left>
+					<width>100</width>
+					<height>30</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<colordiffuse>OSDProgressBar</colordiffuse>
+					<texture fallback="flags/Rating10/rating0.png">$INFO[MusicPlayer.UserRating,flags/Rating10/rating,.png]</texture>
+					<visible>Player.HasAudio</visible>
+				</control>
+				<control type="image">
+					<width>140</width>
+					<height>40</height>
+					<texture>flags/flag_frame.png</texture>
+					<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+					<visible>Player.HasAudio</visible>
+				</control>
+			</control>
+		</control>
+	</include>
+
+	<include name="OSD_MediaInfo2">
+		<control type="group">
+			<include>Animation_SlideUpFadeOut</include>
+			<include>OSD_Fade_Animation</include>
+			<include condition="!Skin.HasSetting(Hide_ExtraMediaFlags)">MediaInfo2</include>
+		</control>
+	</include>
+	<include name="OSD_Progress_Bar">
+		<control type="group">
+			<description>The Progressbar</description>
+			<left>290</left>
+			<bottom>31</bottom>
+			<width>835</width>
+			<height>15</height>
+			<control type="progress" id="23">
+				<description>ProgressbarCache</description>
+				<info>Player.ProgressCache</info>
+				<reveal>true</reveal>
+				<texturebg>osd/osd_progress_back.png</texturebg>
+				<lefttexture>osd/osd_progress_left.png</lefttexture>
+				<midtexture>osd/osd_progress_mid.png</midtexture>
+				<righttexture>osd/osd_progress_right.png</righttexture>
+				<colordiffuse>OSDFinishTime</colordiffuse>
+			</control>
+			<control type="progress" id="23">
+				<description>Progressbar</description>
+				<info>Player.Progress</info>
+				<reveal>true</reveal>
+				<texturebg>osd/osd_progress_back.png</texturebg>
+				<lefttexture>osd/osd_progress_left.png</lefttexture>
+				<midtexture>osd/osd_progress_mid.png</midtexture>
+				<righttexture>osd/osd_progress_right.png</righttexture>
+				<colordiffuse>OSDProgressBar</colordiffuse>
+				<overlaytexture></overlaytexture>
+			</control>
+			<control type="slider" id="87">
+				<description>Seek Slider</description>
+				<action>seek</action>
+				<visible>![Window.IsVisible(SliderDialog)]</visible>
+			</control>
+		</control>
+		<control type="label">
+			<description>Current position / Total Time</description>
+			<left>290</left>
+			<bottom>5</bottom>
+			<width>835</width>
+			<height>30</height>
+			<aligny>center</aligny>
+			<align>left</align>
+			<font>METF_OSDDuration</font>
+			<textcolor>OSDPlayingDuration</textcolor>
+			<label>$VAR[PlayerTime] [COLOR TextNF]/[/COLOR] $VAR[PlayerDuration]</label>
+			<visible>![Window.IsActive(musicosd) | Window.IsActive(visualisation)] | Skin.HasSetting(ShowMusicExtraInfo)</visible>
+		</control>
+		<control type="label" id="22223">
+			<description>Next Playing</description>
+			<left>390</left>
+			<bottom>5</bottom>
+			<width>635</width>
+			<height>30</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<scroll>true</scroll>
+			<font>METF_DialogVerySmall</font>
+			<textcolor>OSDFinishTime</textcolor>
+			<label>[COLOR=TextFO]$LOCALIZE[209]:[/COLOR] $INFO[MusicPlayer.offset(1).Title][COLOR=TextFO][I] ($INFO[MusicPlayer.offset(1).Artist])[/I][/COLOR]</label>
+			<visible>MusicPlayer.HasNext</visible>
+			<visible>![Window.IsActive(musicosd) | Window.IsActive(visualisation)] | Skin.HasSetting(ShowMusicExtraInfo)</visible>
+		</control>
+		<control type="label" id="22223">
+			<description>Remaining Time</description>
+			<left>490</left>
+			<bottom>5</bottom>
+			<width>435</width>
+			<height>30</height>
+			<aligny>center</aligny>
+			<align>center</align>
+			<font>METF_OSDTime</font>
+			<textcolor>OSDPlayingDuration</textcolor>
+			<label>$LOCALIZE[19081] $LOCALIZE[1405]: $VAR[PlayerTimeRemaining]</label>
+			<visible>Player.HasVideo</visible>
+		</control>
+		<control type="label">
+			<description>Playlist count</description>
+			<left>825</left>
+			<bottom>5</bottom>
+			<width>300</width>
+			<height>30</height>
+			<aligny>center</aligny>
+			<align>right</align>
+			<font>METF_OSDTime</font>
+			<textcolor>OSDFinishTime</textcolor>
+			<label>$INFO[MusicPlayer.PlaylistPosition]$INFO[MusicPlayer.PlaylistLength,/]</label>
+			<visible>![Window.IsActive(musicosd) | Window.IsActive(visualisation)] | Skin.HasSetting(ShowMusicExtraInfo)</visible>
+		</control>
+		<control type="label">
+			<description>Finish Time</description>
+			<bottom>5</bottom>
+			<left>825</left>
+			<width>300</width>
+			<height>30</height>
+			<aligny>center</aligny>
+			<align>right</align>
+			<font>METF_OSDTime</font>
+			<textcolor>OSDPlayingDuration</textcolor>
+			<label>$LOCALIZE[31409]: $VAR[PlayerFinishTime]</label>
+			<visible>Player.HasVideo</visible>
+		</control>
+	</include>
+	<include name="Time_Small">
+		<control type="group">
+			<visible>
+				[![Window.IsActive(musicosd) | Window.IsActive(visualisation)] + !Skin.HasSetting(HideClock)]
+				|
+				[[Window.IsActive(musicosd) | Window.IsActive(visualisation)] + !Skin.HasSetting(HideVisClock)]
+			</visible>
+			<width>130</width>
+			<height>55</height>
+			<control type="label">
+				<description>Hours</description>
+				<width>90</width>
+				<font>METF_Hours_Small</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>Time</textcolor>
+				<label>$INFO[System.Time(hh)]</label>
+			</control>
+			<control type="label">
+				<description>Minutes</description>
+				<left>90</left>
+				<width>40</width>
+				<height>25</height>
+				<font>METF_Minutes_Small</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>Time</textcolor>
+				<label>$INFO[System.Time(mm)]</label>
+			</control>
+			<control type="label">
+				<description>AM/PM</description>
+				<left>90</left>
+				<bottom>0</bottom>
+				<width>42</width>
+				<height>20</height>
+				<font>METF_FontAMPM_Small</font>
+				<textcolor>TimeAMPM</textcolor>
+				<label>[B]$INFO[System.Time(xx)][/B]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+		</control>
+	</include>
+
+	<include name="OSD_Player_Details_Right">
+		<control type="label">
+			<height>30</height>
+			<align>right</align>
+			<font>METF_OSDPlayerStatus</font>
+			<textcolor>OSDPlayerStatusText</textcolor>
+			<shadowcolor>ff000000</shadowcolor>
+			<label>$VAR[PlayerDetails]</label>
+		</control>
+	</include>
+	<include name="OSD_Player_Details_Left">
+		<control type="label">
+			<height>30</height>
+			<align>left</align>
+			<font>METF_OSDPlayerStatus</font>
+			<textcolor>OSDPlayerStatusText</textcolor>
+			<shadowcolor>ff000000</shadowcolor>
+			<label>$VAR[PlayerDetails]</label>
+		</control>
+	</include>
+	<include name="OSD_Music_MediaOverlay">
+		<control type="group">
+			<include>OSD_Fade_Animation</include>
+			<control type="group">
+				<left>-40</left>
+				<top>555</top>
+				<animation effect="slide" start="-280" end="30" time="600" tween="cubic" easing="out" delay="400">WindowOpen</animation>
+				<animation effect="slide" start="30" end="-280" time="600" tween="cubic" easing="out" delay="800">WindowClose</animation>
+				<visible>Skin.HasSetting(MediaOverlay)</visible>
+				<control type="image" id="7026">
+					<width>180</width>
+					<height>180</height>
+					<left>64</left>
+					<top>-70</top>
+					<include>Animation_SpinningCD</include>
+				</control>
+				<control type="image">
+					<description>cover image</description>
+					<left>-50</left>
+					<top>-80</top>
+					<width>340</width>
+					<height>200</height>
+					<fadetime>200</fadetime>
+					<texture background="true">$INFO[MusicPlayer.Cover]</texture>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<bordertexture border="8">frames/thumb_border_square.png</bordertexture>
+					<bordersize>8</bordersize>
+				</control>
+			</control>
+		</control>
+	</include>
+	<!-- Onscreen Displays -->
+	<include name="OSD_Banner_left">
+		<control type="group">
+			<left>30</left>
+			<top>5</top>
+			<width>140</width>
+			<height>90</height>
+			<control type="image">
+				<height>75</height>
+				<top>7</top>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture>$VAR[Studio_Icons]</texture>
+				<colordiffuse>MediaFlagDiffuse</colordiffuse>
+			</control>
+			<control type="image">
+				<texture>flags/flag_frame.png</texture>
+				<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+			</control>
+		</control>
+	</include>
+	
+	<include name="OSD_Banner_middle">
+		<control type="group">
+			<left>210</left>
+			<top>6</top>
+			<width>845</width>
+			<control type="textbox">
+				<description>Plot</description>
+				<height>66</height>
+				<align>justify</align>
+				<font>METF_PlotTextSmall</font>
+				<textcolor>TextNF</textcolor>
+				<label>$INFO[VideoPlayer.Plot]</label>
+				<include condition="!Skin.HasSetting(AutoScrollFast)">AutoScrollShort</include>
+				<include condition="Skin.HasSetting(AutoScrollFast)">AutoScrollShortFast</include>
+				<visible>Skin.HasSetting(ShowVideoPlotFullscreen) + !String.IsEmpty(VideoPlayer.Plot)</visible>
+			</control>
+			<control type="group">
+				<description>GameOSD controls</description>
+				<visible>Window.IsActive(GameOSD)</visible>
+				<control type="textbox">
+					<description>Plot</description>
+					<height>66</height>
+					<align>justify</align>
+					<font>METF_PlotTextSmall</font>
+					<textcolor>TextNF</textcolor>
+                        <label>$LOCALIZE[35236] [CR]$LOCALIZE[35224] = Select + X      |      $LOCALIZE[13007] = Select + B [CR]$LOCALIZE[35222] = Select + Start      |      $LOCALIZE[13376] = Select + Right Stick</label>
+					<include condition="!Skin.HasSetting(AutoScrollFast)">AutoScrollShort</include>
+					<include condition="Skin.HasSetting(AutoScrollFast)">AutoScrollShortFast</include>
+				</control>	
+			</control>		
+			<control type="grouplist">
+				<orientation>vertical</orientation>
+				<itemgap>5</itemgap>
+				<visible>!Skin.HasSetting(ShowVideoPlotFullscreen) | String.IsEmpty(VideoPlayer.Plot)</visible>
+				<control type="label">
+					<description>Director</description>
+					<height>24</height>
+					<align>center</align>
+					<font>METF_PlotTextSmall</font>
+					<textcolor>TextFO</textcolor>
+					<label>$VAR[OSD_Banner_Line1]</label>
+					<visible>!String.IsEmpty(VideoPlayer.Director) | !String.IsEmpty(VideoPlayer.Episode) | !String.IsEmpty(MusicPlayer.Artist)</visible>
+				</control>
+				<control type="label">
+					<description>Genre</description>
+					<height>24</height>
+					<align>center</align>
+					<font>METF_PlotTextSmall</font>
+					<textcolor>TextFO</textcolor>
+					<label>$VAR[OSD_Banner_Line2]</label>
+					<visible>!String.IsEmpty(VideoPlayer.Genre) | !String.IsEmpty(MusicPlayer.Album)</visible>
+				</control>
+				<control type="label">
+					<height>24</height>
+					<align>center</align>
+					<font>METF_PlotTextSmall</font>
+					<textcolor>TextFO</textcolor>
+					<label>$VAR[OSD_Banner_Line3]</label>
+					<visible>!String.IsEmpty(VideoPlayer.Genre) | !String.IsEmpty(MusicPlayer.Album)</visible>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="OSD_Banner_right">
+		<control type="group">
+			<left>1060</left>
+			<top>25</top>
+			<width>200</width>
+			<include>OSD_MediaBoxes</include>
+		</control>
+	</include>
+	<include name="OSD_Banner">
+		<control type="group">
+			<include>Animation_SlideDownFadeOut</include>
+			<include>OSD_Fade_Animation</include>
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>100</height>
+			<control type="image">
+				<description>Background Image</description>
+				<texture>osd/osd_dialog_bg_top.png</texture>
+				<colordiffuse>OSDBackgroundColor</colordiffuse>
+			</control>
+			<include>OSD_Banner_left</include>
+			<include>OSD_Banner_middle</include>
+			<include>OSD_Banner_right</include>
+		</control>
+	</include>
+	<include name="OSD_Deck_Full_left">
+		<control type="group">
+			<include>OSD_Fade_Animation</include>
+			<control type="group">
+				<description>TV Show Poster / Logo / Clearart</description>
+				<visible>!String.StartsWith(Player.FolderPath,http)</visible>
+				<control type="image">
+					<description>TV Show Thumbnail</description>
+					<left>42</left>
+					<bottom>30</bottom>
+					<width>216</width>
+					<height>318</height>
+					<texture background="true">$INFO[Player.Art(tvshow.poster)]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<visible>VideoPlayer.Content(Episodes) + !String.StartsWith(VideoPlayer.Cover,default) + !Skin.HasSetting(Enable_OSDClearArt)</visible>
+				</control>
+				<control type="image">
+					<description>TV Show Thumbnail Frame</description>
+					<left>28</left>
+					<bottom>10</bottom>
+					<width>244</width>
+					<height>358</height>
+					<texture>frames/ClassicFrame_PosterMedium.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>VideoPlayer.Content(Episodes) + !String.StartsWith(VideoPlayer.Cover,default) + !Skin.HasSetting(Enable_OSDClearArt)</visible>
+				</control>
+				<control type="image">
+					<description>TV Show Clear Art/Logo</description>
+					<left>25</left>
+					<bottom>30</bottom>
+					<width>250</width>
+					<height>142</height>
+					<texture background="true">$VAR[PlayerTVShowClearartClearlogo]</texture>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<visible>Skin.HasSetting(Enable_OSDClearArt) + VideoPlayer.Content(Episodes)</visible>
+				</control>
+				<control type="image">
+					<description>Movie Poster</description>
+					<left>42</left>
+					<bottom>30</bottom>
+					<width>216</width>
+					<height>318</height>
+					<texture background="true">$INFO[Player.Art(poster)]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<visible>VideoPlayer.Content(Movies) + !String.StartsWith(Player.Art,default)</visible>
+				</control>
+				<control type="image">
+					<description>Movie Poster Frame</description>
+					<left>28</left>
+					<bottom>10</bottom>
+					<width>244</width>
+					<height>358</height>
+					<texture>frames/ClassicFrame_PosterMedium.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>VideoPlayer.Content(Movies) + !String.StartsWith(Player.Art,default)</visible>
+				</control>
+				<control type="image">
+					<description>Music Video Thumbnail</description>
+					<left>25</left>
+					<bottom>10</bottom>
+					<width>250</width>
+					<height>140</height>
+					<aspectratio align="right" aligny="center">keep</aspectratio>
+					<bordertexture border="6">frames/thumb_border_round.png</bordertexture>
+					<bordersize>6</bordersize>
+					<texture diffuse="frames/EpisodeMatte.png">$INFO[VideoPlayer.Cover]</texture>
+					<visible>VideoPlayer.Content(MusicVideos) + !String.StartsWith(VideoPlayer.Cover,default)</visible>
+				</control>
+				<control type="image">
+					<description>LiveTV Channel</description>
+					<left>70</left>
+					<bottom>10</bottom>
+					<width>150</width>
+					<height>150</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<info>VideoPlayer.Cover</info>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
+				</control>
+				<control type="image">
+					<description>cover image</description>
+					<bottom>15</bottom>
+					<left>10</left>
+					<width>235</width>
+					<height>235</height>
+					<texture background="true">$INFO[MusicPlayer.Cover]</texture>
+					<aspectratio aligny="bottom">scale</aspectratio>
+					<bordertexture border="8">frames/thumb_border_square.png</bordertexture>
+					<bordersize>6</bordersize>
+					<visible>Player.HasAudio</visible>
+					<visible>!Skin.HasSetting(MediaOverlay)</visible>
+				</control>
+				<control type="image">
+					<description>Game Boxart Poster</description>
+					<posx>42</posx>
+					<posy>370</posy>
+					<width>216</width>
+					<height>318</height>
+					<texture diffuse="frames/EpisodeMatte.png">$INFO[Player.Filenameandpath].png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<visible>Window.IsActive(GameOSD)</visible>
+				</control>
+				<control type="image">
+					<description>Game Boxart Poster Frame</description>
+					<posx>28</posx>
+					<posy>350</posy>
+					<width>244</width>
+					<height>358</height>
+					<texture>frames/ClassicFrame_PosterMedium.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>Window.IsActive(GameOSD)</visible>
+				</control>
+			</control>
+			<control type="group">
+				<visible>String.StartsWith(Player.FolderPath,http)</visible>
+				<control type="image">
+					<description>Default Thumbnail</description>
+					<left>35</left>
+					<bottom>30</bottom>
+					<width>218</width>
+					<height>310</height>
+					<aspectratio align="right" aligny="bottom">keep</aspectratio>
+					<bordertexture border="6">frames/thumb_border_round.png</bordertexture>
+					<bordersize>6</bordersize>
+					<texture diffuse="frames/EpisodeMatte.png">$INFO[VideoPlayer.Cover]</texture>
+					<visible>!String.StartsWith(VideoPlayer.Cover,default)</visible>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="OSD_Deck_Full_middle">
+		<control type="group">
+			<include>OSD_Fade_Animation</include>
+			<control type="label">
+			    <description>Artist - for music only</description>
+				<left>290</left>
+				<top>-80</top>
+				<width>840</width>
+				<height>100</height>
+				<font>METF_MusicVizTitle</font>
+				<textcolor>NowPlayingTitle</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<scrollout>false</scrollout>
+				<pauseatend>3800</pauseatend>
+				<scrollspeed>40</scrollspeed>
+				<label>[B]$INFO[MusicPlayer.Artist][/B]</label>
+				<visible>!Player.HasVideo + ![Skin.HasSetting(ShowArtistClearlogo) + [!String.IsEmpty(Player.Art(artist.clearlogo)) | !String.IsEmpty(Player.Art(clearlogo))]]</visible>
+			</control>
+			<control type="image">
+				<description>artist clearlogo</description>
+				<left>290</left>
+				<top>-82</top>
+				<width>840</width>
+				<height>98</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true" fallback="$INFO[Player.Art(clearlogo)]">$INFO[Player.Art(artist.clearlogo)]</texture>
+				<visible>!Player.HasVideo + Skin.HasSetting(ShowArtistClearlogo) + [!String.IsEmpty(Player.Art(artist.clearlogo)) | !String.IsEmpty(Player.Art(clearlogo))]</visible>
+			</control>
+			<control type="fadelabel">
+				<description>Title</description>
+				<left>290</left>
+				<top>13</top>
+				<width>840</width>
+				<height>40</height>
+				<font>METF_TitleTextLarge</font>
+				<textcolor>TitleText</textcolor>
+				<align>center</align>
+				<scrollout>false</scrollout>
+				<pauseatend>3800</pauseatend>
+				<scrollspeed>40</scrollspeed>
+				<scroll>true</scroll>
+				<label>[B]$VAR[PlayerTitle][/B]</label>
+			</control>
+			<control type="label" id="22223">
+				<left>450</left>
+				<top>44</top>
+				<width>520</width>
+				<height>30</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<scroll>true</scroll>
+				<font>METF_TitleTextMedium</font>
+				<textcolor>OSDPlayerStatusText</textcolor>
+				<label>$VAR[PlayerTitle2]</label>
+			</control>
+			<include condition="!Player.HasGame">OSD_Progress_Bar</include>
+		</control>
+	</include>
+
+	<include name="OSD_Deck_Full_right">
+		<control type="group">
+			<include>OSD_PartialFade_Animation</include>
+			<right>0</right>
+			<width>145</width>
+			<control type="group">
+				<top>15</top>
+				<right>15</right>
+				<include>OSD_Player_Details_Right</include>
+			</control>
+			<control type="group">
+				<top>-490</top>
+				<left>-1123</left>
+				<include>Global_Weather</include>
+			</control>
+			<control type="group">
+				<top>105</top>
+				<include>Time_Small</include>
+			</control>
+		</control>
+	</include>
+	
+	<include name="OSD_Deck_Full">
+		<control type="image">
+			<left>0</left>
+			<bottom>0</bottom>
+			<width>1280</width>
+			<height>175</height>
+			<include>Animation_FadedByOSDSettings</include>
+			<include>OSD_Fade_Animation</include>
+			<texture>osd/osd_dialog_bg.png</texture>
+			<colordiffuse>OSDBackgroundColor</colordiffuse>
+			<visible>Player.HasVideo</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<bottom>0</bottom>
+			<width>1280</width>
+			<height>265</height>
+			<include>Animation_FadedByOSDSettings</include>
+			<include>OSD_Fade_Animation</include>
+			<texture>osd/osd_dialog_bg.png</texture>
+			<colordiffuse>OSDBackgroundColor</colordiffuse>
+			<visible>!Player.HasVideo</visible>
+		</control>
+		<control type="group">
+			<include>Animation_FadedByOSDSettings</include>
+			<left>0</left>
+			<bottom>0</bottom>
+			<width>1280</width>
+			<height>175</height>
+			<include>OSD_Deck_Full_left</include>
+			<include>OSD_Deck_Full_middle</include>
+			<include>OSD_Deck_Full_right</include>
+		</control>
+		<control type="group">
+			<include>Animation_FadedByOSDSettings</include>
+			<visible>[Window.IsActive(visualisation) + !Skin.HasSetting(SlimMusicInfo))] | Window.IsActive(fullscreeninfo)</visible>
+			<include>OSD_MediaInfo2</include>
+		</control>
+	</include>
+	
+	<include name="OSD_Deck_Slim_left">
+		<control type="group">
+			<include>OSD_PartialFade_Animation</include>
+			<top>20</top>
+			<left>10</left>
+			<include>OSD_Player_Details_Left</include>
+		</control>
+	</include>
+	<include name="OSD_Deck_Slim_middle">
+		<control type="group">
+			<include>OSD_Fade_Animation</include>
+			<control type="label">
+				<description>Title</description>
+				<visible>Player.HasVideo</visible>
+				<left>300</left>
+				<top>5</top>
+				<width>835</width>
+				<height>40</height>
+				<align>center</align>
+				<scrollout>false</scrollout>
+				<pauseatend>3800</pauseatend>
+				<scrollspeed>40</scrollspeed>
+				<scroll>true</scroll>
+				<font>METF_TitleTextMedium</font>
+				<textcolor>TitleText</textcolor>
+				<label>$VAR[PlayerTitle]</label>
+			</control>
+			<control type="label">
+				<visible>!Player.HasVideo</visible>
+				<left>300</left>
+				<top>5</top>
+				<width>835</width>
+				<height>40</height>
+				<align>center</align>
+				<scrollout>false</scrollout>
+				<pauseatend>3800</pauseatend>
+				<scrollspeed>40</scrollspeed>
+				<scroll>true</scroll>
+				<font>METF_TitleTextMedium</font>
+				<textcolor>TitleText</textcolor>
+				<label>$INFO[MusicPlayer.Title] [COLOR=TextFO][I]($INFO[MusicPlayer.Artist])[/I][/COLOR]</label>
+			</control>
+			<include>OSD_Progress_Bar</include>
+		</control>
+	</include>
+	<include name="OSD_Deck_Slim_right">
+		<control type="group">
+			<include>OSD_PartialFade_Animation</include>
+			<right>0</right>
+			<width>145</width>
+			<top>20</top>
+			<include>Time_Small</include>
+		</control>
+	</include>
+	<include name="OSD_Deck_Slim">
+		<control type="group">
+			<include>Animation_SlideUpFadeOut</include>
+			<left>0</left>
+			<bottom>0</bottom>
+			<width>1280</width>
+			<height>90</height>
+			<control type="image">
+				<include>OSD_Fade_Animation</include>
+				<texture>osd/osd_dialog_bg.png</texture>
+				<colordiffuse>OSDBackgroundColor</colordiffuse>
+			</control>
+			<include>OSD_Deck_Slim_left</include>
+			<include>OSD_Deck_Slim_middle</include>
+			<include>OSD_Deck_Slim_right</include>
+		</control>
+	</include>
+
+	<include name="OSDdiffuse">
+		<description>OSD default</description>
+		<colordiffuse>SubmenuTextFocused</colordiffuse>
+	</include>
+</includes>
