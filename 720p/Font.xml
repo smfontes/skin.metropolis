@@ -79,6 +79,21 @@
 			<size>40</size>
 		</font>
 		<font>
+			<name>METF_Hours_Small</name>
+			<filename>MET_Myriad.ttf</filename>
+			<size>85</size>
+		</font>
+		<font>
+			<name>METF_Minutes_Small</name>
+			<filename>MET_Myriad.ttf</filename>
+			<size>35</size>
+		</font>
+		<font>
+			<name>METF_FontAMPM_Small</name>
+			<filename>MET_Myriad.ttf</filename>
+			<size>28</size>
+		</font>
+		<font>
 			<name>METF_RSS</name>
 			<filename>MET_UbuntuRegular.ttf</filename>
 			<size>17</size>
@@ -187,12 +202,17 @@
 		<font>
 			<name>METF_OSDTime</name>
 			<filename>MET_Bebas.ttf</filename>
-			<size>28</size>
+			<size>22</size>
 		</font>
 		<font>
 			<name>METF_OSDPlayerStatus</name>
 			<filename>MET_Bebas.ttf</filename>
-			<size>54</size>
+			<size>50</size>
+		</font>
+		<font>
+			<name>METF_OSDDuration</name>
+			<filename>MET_Bebas.ttf</filename>
+			<size>22</size>
 		</font>
 		<font>
 			<name>METF_DialogLargeBold</name>
