@@ -1,3 +1,35 @@
 <colors>
-	<color name="HelpText">FF00C800</color>
+	<color name="HelpText"            >FF00C800</color>
+	<color name="WeatherHighTemp"     >FF50EE60</color>
+
+	<color name="WeatherDay"          >FF569434</color>
+	<color name="IMDbDiffuseVotes"    >BB569434</color>
+	<color name="IMDbDiffuseTop250"   >EE569434</color>
+	<color name="MPAADescription"     >FF569434</color>
+
+	<color name="HomeStatsCategory"   >FF56C634</color>
+	<color name="NowPlayingTitle"     >FF56C634</color>
+	<color name="WeatherHeading"      >FF56C634</color>
+
+	<color name="Date"                >FF5FB469</color>
+	<color name="TextFO"              >FF5FB469</color>
+	<color name="DialogTextFO"        >FF5FB469</color>
+	<color name="HomeMenuTextFocused" >FF5FB469</color>
+	<color name="SubmenuTextFocused"  >FF5FB469</color>
+	<color name="RSSText"             >FF5FB469</color>
+	<color name="WatchedOverlay"      >FF5FB469</color>
+	<color name="SettingsTitle"       >FF5FB469</color>
+	<color name="SettingsHeading"     >FF5FB469</color>
+	<color name="OSDPlayerStatusText" >FF5FB469</color>
+	<color name="OSDPlayingDuration"  >FF5FB469</color>
+	<color name="OSDProgressBar"      >FF5FB469</color>
+	<color name="DialogProgressBar"   >FF5FB469</color>
+	<color name="ArrowDiffuse"        >FF5FB469</color>
+
+	<color name="HelpArrowDiffuse"    >FF5FEE69</color>
+	<color name="MediaDetailsInfo"    >FF5FEE69</color>
+	<color name="MediaDetailsYear"    >FF5FEE69</color>
+	<color name="MediaDetailsDuration">FF5FEE69</color>
+	<color name="MediaDetailsEpisodes">FF5FEE69</color>
+	<color name="GlobalHeading"       >FF5FEE69</color>
 </colors>
