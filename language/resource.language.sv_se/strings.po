@@ -5,17 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Skins\n"
-"Report-Msgid-Bugs-To: http://trac.kodi.tv/\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-05-25 10:08+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2023-07-30 13:11+0000\n"
+"Last-Translator: Andreas Bolin <bolin.andreas@gmail.com>\n"
 "Language-Team: Swedish <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-metropolis/sv_se/>\n"
 "Language: sv_se\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.6.2\n"
+"X-Generator: Weblate 4.18.2\n"
 
 msgctxt "Addon Summary"
 msgid "A Mix of Retro and Modern."
@@ -115,7 +115,7 @@ msgstr "Dölj bakgrundsfanart"
 
 msgctxt "#31034"
 msgid "Enable Dynamic Weather Artwork"
-msgstr "Aktivera dynamiska väderbilder"
+msgstr "Aktivera dynamiska väderbakgrunder"
 
 msgctxt "#31035"
 msgid "Show Clean Library SubMenu items"
@@ -163,7 +163,7 @@ msgstr "Göm rotmapp för video"
 
 msgctxt "#31126"
 msgid "Extra Artwork Downloader"
-msgstr "Extra Artwork Downloader"
+msgstr "Extra Bakgrunds-nerladdare"
 
 msgctxt "#31127"
 msgid "TvTunes Downloader"
@@ -196,7 +196,7 @@ msgstr "Pixelformat"
 
 msgctxt "#31141"
 msgid "Audio channels"
-msgstr ""
+msgstr "Ljudkanaler"
 
 msgctxt "#31142"
 msgid "CPU used"
@@ -204,7 +204,7 @@ msgstr ""
 
 msgctxt "#31143"
 msgid "Memory used"
-msgstr ""
+msgstr "Använt minne"
 
 msgctxt "#31159"
 msgid "ffx2"
@@ -264,25 +264,25 @@ msgstr "Standard hemlayout"
 
 msgctxt "#31211"
 msgid "Configure actions that can be used during playback · Configure how media content is played"
-msgstr ""
+msgstr "Konfigurera åtgärder som kan användas under uppspelning · Konfigurera hur mediainnehåll spelas"
 
 msgctxt "#31212"
 msgid "Manage your installed add-ons · Browse for and install add-ons from kodi.tv · Modify add-on settings"
-msgstr ""
+msgstr "Hantera dina installerade tillägg · Bläddra efter och installera tillägg från kodi.tv · Ställ in tilläggsinställningar"
 
 msgctxt "#31213"
 msgid "Configure display · Configure audio · Configure internet access · Configure power saving · Configure logging"
-msgstr ""
+msgstr "Konfigurera skärmen · Konfigurera ljud · Konfigurera internetåtkomst · Konfigurera energialternativ · Konfigurera loggning"
 
 # empty strings from id 31214 to 31215
 msgctxt "#31216"
 msgid "Configure skin · Configure region · Configure control · Configure screensaver · Configure master lock"
-msgstr ""
+msgstr "Konfigurera skal · Konfigurera plats · Konfigurera kontroll · Konfigurera skärmsläckare · Konfigurera huvudlåset"
 
 # empty string with id 31217
 msgctxt "#31218"
 msgid "Configure & manage media sharing services · Configure & manage the weather service"
-msgstr ""
+msgstr "Konfigurera & hantera delningstjänster för media · Konfigurera & hantera vädertjänsten"
 
 msgctxt "#31219"
 msgid "Configure controller settings · Configure rewind and autosave functions"
@@ -291,11 +291,11 @@ msgstr ""
 # empty string with id 31219
 msgctxt "#31220"
 msgid "Configure TV settings · Change full screen info · Manage EPG data settings"
-msgstr ""
+msgstr "Konfigurera tv-inställningar · Ändra helskärmsinformation · Hantera EPG datainställningar"
 
 msgctxt "#31221"
 msgid "Configure library sources · Show the media lists display content · Configure how library lists are navigated"
-msgstr ""
+msgstr "Konfigurera bibliotekskällor · Visa medialistor displayinnehåll · Konfigurera hur bibliotekslistor navigeras"
 
 msgctxt "#31244"
 msgid "Playing"
@@ -559,7 +559,7 @@ msgstr "En undergenre till actionfilmen, kampsportsfilmer innehåller flera slag
 
 msgctxt "#31371"
 msgid "Multi-episode, fictional program of limited duration, shown on a daily or weekly schedule, usually lasting fifteen hours or less in total running time. A good television miniseries can make the small screen seem huge. These programs are the best that TV has to offer: an excuse to sink in and lose yourself in a story that isn't over in just a couple of hours. The sets, the plots, and the acting make each of these essential miniseries an exquisite television experience."
-msgstr "Fiktionellt program i flera avsnitt med begränsad spellängd, som visas dagligen eller veckovis, vanligtvis med en total spellängd på femton timmar eller mindre. En bra TV-miniserie kan få den lilla skärmen att verka stor. Dessa program är det bästa TV kan erbjuda: en ursäkt för att sjunka ner och förlora dig själv i en berättelse som inte tar slut på några timmar. Scenerna, handlingen och skådespeleriet gör varje nödvändig miniserie till en exklusiv upplevelse."
+msgstr "Fiktionellt program i flera avsnitt med begränsad speltid, som visas dagligen eller veckovis, vanligtvis med en total speltid på femton timmar eller mindre. En bra TV-miniserie kan få den lilla skärmen att verka stor. Dessa program är det bästa TV kan erbjuda: en ursäkt för att sjunka ner och förlora dig själv i en berättelse som inte tar slut på några timmar. Scenerna, handlingen och skådespeleriet gör varje nödvändig miniserie till en exklusiv upplevelse."
 
 msgctxt "#31372"
 msgid "Monster movie (also can be referred to as a creature feature or monster film) is a name commonly given to movies, which centre on the struggle between human beings and one or more monsters. The term is usually applied to films sometimes labelled as horror, fantasy or science fiction genre that involve fictional creatures, in most cases it is applied to films that feature more oversized monsters despite its history starting with adaptations of horror folklore and literature."
@@ -1003,7 +1003,7 @@ msgstr ""
 
 msgctxt "#31484"
 msgid "Order"
-msgstr ""
+msgstr "Sortera"
 
 msgctxt "#31600"
 msgid "Enable Live TV (PVR) support"

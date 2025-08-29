@@ -112,7 +112,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<texture background="true" fallback="Background.png" diffuse="FanartDiffuse.png">$INFO[Skin.String(CustomBackground)]</texture>
 			<colordiffuse>GlobalContextColour</colordiffuse>
-			<visible>ControlGroup(7001).HasFocus | ControlGroup(7000).HasFocus | Window.IsActive(yesnodialog) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(contextmenu) | Window.IsActive(favourites) | Window.IsActive(mediasource) | Window.IsActive(addonsettings) | Window.IsActive(pictureinfo) | Window.IsActive(songinformation)</visible>
+			<visible>ControlGroup(7001).HasFocus | ControlGroup(7000).HasFocus | Window.IsActive(yesnodialog) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(contextmenu) | Container.Content(favourites) | Window.IsActive(mediasource) | Window.IsActive(addonsettings) | Window.IsActive(pictureinfo) | Window.IsActive(songinformation)</visible>
 			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
 		</control>
@@ -1624,9 +1624,9 @@
 					<posy>370</posy>
 					<width>216</width>
 					<height>318</height>
-					<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+					<texture background="true">$INFO[Player.Art(poster)]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<visible>VideoPlayer.Content(Movies) + !String.StartsWith(VideoPlayer.Cover,default)</visible>
+					<visible>VideoPlayer.Content(Movies) + !String.StartsWith(Player.Art,default)</visible>
 				</control>
 				<control type="image">
 					<description>Movie Poster Frame</description>
@@ -1636,7 +1636,7 @@
 					<height>358</height>
 					<texture>frames/ClassicFrame_PosterMedium.png</texture>
 					<aspectratio>stretch</aspectratio>
-					<visible>VideoPlayer.Content(Movies) + !String.StartsWith(VideoPlayer.Cover,default)</visible>
+					<visible>VideoPlayer.Content(Movies) + !String.StartsWith(Player.Art,default)</visible>
 				</control>
 				<!-- Music Video Thumbnail -->
 				<control type="image">
@@ -1889,23 +1889,23 @@
 			<control type="label">
 				<include>OSD_Player_Labels</include>
 				<label>[UPPERCASE]$LOCALIZE[31244][/UPPERCASE]</label>
-				<visible>Player.Playing + ![Player.SeekBar | Player.DisplayAfterSeek] + !Player.IsTempo</visible>
+				<visible>Player.Playing + ![Player.SeekBar | Player.HasPerformedSeek(3)] + !Player.IsTempo</visible>
 			</control>
 			<control type="label">
 				<include>OSD_Player_Labels</include>
 				<label>[UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</label>
-				<visible>Player.DisplayAfterSeek + ![Player.Paused | Player.Forwarding | Player.Rewinding] + !Player.IsTempo</visible>
+				<visible>Player.HasPerformedSeek(3) + ![Player.Paused | Player.Forwarding | Player.Rewinding] + !Player.IsTempo</visible>
 			</control>
 			<!--labels while at not normal speed -->
 			<control type="label">
 				<include>OSD_Player_Labels</include>
 				<label>[UPPERCASE]$INFO[Player.PlaySpeed,+,X][/UPPERCASE] [UPPERCASE]$LOCALIZE[31244][/UPPERCASE]</label>
-				<visible>Player.Playing + ![Player.SeekBar | Player.DisplayAfterSeek] + Player.IsTempo</visible>
+				<visible>Player.Playing + ![Player.SeekBar | Player.HasPerformedSeek(3)] + Player.IsTempo</visible>
 			</control>
 			<control type="label">
 				<include>OSD_Player_Labels</include>
 				<label>[UPPERCASE]$INFO[Player.PlaySpeed,+,X][/UPPERCASE] [UPPERCASE]$INFO[Player.SeekOffset][/UPPERCASE]</label>
-				<visible>Player.DisplayAfterSeek + ![Player.Paused | Player.Forwarding | Player.Rewinding] + Player.IsTempo</visible>
+				<visible>Player.HasPerformedSeek(3) + ![Player.Paused | Player.Forwarding | Player.Rewinding] + Player.IsTempo</visible>
 			</control>
 		</control>
 	</include>
