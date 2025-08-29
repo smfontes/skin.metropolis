@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">40001</defaultcontrol>
+	<controls>
+		<control type="group">
+			<description>Everything</description>
+			<include>Animation_FadedByMenu</include>
+			<include>Animation_CommonFade</include>
+			<include>Animation_OpenCloseFade</include>
+			<control type="group">
+				<description>Opaque background</description>
+				<include>Dimensions_Fullscreen</include>
+				<control type="image">
+					<texture background="true" fallback="Background.png" colordiffuse="BackgroundColor">$INFO[Skin.String(CustomBackground)]</texture>
+				</control>
+				<control type="image">
+					<texture background="true" fallback="Background.png" colordiffuse="BackgroundColor">$INFO[Skin.String(CustomBackground)]</texture>
+				</control>
+			</control>
+			<control type="group">
+				<description>Top Line</description>
+				<top>20</top>
+				<left>20</left>
+				<width>1240</width>
+				<height>30</height>
+				<control type="label">
+					<description>Actor Name on left hand side</description>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>METF_TitleTextLarge</font>
+					<textcolor>TextNF</textcolor>
+					<label>$INFO[Window.Property(label)]</label>
+				</control>
+				<control type="label">
+					<description>Birthday & Place of birth on right hand side</description>
+					<visible>!String.IsEmpty(Window.Property(Birthday)) | !String.IsEmpty(Window.Property(PlaceOfBirth))</visible>
+					<align>right</align>
+					<font>METF_MediaDetailsSmall</font>
+					<textcolor>TextNF</textcolor>
+					<label>$INFO[Window.Property(Birthday),[COLOR=MediaDetailsInfo]$LOCALIZE[21893]: [/COLOR]]$INFO[Window.Property(PlaceOfBirth),[COLOR=MediaDetailsInfo] · [/COLOR]]</label>
+				</control>
+			</control>
+			<control type="group">
+				<description>Second Line</description>
+				<top>60</top>
+				<left>20</left>
+				<width>845</width>
+				<height>30</height>
+				<control type="label">
+					<description>Age on Left hand side</description>
+					<visible>!String.IsEmpty(Window.Property(Age))</visible>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>METF_PlotText</font>
+					<textcolor>TextNF</textcolor>
+					<label>$INFO[Window.Property(Age),[COLOR=MediaDetailsInfo]$ADDON[script.extendedinfo 32020]: [/COLOR]]</label>
+				</control>
+				<control type="label">
+					<description>Deathday on Right hand side</description>
+					<visible>!String.IsEmpty(Window.Property(Age))</visible>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>METF_PlotText</font>
+					<textcolor>TextNF</textcolor>
+					<label>$INFO[Window.Property(Deathday),[COLOR=MediaDetailsInfo]$ADDON[script.extendedinfo 32013]: [/COLOR]]</label>
+				</control>
+			</control>
+			<control type="group">
+				<description>Third Line - label for current info</description>
+				<top>95</top>
+				<left>355</left>
+				<width>510</width>
+				<height>30</height>
+				<include file="script-script.extendedinfo-includes.xml" content="MiddleHeading">
+					<param name="VisibleIf">Information</param>
+					<param name="Heading">$LOCALIZE[29943]</param>
+				</include>
+				<include file="script-script.extendedinfo-includes.xml" content="MiddleHeading">
+					<param name="VisibleIf">Movies</param>
+					<param name="Heading">$ADDON[script.extendedinfo 32120]</param>
+				</include>
+				<include file="script-script.extendedinfo-includes.xml" content="MiddleHeading">
+					<param name="VisibleIf">TVShows</param>
+					<param name="Heading">$ADDON[script.extendedinfo 32121]</param>
+				</include>
+				<include file="script-script.extendedinfo-includes.xml" content="MiddleHeading">
+					<param name="VisibleIf">MovieCrew</param>
+					<param name="Heading">$ADDON[script.extendedinfo 32122]</param>
+				</include>
+				<include file="script-script.extendedinfo-includes.xml" content="MiddleHeading">
+					<param name="VisibleIf">TVCrew</param>
+					<param name="Heading">$ADDON[script.extendedinfo 32123]</param>
+				</include>
+			</control>
+			<control type="group">
+				<description>Left box</description>
+				<left>0</left>
+				<top>90</top>
+				<width>335</width>
+				<height>453</height>
+				<control type="image">
+					<description>Image to show Actor thumbs have focus</description>
+					<left>-13</left>
+					<top>-10</top>
+					<width>361</width>
+					<height>473</height>
+					<visible>Control.HasFocus(450)</visible>
+					<texture background="true" colordiffuse="BackgroundColor" diffuse="frames/square_matte.png">dialogs/DialogBG_Icon2.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="panel" id="450">
+					<description>Actor Thumbs</description>
+					<left>32</left>
+					<top>27</top>
+					<width>270</width>
+					<height>396</height>
+					<onup>450</onup>
+					<ondown>450</ondown>
+					<onright>150</onright>
+					<onleft>40001</onleft>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					<itemlayout>
+						<control type="image">
+							<texture background="true" fallback="DefaultThumb.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+					</itemlayout>
+					<focusedlayout>
+						<control type="image">
+							<texture background="true" fallback="DefaultThumb.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="image">
+					<description>Default image if the list is empty</description>
+					<visible>!Integer.IsGreater(Container(450).NumItems,0)</visible>
+					<left>32</left>
+					<top>27</top>
+					<width>270</width>
+					<height>396</height>
+					<texture>DefaultThumb.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<description>Frame for Actor Thumbs</description>
+					<left>18</left>
+					<top>8</top>
+					<width>302</width>
+					<height>444</height>
+					<texture>frames/ClassicFrame_Poster.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="label">
+					<description>Count of Actor Thumbs</description>
+					<top>434</top>
+					<left>10</left>
+					<font>METF_DialogVerySmall</font>
+					<textcolor>MediaDetailsGenre</textcolor>
+					<visible>Control.HasFocus(450)</visible>
+					<label>$INFO[Container(450).CurrentItem]/$INFO[Container(450).NumItems]</label>
+				</control>
+			</control>
+			<control type="group">
+				<description>Middle box</description>
+				<left>355</left>
+				<top>135</top>
+				<width>510</width>
+				<height>340</height>
+				<control type="image">
+					<description>Image to show middle box is focused</description>
+					<left>-35</left>
+					<top>-15</top>
+					<width>580</width>
+					<height>375</height>
+					<visible>Control.HasFocus(150) | Control.HasFocus(250) | Control.HasFocus(550) | Control.HasFocus(650)</visible>
+					<texture background="true" colordiffuse="BackgroundColor" diffuse="frames/square_matte.png">dialogs/DialogBG_Icon2.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="group" id="9000">
+					<description>Biography</description>
+					<visible>String.IsEqual(Window.Property(MiddleInfo),Information)</visible>
+					<control type="textbox">
+						<description>Biography</description>
+						<top>7</top>
+						<height>325</height>
+						<align>justify</align>
+						<font>METF_PlotText</font>
+						<textcolor>TextNF</textcolor>
+						<label fallback="19055">$INFO[Window.Property(Biography)]</label>
+						<include condition="!Skin.HasSetting(AutoScrollFast)">AutoScrollLong</include>
+						<include condition="Skin.HasSetting(AutoScrollFast)">AutoScrollLongFast</include>
+					</control>
+				</control>
+				<control type="group">
+					<description>The lists</description>
+					<control type="list" id="150">
+						<description>Movie Roles</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),Movies)</visible>
+						<onright>250</onright>
+						<onleft>450</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">LeftLabelNF</include>
+								<label>[COLOR=ButtonDiffuse]$INFO[Listitem.Year][/COLOR] $INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">RightLabelNF</include>
+								<label>$INFO[ListItem.Property(Character)]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">LeftLabelFO</include>
+								<label>[COLOR=ButtonDiffuse]$INFO[Listitem.Year][/COLOR] [B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">RightLabelFO</include>
+								<label>[B]$INFO[ListItem.Property(Character)][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="list" id="250">
+						<description>TV Show Roles</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),TVShows)</visible>
+						<onright>550</onright>
+						<onleft>150</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">LeftLabelNF</include>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">RightLabelNF</include>
+								<label>$INFO[ListItem.Property(Character)]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">LeftLabelFO</include>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">RightLabelFO</include>
+								<label>[B]$INFO[ListItem.Property(Character)][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="list" id="550">
+						<description>Movie Crew</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),MovieCrew)</visible>
+						<onright>650</onright>
+						<onleft>250</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">LeftLabelNF</include>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">RightLabelNF</include>
+								<label>$INFO[ListItem.Property(Job)]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">LeftLabelFO</include>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">RightLabelFO</include>
+								<label>[B]$INFO[ListItem.Property(Job)][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="list" id="650">
+						<description>TV Crew</description>
+						<visible>String.IsEqual(Window.Property(MiddleInfo),TVCrew)</visible>
+						<onright>750</onright>
+						<onleft>550</onleft>
+						<itemlayout height="24">
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">LeftLabelNF</include>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">RightLabelNF</include>
+								<label>$INFO[ListItem.Property(Job)]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="24">
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">LeftLabelFO</include>
+								<label>[B]$INFO[ListItem.Label][/B]</label>
+							</control>
+							<control type="label">
+								<include file="script-script.extendedinfo-includes.xml">RightLabelFO</include>
+								<label>[B]$INFO[ListItem.Property(Job)][/B]</label>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<description>Right Top box</description>
+				<left>885</left>
+				<top>57</top>
+				<width>395</width>
+				<height>228</height>
+				<control type="image">
+					<description>Image to show Fanart has focus</description>
+					<left>-15</left>
+					<top>-10</top>
+					<width>420</width>
+					<height>248</height>
+					<visible>Control.HasFocus(750)</visible>
+					<texture background="true" colordiffuse="MediaFlagBoxDiffuse">dialogs/DialogBG_Icon2.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="panel" id="750">
+					<description>Fanart</description>
+					<left>30</left>
+					<top>20</top>
+					<width>335</width>
+					<height>188</height>
+					<onup>1350</onup>
+					<ondown>1350</ondown>
+					<onright>40001</onright>
+					<onleft>650</onleft>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					<itemlayout>
+						<control type="image">
+							<texture background="true" fallback="DefaultThumb.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+					</itemlayout>
+					<focusedlayout>
+						<control type="image">
+							<texture background="true" fallback="DefaultThumb.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="image">
+					<description>Default image if the list is empty</description>
+					<visible>!Integer.IsGreater(Container(750).NumItems,0)</visible>
+					<left>30</left>
+					<top>20</top>
+					<width>335</width>
+					<height>188</height>
+					<texture>DefaultThumb.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<description>Frame for Fanart</description>
+					<left>15</left>
+					<top>0</top>
+					<width>360</width>
+					<height>223</height>
+					<texture>frames/ClassicFrame_FanartSmall.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="label">
+					<description>Count of Fanart images</description>
+					<top>211</top>
+					<left>10</left>
+					<font>METF_DialogVerySmall</font>
+					<textcolor>MediaDetailsGenre</textcolor>
+					<visible>Control.HasFocus(750)</visible>
+					<label>$INFO[Container(750).CurrentItem]/$INFO[Container(750).NumItems]</label>
+				</control>
+			</control>
+			<control type="group">
+				<description>Right bottom box</description>
+				<left>885</left>
+				<top>285</top>
+				<width>395</width>
+				<height>258</height>
+				<control type="group">
+					<include file="script-script.extendedinfo-includes.xml" content="RightPosterImage">
+						<param name="VisibleIf">Movies</param>
+						<param name="Image">$INFO[Container(150).Listitem.Art(poster)]</param>
+  					</include>
+  					<include file="script-script.extendedinfo-includes.xml" content="RightPosterImage">
+						<param name="VisibleIf">TVShows</param>
+						<param name="Image">$INFO[Container(250).Listitem.Art(poster)]</param>
+  					</include>
+  					<include file="script-script.extendedinfo-includes.xml" content="RightPosterImage">
+						<param name="VisibleIf">MovieCrew</param>
+						<param name="Image">$INFO[Container(550).Listitem.Art(poster)]</param>
+  					</include>
+					<include file="script-script.extendedinfo-includes.xml" content="RightPosterImage">
+						<param name="VisibleIf">TVCrew</param>
+						<param name="Image">$INFO[Container(650).Listitem.Art(poster)]</param>
+  					</include>
+					<control type="image">
+						<description>Frame for posters</description>
+						<visible>!String.IsEqual(Window.Property(MiddleInfo),Information) </visible>
+						<top>0</top>
+						<left>110</left>
+						<width>186</width>
+						<height>258</height>
+						<texture background="true">frames/ClassicFrame_PosterSmall.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Flag if movie or show is in the library</description>
+						<width>55</width>
+						<height>55</height>
+						<top>8</top>
+						<left>230</left>
+						<texture>../../script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
+						<visible>[!String.IsEmpty(Container(150).ListItem.dbid) + String.IsEqual(Window.Property(MiddleInfo),Movies)]
+							| [!String.IsEmpty(Container(250).ListItem.dbid) + String.IsEqual(Window.Property(MiddleInfo),TVShows)]
+							| [!String.IsEmpty(Container(550).ListItem.dbid) + String.IsEqual(Window.Property(MiddleInfo),MovieCrew)]
+							| [!String.IsEmpty(Container(650).ListItem.dbid) + String.IsEqual(Window.Property(MiddleInfo),TVCrew)]
+						</visible>
+					</control>
+				</control>
+				<control type="grouplist">
+					<description>General Info for right hand side</description>
+					<visible>String.IsEqual(Window.Property(MiddleInfo),Information)</visible>
+					<left>20</left>
+					<top>5</top>
+					<width>355</width>
+					<height>245</height>
+					<itemgap>5</itemgap>
+					<orientation>vertical</orientation>
+					<aligny>top</aligny>
+					<control type="group">
+						<description>AKA</description>
+						<visible>!String.IsEmpty(Window.Property(AlsoKnownAs))</visible>
+						<height>140</height>
+						<scroll>false</scroll>
+						<control type="label">
+							<align>center</align>
+							<height>30</height>
+							<textcolor>MediaDetailsGenre</textcolor>
+							<label>$ADDON[script.extendedinfo 32016]</label>
+						</control>
+						<control type="textbox">
+							<top>30</top>
+							<height>110</height>
+							<width>355</width>
+							<font>METF_PlotTextSmall</font>
+							<textcolor>TextNF</textcolor>
+							<label>$INFO[Window.Property(AlsoKnownAs)]</label>
+							<include condition="!Skin.HasSetting(AutoScrollFast)">AutoScrollLong</include>
+							<include condition="Skin.HasSetting(AutoScrollFast)">AutoScrollLongFast</include>
+						</control>
+					</control>
+					<control type="group">
+						<description>Number of movies</description>
+						<height>30</height>
+						<scroll>false</scroll>
+						<control type="label">
+							<align>left</align>
+							<textcolor>MediaDetailsGenre</textcolor>
+							<label>$LOCALIZE[342]:</label>
+						</control>
+						<control type="label">
+							<align>right</align>
+							<label>$INFO[Container(150).Numitems]</label>
+						</control>
+					</control>
+					<control type="group">
+						<description>Number of TV Shows</description>
+						<height>30</height>
+						<scroll>false</scroll>
+						<control type="label">
+							<align>left</align>
+							<textcolor>MediaDetailsGenre</textcolor>
+							<label>$LOCALIZE[20343]:</label>
+						</control>
+						<control type="label">
+							<align>right</align>
+							<label>$INFO[Container(250).Numitems]</label>
+						</control>
+					</control>
+					<control type="group">
+						<description>Number of movies in library</description>
+						<visible>!String.IsEmpty(Window.Property(DBMovies))</visible>
+						<height>30</height>
+						<scroll>false</scroll>
+						<control type="label">
+							<align>left</align>
+							<textcolor>MediaDetailsGenre</textcolor>
+							<label>$ADDON[script.extendedinfo 32021]:</label>
+						</control>
+						<control type="label">
+							<align>right</align>
+							<label>$INFO[Window.Property(DBMovies)]</label>
+						</control>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<description>Middle bottom box for Help text</description>
+				<visible>!Skin.HasSetting(HideHelpText)</visible>
+				<left>335</left>
+				<top>483</top>
+				<width>550</width>
+				<height>60</height>
+				<control type="grouplist">
+					<top>15</top>
+					<height>30</height>
+					<itemgap>5</itemgap>
+					<aligny>center</aligny>
+					<orientation>horizontal</orientation>
+					<control type="image">
+						<visible>Control.HasFocus(450) | Control.HasFocus(750) | [Integer.IsGreater(Container(450).NumItems,0) + [Control.HasFocus(19000) | Control.HasFocus(10150) | Control.HasFocus(10250) | Control.HasFocus(10550) Control.HasFocus(10650)]]</visible>
+						<width>30</width>
+						<texture>ArrowUp.png</texture>
+						<colordiffuse>HelpArrowDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Poster</description>
+						<visible>Integer.IsGreater(Container(450).NumItems,0) + [Control.HasFocus(19000) | Control.HasFocus(10150) | Control.HasFocus(10250) | Control.HasFocus(10550) Control.HasFocus(10650)]</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$LOCALIZE[20021]</label>
+					</control>
+					<control type="image">
+						<visible>[Integer.IsGreater(Container(750).NumItems,0) + [Control.HasFocus(19000) | Control.HasFocus(10150) | Control.HasFocus(10250) | Control.HasFocus(10550) Control.HasFocus(10650)]] | Control.HasFocus(750) | Control.HasFocus(450)</visible>
+						<width>30</width>
+						<texture>ArrowDown.png</texture>
+						<colordiffuse>HelpArrowDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Poster</description>
+						<visible>Control.HasFocus(450)</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$LOCALIZE[20021]</label>
+					</control>
+					<control type="label">
+						<description>Fanart</description>
+						<visible>Control.HasFocus(750) | [Integer.IsGreater(Container(750).NumItems,0) + [Control.HasFocus(19000) | Control.HasFocus(10150) | Control.HasFocus(10250) | Control.HasFocus(10550) Control.HasFocus(10650)]]</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$LOCALIZE[20445]</label>
+					</control>
+					<control type="image">
+						<visible>Control.HasFocus(450) | Control.HasFocus(150) | Control.HasFocus(250) | Control.HasFocus(550) | Control.HasFocus(650) | Control.HasFocus(750)</visible>
+						<width>30</width>
+						<texture>ArrowLeft.png</texture>
+						<colordiffuse>HelpArrowDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Buttons</description>
+						<visible>Control.HasFocus(450) 
+							| [[Control.HasFocus(150) | Control.HasFocus(250) | Control.HasFocus(550) | Control.HasFocus(650) | Control.HasFocus(750)] + !Integer.IsGreater(Container(450).NumItems,0)]
+							| [Control.HasFocus(750) + String.IsEqual(Window.Property(MiddleInfo),Information) + !Integer.IsGreater(Container(450).NumItems,0)]
+						</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$LOCALIZE[35059]</label>
+					</control>
+					<control type="label">
+						<description>Poster</description>
+						<visible>[[Control.HasFocus(150) | Control.HasFocus(250) | Control.HasFocus(550) | Control.HasFocus(650)] + Integer.IsGreater(Container(450).NumItems,0)]
+							| [Control.HasFocus(750) + String.IsEqual(Window.Property(MiddleInfo),Information) + Integer.IsGreater(Container(450).NumItems,0)]
+						</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$LOCALIZE[20021]</label>
+					</control>
+					<control type="label">
+						<description>Movies</description>
+						<visible>Control.HasFocus(750) + String.IsEqual(Window.Property(MiddleInfo),Movies)</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$ADDON[script.extendedinfo 32120]</label>
+					</control>
+					<control type="label">
+						<description>TV Shows</description>
+						<visible>Control.HasFocus(750) + String.IsEqual(Window.Property(MiddleInfo),TVShows)</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$ADDON[script.extendedinfo 32121]</label>
+					</control>
+					<control type="label">
+						<description>Movie Crew</description>
+						<visible>Control.HasFocus(750) + String.IsEqual(Window.Property(MiddleInfo),MovieCrew)</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$ADDON[script.extendedinfo 32122]</label>
+					</control>
+					<control type="label">
+						<description>TV Crew</description>
+						<visible>Control.HasFocus(750) + String.IsEqual(Window.Property(MiddleInfo),TVCrew)</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$ADDON[script.extendedinfo 32123]</label>
+					</control>
+					<control type="image">
+						<visible>Control.HasFocus(450) | Control.HasFocus(150) | Control.HasFocus(250) | Control.HasFocus(550) | Control.HasFocus(650) | Control.HasFocus(750)</visible>
+						<width>30</width>
+						<texture>ArrowRight.png</texture>
+						<colordiffuse>HelpArrowDiffuse</colordiffuse>
+					</control>
+					<control type="label">
+						<description>Buttons</description>
+						<visible>Control.HasFocus(750) 
+							| [[Control.HasFocus(150) | Control.HasFocus(250) | Control.HasFocus(550) | Control.HasFocus(650) | Control.HasFocus(750)] + !Integer.IsGreater(Container(750).NumItems,0)]
+							| [Control.HasFocus(450) + String.IsEqual(Window.Property(MiddleInfo),Information) + !Integer.IsGreater(Container(750).NumItems,0)]
+						</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$LOCALIZE[35059]</label>
+					</control>
+					<control type="label">
+						<description>Fanart</description>
+						<visible>[[Control.HasFocus(150) | Control.HasFocus(250) | Control.HasFocus(550) | Control.HasFocus(650)] + Integer.IsGreater(Container(750).NumItems,0)]
+							| [Control.HasFocus(450) + String.IsEqual(Window.Property(MiddleInfo),Information) + Integer.IsGreater(Container(750).NumItems,0)]
+						</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$LOCALIZE[20445]</label>
+					</control>
+					<control type="label">
+						<description>Movies</description>
+						<visible>Control.HasFocus(450) + String.IsEqual(Window.Property(MiddleInfo),Movies)</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$ADDON[script.extendedinfo 32120]</label>
+					</control>
+					<control type="label">
+						<description>TV Shows</description>
+						<visible>Control.HasFocus(450) + String.IsEqual(Window.Property(MiddleInfo),TVShows)</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$ADDON[script.extendedinfo 32121]</label>
+					</control>
+					<control type="label">
+						<description>Movie Crew</description>
+						<visible>Control.HasFocus(450) + String.IsEqual(Window.Property(MiddleInfo),MovieCrew)</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$ADDON[script.extendedinfo 32122]</label>
+					</control>
+					<control type="label">
+						<description>TV Crew</description>
+						<visible>Control.HasFocus(450) + String.IsEqual(Window.Property(MiddleInfo),TVCrew)</visible>
+						<include file="script-script.extendedinfo-includes.xml">HelpLabel</include>
+						<label>$ADDON[script.extendedinfo 32123]</label>
+					</control>
+				</control>
+			</control>
+			<control type="grouplist" id="40001">
+				<description>Control Buttons</description>
+				<include>Animation_FadedByMenu</include>
+				<include>Animation_CommonFade</include>
+				<include>Animation_OpenCloseFade</include>
+				<posx>334</posx>
+				<posy>555</posy>
+				<width>552</width>
+				<height>70</height>
+				<itemgap>10</itemgap>
+				<align>center</align>
+				<orientation>horizontal</orientation>
+				<onleft>40001</onleft>
+				<onright>40001</onright>
+				<onup>450</onup>
+				<ondown>750</ondown>
+				<control type="button" id="19000">
+					<description>Information</description>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_information.png</texturenofocus>
+					<texturefocus>buttons/button_informationFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,Information)</onfocus>
+					<onclick>noop</onclick>
+				</control>
+				<control type="button" id="10150">
+					<description>Movies</description>
+					<visible>Integer.IsGreater(Container(150).NumItems,0) | Container(150).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_moviecast.png</texturenofocus>
+					<texturefocus>buttons/button_moviecastFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,Movies)</onfocus>
+					<onclick>SetFocus(150)</onclick>
+				</control>
+				<control type="button" id="10250">
+					<description>TV Shows</description>
+					<visible>Integer.IsGreater(Container(250).NumItems,0) | Container(250).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_tvcast.png</texturenofocus>
+					<texturefocus>buttons/button_tvcastFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,TVShows)</onfocus>
+					<onclick>SetFocus(250)</onclick>
+				</control>
+				<control type="button" id="10550">
+					<description>Movie Crew</description>
+					<visible>Integer.IsGreater(Container(550).NumItems,0) | Container(550).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_moviecrew.png</texturenofocus>
+					<texturefocus>buttons/button_moviecrewFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,MovieCrew)</onfocus>
+					<onclick>SetFocus(550)</onclick>
+				</control>
+				<control type="button" id="10650">
+					<description>TV Crew</description>
+					<visible>Integer.IsGreater(Container(650).NumItems,0) | Container(650).IsUpdating</visible>
+					<include>VideoInfoButton</include>
+					<texturenofocus>buttons/button_tvcrew.png</texturenofocus>
+					<texturefocus>buttons/button_tvcrewFO.png</texturefocus>
+					<include>Animation_ButtonFocus</include>
+					<onfocus>SetProperty(MiddleInfo,TVCrew)</onfocus>
+					<onclick>SetFocus(650)</onclick>
+				</control>
+			</control>
+			<control type="group">
+				<description>Control Button Text</description>
+				<include>Animation_FadedByMenu</include>
+				<include>Animation_CommonFade</include>
+				<include>Animation_OpenCloseFade</include>
+				<control type="label">
+					<description>Information</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$LOCALIZE[29943]</label>
+					<visible>ControlGroup(40001).HasFocus(19000)</visible>
+				</control>
+				<control type="label">
+					<description>Movies</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$ADDON[script.extendedinfo 32120]</label>
+					<visible>ControlGroup(40001).HasFocus(10150)</visible>
+				</control>
+				<control type="label">
+					<description>TV Shows</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$ADDON[script.extendedinfo 32121]</label>
+					<visible>ControlGroup(40001).HasFocus(10250)</visible>
+				</control>
+				<control type="label">
+					<description>Movie Crew</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$ADDON[script.extendedinfo 32122]</label>
+					<visible>ControlGroup(40001).HasFocus(10550)</visible>
+				</control>
+				<control type="label">
+					<description>TV Crew</description>
+					<include>VideoInfoButtonLabel</include>
+					<label>$ADDON[script.extendedinfo 32123]</label>
+					<visible>ControlGroup(40001).HasFocus(10650)</visible>
+				</control>
+			</control>
+			<control type="image">
+				<description>Powered by TMDB</description>
+				<top>650</top>
+				<left>-55</left>
+				<height>65</height>
+				<width>200</width>
+				<texture>tmdb.png</texture>
+				<colordiffuse>MediaFlagBoxDiffuse</colordiffuse>
+				<aspectratio align="right">keep</aspectratio>
+			</control>
+			<include>Object_InfoLines</include>
+			<include>Global_Time</include>
+			<include condition="Skin.HasSetting(DebugGrid)">Object_DebugGrid</include>
+		</control>
+	</controls>
+</window>
