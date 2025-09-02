@@ -651,8 +651,15 @@
 					<control type="radiobutton" id="708">
 						<include>SettingsLabel</include>
 						<label>$LOCALIZE[31332]</label>
-						<onclick>Skin.ToggleSetting(SkinHelper.EnableExtraFanart)</onclick>
-						<selected>Skin.HasSetting(SkinHelper.EnableExtraFanart)</selected>
+						<onclick>Skin.ToggleSetting(EnableExtraFanart)</onclick>
+						<selected>Skin.HasSetting(EnableExtraFanart)</selected>
+					</control>
+					<control type="radiobutton" id="7081">
+						<include>SettingsLabel</include>
+						<label>    $LOCALIZE[19082]: /extrafanart/</label>
+						<onclick>Skin.ToggleSetting(PreferExtrafanartDirectory)</onclick>
+						<selected>Skin.HasSetting(PreferExtrafanartDirectory)</selected>
+						<visible>Skin.HasSetting(EnableExtraFanart)</visible>
 					</control>
 					<control type="image" id="709">
 						<include>Settings_Line</include>
@@ -965,6 +972,13 @@
 						<onclick>Skin.Reset(VisBgFanart)</onclick>
 						<onclick>Skin.ToggleSetting(VisBgExtraFanart)</onclick>
 						<selected>Skin.HasSetting(VisBgExtraFanart)</selected>
+					</control>
+					<control type="radiobutton" id="9101">
+						<include>SettingsLabel</include>
+						<label>    $LOCALIZE[19082]: /extrafanart/</label>
+						<onclick>Skin.ToggleSetting(VisBgPreferExtrafanartDirectory)</onclick>
+						<selected>Skin.HasSetting(VisBgPreferExtrafanartDirectory)</selected>
+						<visible>Skin.HasSetting(VisBgExtraFanart)</visible>
 					</control>
 					<control type="radiobutton" id="911">
 						<include>SettingsLabel</include>
