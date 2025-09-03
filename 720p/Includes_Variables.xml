@@ -102,7 +102,12 @@
 		<value condition="Skin.HasSetting(GlobalFanartLight)">FanartDiffuseLight</value>
 		<value>FanartDiffuse</value>
 	</variable>
-
+	
+    <variable name="FormattedDate">
+    	<value condition="String.IsEqual(Skin.String(dateformat),date)">$INFO[System.Date(yyyy.mm.dd)]</value>
+    	<value condition="String.IsEqual(Skin.String(dateformat),day)">$INFO[System.Date(DDD)]</value>
+    	<value condition="String.IsEqual(Skin.String(dateformat),dayanddate)">$INFO[System.Date(ddd)]$COMMA $INFO[System.Date(mmm d)]</value>
+    </variable>
 
 	<variable name="GlobalWidgetIcon">
 		<value condition="!String.IsEmpty(Container(8000).ListItem.Art(poster))">$INFO[Container(8000).ListItem.Art(poster)]</value>
