@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<onload condition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(VisBgArtistSlideshow)">RunScript(script.artistslideshow)</onload>
+	<onload>RunPlugin(plugin://script.skinvariables/?info=get_jsonrpc&amp;method=Settings.GetSettingValue&amp;setting=musiclibrary.artistsfolder&amp;window_prop=Musiclibrary.artistsfolder&amp;window_id=Home)</onload>
 	<defaultcontrol></defaultcontrol>
 	<controls>
 		<control type="multiimage" id="99">
@@ -12,15 +13,35 @@
 		<control type="image">
 			<include>MusicVis_Background</include>
 			<texture background="true" fallback="home_art/music.jpg">$INFO[Player.Art(fanart)]</texture>
-			<visible>Skin.HasSetting(VisBgFanart) | String.IsEmpty(Control.GetLabel(6950))</visible>
+			<visible>Skin.HasSetting(VisBgFanart) | [Skin.HasSetting(VisBgExtraFanart) + String.IsEmpty(Control.GetLabel(6999)) + String.IsEmpty(Control.GetLabel(6951))]</visible>
 		</control>
-		<control type="multiimage" id="6950">
-			<include>MusicVis_Background</include>
-			<timeperimage>6000</timeperimage>
-			<randomize>true</randomize>
-			<loop>yes</loop>
-			<imagepath background="true" fallback="home_art/music.jpg">$INFO[Window(Home).Property(SkinHelper.Player.Music.ExtraFanArt)]</imagepath>
-			<visible>Skin.HasSetting(VisBgExtraFanart) + Skin.HasSetting(SkinHelper.EnableExtraFanart) + !String.IsEmpty(Window(Home).Property(SkinHelper.Player.Music.ExtraFanArt))</visible>
+		<control type="group">
+			<description>Extra Fanart from fanart, fanart1, fanart2, ...</description>
+			<visible>Skin.HasSetting(VisBgExtraFanart) + [!Skin.HasSetting(VisBgPreferExtrafanartDirectory) | [Skin.HasSetting(VisBgPreferExtrafanartDirectory) + String.IsEmpty(Control.GetLabel(6999))]]</visible>
+			<control type="fadelabel" id="6951">
+				<left>-100</left>
+				<top>-100</top>
+				<font>METF_MediaDetailsSmall</font>
+				<scrollspeed>200</scrollspeed>
+				<randomize>true</randomize>
+				<include>MusicPlayerExtraFanartItems</include>
+		 	</control>
+		 	<control type="multiimage" id="6950">
+				<include>MusicVis_Background</include>
+				<timeperimage>6000</timeperimage>
+				<fadetime>1500</fadetime>
+				<imagepath background="true" diffuse="FanartDiffuse.png">$INFO[Control.GetLabel(6951)]</imagepath>
+			</control>
+		</control>
+		<control type="group">
+			<description>Extra Fanart from extrafanart directory</description>
+			<visible>Skin.HasSetting(VisBgExtraFanart) + Skin.HasSetting(VisBgPreferExtrafanartDirectory)</visible>
+			<control type="multiimage" id="6999">
+				<include>MusicVis_Background</include>
+				<timeperimage>6000</timeperimage>
+				<fadetime>1500</fadetime>
+				<imagepath background="true" diffuse="FanartDiffuse.png">$INFO[Window(Home).Property(Musiclibrary.artistsfolder.Value)]$INFO[MusicPlayer.Artist]/extrafanart</imagepath>
+			</control>
 		</control>
 		<control type="visualisation" id="2">
 			<description>visualisation</description>

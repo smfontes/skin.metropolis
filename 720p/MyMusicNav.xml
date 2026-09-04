@@ -2,7 +2,7 @@
 <window>
 	<views>55,905,58,559,501</views>
 	<defaultcontrol always="true">55</defaultcontrol>
-	<onunload>ClearProperty(SkinHelper.Music.ExtraFanArt, Home)</onunload>
+	<onload>RunPlugin(plugin://script.skinvariables/?info=get_jsonrpc&amp;method=Settings.GetSettingValue&amp;setting=musiclibrary.artistsfolder&amp;window_prop=Musiclibrary.artistsfolder&amp;window_id=Home)</onload>
 	<controls>
 		<include>Global_Background</include>
 		<include>Global_Background_Fanart</include>
