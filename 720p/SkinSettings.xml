@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;levels=0)</onunload>
+	<onload condition="String.IsEmpty(Skin.String(dateformat))">Skin.SetString(dateformat,date)</onload>
 	<controls>
 		<include>Global_Background</include>
 		<control type="group">
@@ -135,12 +136,13 @@
 						<onclick>Skin.ToggleSetting(HideClock)</onclick>
 						<selected>Skin.HasSetting(HideClock)</selected>
 					</control>
-					<control type="radiobutton" id="104">
+					<control type="button" id="104">
 						<include>SettingsLabel</include>
-						<label>$LOCALIZE[31453]</label>
-						<onclick>Skin.ToggleSetting(ShowDate)</onclick>
-						<selected>Skin.HasSetting(ShowDate)</selected>
-						<visible>!Skin.HasSetting(HideClock)</visible>
+						<label>$LOCALIZE[14052]</label>
+						<label2>$VAR[FormattedDate]</label2>
+						<onclick condition="String.IsEqual(Skin.String(dateformat),date)">Skin.SetString(dateformat,day)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(dateformat),day)">Skin.SetString(dateformat,dayanddate)</onclick>
+						<onclick condition="String.IsEqual(Skin.String(dateformat),dayanddate)">Skin.SetString(dateformat,date)</onclick>
 					</control>
 					<control type="radiobutton" id="105">
 						<include>SettingsLabel</include>

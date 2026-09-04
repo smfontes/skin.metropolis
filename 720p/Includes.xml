@@ -305,14 +305,7 @@
 			<control type="label">
 				<description>Date</description>
 				<include>Global_TimeWeekdayDetails</include>
-				<label>$INFO[System.Date(yyyy.mm.dd)]</label>
-				<visible>Skin.HasSetting(ShowDate)</visible>
-			</control>
-			<control type="label">
-				<description>Day of Week</description>
-				<include>Global_TimeWeekdayDetails</include>
-				<label>$INFO[System.Date(DDD)]</label>
-				<visible>!Skin.HasSetting(ShowDate)</visible>
+				<label>$VAR[FormattedDate]</label>
 			</control>
 		</control>
 	</include>
