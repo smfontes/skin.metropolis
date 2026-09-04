@@ -415,6 +415,12 @@
 						<onclick>Skin.ToggleSetting(CropMVGalleryIcon)</onclick>
 						<selected>Skin.HasSetting(CropMVGalleryIcon)</selected>
 					</control>
+					<control type="radiobutton" id="517">
+						<include>SettingsLabel</include>
+						<label>Use tall list in Background view</label>
+						<onclick>Skin.ToggleSetting(BackgroundViewTall)</onclick>
+						<selected>Skin.HasSetting(BackgroundViewTall)</selected>
+					</control>
 				</control>
 
 				<!-- View Types -->
@@ -596,6 +602,14 @@
 						<onclick>Skin.ToggleSetting(NoViewGames)</onclick>
 						<selected>Skin.HasSetting(NoViewGames)</selected>
 						<visible>System.HasAddon(plugin.program.advanced.launcher)</visible>
+					</control>
+					<!-- View 59555 -->
+					<control type="radiobutton" id="623">
+						<description>Background</description>
+						<include>SettingsLabel</include>
+						<label>$LOCALIZE[31441] $LOCALIZE[33068]</label>
+						<onclick>Skin.ToggleSetting(NoViewBackground)</onclick>
+						<selected>Skin.HasSetting(NoViewBackground)</selected>
 					</control>
 				</control>
 
