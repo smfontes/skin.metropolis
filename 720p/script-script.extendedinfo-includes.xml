@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="LeftLabelNF">
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>METF_InfoText</font>
+		<textcolor>TextNF</textcolor>
+	</include>
+	<include name="RightLabelNF">
+		<align>right</align>
+		<aligny>center</aligny>
+		<font>METF_InfoText</font>
+		<textcolor>TextNF</textcolor>
+	</include>
+	<include name="LeftLabelFO">
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>METF_InfoText</font>
+		<textcolor>TextFO</textcolor>
+		<scrollspeed>30</scrollspeed>
+	</include>
+	<include name="RightLabelFO">
+		<align>right</align>
+		<aligny>center</aligny>
+		<font>METF_InfoText</font>
+		<textcolor>TextFO</textcolor>
+		<scrollspeed>30</scrollspeed>
+	</include>
+	<include name="HelpLabel">
+		<aligny>center</aligny>
+		<width>auto</width>
+		<font>METF_HelpText</font>
+		<textcolor>HelpText</textcolor>
+	</include>
+	<include name="MiddleHeading">
+		<param name="Heading"></param>
+		<param name="VisibleIf"></param>
+		<definition>
+			<control type="label">
+				<visible>String.IsEqual(Window.Property(MiddleInfo),$PARAM[VisibleIf])</visible>
+				<align>center</align>
+				<font>METF_Heading</font>
+				<textcolor>MediaDetailsInfo</textcolor>
+				<label>$PARAM[Heading]</label>
+			</control>
+		</definition>
+	</include>
+	<include name="RightPosterImage">
+		<param name="Image"></param>
+		<param name="VisibleIf"></param>
+		<definition>
+			<control type="image">
+				<visible>String.IsEqual(Window.Property(MiddleInfo),$PARAM[VisibleIf])</visible>
+				<top>20</top>
+				<left>125</left>
+				<width>146</width>
+				<height>218</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture fallback="DefaultThumb.png">$PARAM[Image]</texture>
+			</control>
+		</definition>
+	</include>
+</includes>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="ListExtraFanartItems">
+        <info>ListItem.Art(fanart)</info>
+		<info>ListItem.Art(fanart1)</info>
+		<info>ListItem.Art(fanart2)</info>
+		<info>ListItem.Art(fanart3)</info>
+		<info>ListItem.Art(fanart4)</info>
+		<info>ListItem.Art(fanart5)</info>
+		<info>ListItem.Art(fanart6)</info>
+		<info>ListItem.Art(fanart7)</info>
+		<info>ListItem.Art(fanart8)</info>
+		<info>ListItem.Art(fanart9)</info>
+		<info>ListItem.Art(fanart10)</info>
+		<info>ListItem.Art(fanart11)</info>
+		<info>ListItem.Art(fanart12)</info>
+		<info>ListItem.Art(fanart13)</info>
+		<info>ListItem.Art(fanart14)</info>
+		<info>ListItem.Art(fanart15)</info>
+		<info>ListItem.Art(fanart16)</info>
+		<info>ListItem.Art(fanart17)</info>
+		<info>ListItem.Art(fanart18)</info>
+		<info>ListItem.Art(fanart19)</info>
+		<info>ListItem.Art(fanart20)</info>
+		<!-- tvshow.fanart are filled with the series fanart when navigating episode lists -->
+		<info>ListItem.Art(tvshow.fanart)</info>
+		<info>ListItem.Art(tvshow.fanart1)</info>
+		<info>ListItem.Art(tvshow.fanart2)</info>
+		<info>ListItem.Art(tvshow.fanart3)</info>
+		<info>ListItem.Art(tvshow.fanart4)</info>
+		<info>ListItem.Art(tvshow.fanart5)</info>
+		<info>ListItem.Art(tvshow.fanart6)</info>
+		<info>ListItem.Art(tvshow.fanart7)</info>
+		<info>ListItem.Art(tvshow.fanart8)</info>
+		<info>ListItem.Art(tvshow.fanart9)</info>
+		<info>ListItem.Art(tvshow.fanart10)</info>
+		<info>ListItem.Art(tvshow.fanart11)</info>
+		<info>ListItem.Art(tvshow.fanart12)</info>
+		<info>ListItem.Art(tvshow.fanart13)</info>
+		<info>ListItem.Art(tvshow.fanart14)</info>
+		<info>ListItem.Art(tvshow.fanart15)</info>
+		<info>ListItem.Art(tvshow.fanart16)</info>
+		<info>ListItem.Art(tvshow.fanart17)</info>
+		<info>ListItem.Art(tvshow.fanart18)</info>
+		<info>ListItem.Art(tvshow.fanart19)</info>
+		<info>ListItem.Art(tvshow.fanart20)</info>
+		<!-- artist.fanart used when navigating artist, song or album lists -->
+		<info>ListItem.Art(artist.fanart)</info>
+		<info>ListItem.Art(artist.fanart1)</info>
+		<info>ListItem.Art(artist.fanart2)</info>
+		<info>ListItem.Art(artist.fanart3)</info>
+		<info>ListItem.Art(artist.fanart4)</info>
+		<info>ListItem.Art(artist.fanart5)</info>
+		<info>ListItem.Art(artist.fanart6)</info>
+		<info>ListItem.Art(artist.fanart7)</info>
+		<info>ListItem.Art(artist.fanart8)</info>
+		<info>ListItem.Art(artist.fanart9)</info>
+		<info>ListItem.Art(artist.fanart10)</info>
+		<info>ListItem.Art(artist.fanart11)</info>
+		<info>ListItem.Art(artist.fanart12)</info>
+		<info>ListItem.Art(artist.fanart13)</info>
+		<info>ListItem.Art(artist.fanart14)</info>
+		<info>ListItem.Art(artist.fanart15)</info>
+		<info>ListItem.Art(artist.fanart16)</info>
+		<info>ListItem.Art(artist.fanart17)</info>
+		<info>ListItem.Art(artist.fanart18)</info>
+		<info>ListItem.Art(artist.fanart19)</info>
+		<info>ListItem.Art(artist.fanart20)</info>
+	</include>
+	<include name="MusicPlayerExtraFanartItems">
+		<!-- artist.fanart used for extra fanart in music visualization -->
+		<info>Player.Art(artist.fanart1)</info>
+		<info>Player.Art(artist.fanart2)</info>
+		<info>Player.Art(artist.fanart3)</info>
+		<info>Player.Art(artist.fanart4)</info>
+		<info>Player.Art(artist.fanart5)</info>
+		<info>Player.Art(artist.fanart6)</info>
+		<info>Player.Art(artist.fanart7)</info>
+		<info>Player.Art(artist.fanart8)</info>
+		<info>Player.Art(artist.fanart9)</info>
+		<info>Player.Art(artist.fanart10)</info>
+		<info>Player.Art(artist.fanart11)</info>
+		<info>Player.Art(artist.fanart12)</info>
+		<info>Player.Art(artist.fanart13)</info>
+		<info>Player.Art(artist.fanart14)</info>
+		<info>Player.Art(artist.fanart15)</info>
+		<info>Player.Art(artist.fanart16)</info>
+		<info>Player.Art(artist.fanart17)</info>
+		<info>Player.Art(artist.fanart18)</info>
+		<info>Player.Art(artist.fanart19)</info>
+		<info>Player.Art(artist.fanart20)</info>
+	</include>
+</includes>

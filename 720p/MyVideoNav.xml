@@ -4,7 +4,7 @@
 	<defaultcontrol always="true">55</defaultcontrol>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(NextAired) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onload condition="!System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(NextAired) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">InstallAddon(script.tv.show.next.aired)</onload>
-	<onunload>ClearProperty(SkinHelper.ExtraFanArtPath, Home)</onunload>
+	<onload>RunPlugin(plugin://script.skinvariables/?info=get_jsonrpc&amp;method=Settings.GetSettingValue&amp;setting=videolibrary.moviesetsfolder&amp;window_prop=Videolibrary.moviesetsfolder&amp;window_id=Home)</onload>
 	<controls>
 		<include>Global_Background</include>
 		<include>Global_Background_Fanart</include>

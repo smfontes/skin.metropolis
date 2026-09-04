@@ -46,6 +46,7 @@
 					<width>60</width>
 					<texturefocus>osd/osd_button_playlist_fo.png</texturefocus>
 					<texturenofocus>osd/osd_button_playlist_nf.png</texturenofocus>
+					<onclick>Dialog.Close(videoosd)</onclick>
 					<onclick>ActivateWindow(videoplaylist)</onclick>
 				</control>
 				<control type="button" id="12">
